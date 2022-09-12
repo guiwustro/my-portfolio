@@ -1,6 +1,6 @@
 [
   {
-    "project-name": "Kenzie Hub",
+    "project-name": "HealthyGo",
     "github-link": "https://github.com/guiwustro/healthy-go-project",
     "project-url": "https://healthygo.vercel.app/home/",
     "description": "A aplicação permite o usuário fazer um pedido de diversos restaurantes, podendo filtrar restaurantes de acordo com suas restrições alimentares até finalizar o seu pedido.",
@@ -37,14 +37,7 @@
       "Responsivo para todas as telas entre 320px e 4k;",
       " Dark-Mode;"
     ],
-    "images": [
-      "../../../src/assets/images/projects/kenzie-hub/Home-tela-grande.png",
-      "../../../src/assets/images/projects/kenzie-hub/Login-1440px.png",
-      "../../../src/assets/images/projects/kenzie-hub/Register-1440px.png",
-      "../../../src/assets/images/projects/kenzie-hub/Home-mobile.png",
-      "../../../src/assets/images/projects/kenzie-hub/Register-mobile.png",
-      "../../../src/assets/images/projects/kenzie-hub/Login-mobile.png"
-    ]
+    "images": []
   },
   {
     "project-name": "Kenzie Hub",
@@ -74,7 +67,12 @@
       "O usuário é capaz de alterar e remover as tecnologias e os projetos já existentes;",
       "Responsivo para todas as telas."
     ],
-    "images": []
+    "images": [
+      "../../../src/assets/images/projects/kenzie-hub/Home-tela-grande.png",
+      "../../../src/assets/images/projects/kenzie-hub/Login-1440px.png",
+      "../../../src/assets/images/projects/kenzie-hub/Register-1440px.png",
+      "../../../src/assets/images/projects/kenzie-hub/mobile-montage.JPG"
+    ]
   },
   {
     "project-name": "Hamburgueria da Kenzie",
@@ -96,7 +94,12 @@
       " Responsivo para qualquer tela;",
       " Dark-mode."
     ],
-    "images": []
+    "images": [
+      "../../../src/assets/images/projects/kenzie-burguer/HomePage-LightTheme-EmptyCart.jpg",
+      "../../../src/assets/images/projects/kenzie-burguer/HomePage-DarkTheme-EmptyCart.jpg",
+      "../../../src/assets/images/projects/kenzie-burguer/HomePage-LightTheme.jpg",
+      "../../../src/assets/images/projects/kenzie-burguer/HomePage-DarkTheme.jpg"
+    ]
   },
   {
     "project-name": "Nu Kenzie",
@@ -116,7 +119,11 @@
       "Responsivo para todas as telas;",
       "Dark-mode;"
     ],
-    "images": []
+    "images": [
+      "../../../src/assets/images/projects/nu-kenzie/main-page-1440px-light-mode.png",
+      "../../../src/assets/images/projects/nu-kenzie/home-page-1440px.png",
+      "../../../src/assets/images/projects/nu-kenzie/main-page-1440px.png"
+    ]
   },
   {
     "project-name": "Blog",
@@ -138,6 +145,11 @@
       "Possibilidade de edição da mensagem realizada pelo usuário;",
       "Possibilidade de remoção da mensagem do usuário;",
       "Responsivo para todas as telas."
+    ],
+    "images": [
+      "../../../src/assets/images/projects/blog/Blog-main-page.png",
+      "../../../src/assets/images/projects/blog/Blog-register.png",
+      "../../../src/assets/images/projects/blog/Blog-login.png"
     ]
   },
   {
@@ -161,7 +173,11 @@
       "Opção de remover todos os produtos do carrinho;",
       "Responsivo para qualquer tela;"
     ],
-    "images": []
+    "images": [
+      "../../../src/assets/images/projects/ecommerce-js-vanilla/Home-1440px.png",
+      "../../../src/assets/images/projects/ecommerce-js-vanilla/Home-1024px-CartInclude.png",
+      "../../../src/assets/images/projects/ecommerce-js-vanilla/Home-1024px.png"
+    ]
   },
   {
     "project-name": "Oregon Trail",
@@ -188,6 +204,8 @@
       "Modais de notificação ao usuário em caso de transferência de comida sem ter a comida suficiente, comer doente, entre outros;",
       "Botão para voltar ao menu inicial para criar outra carroça do zero, escolhendo uma nova quantidade de vagões."
     ],
-    "images": []
+    "images": [
+      "../../../src/assets/images/projects/oregon-trail/Oregon-trail-HomePage.png"
+    ]
   }
 ]
