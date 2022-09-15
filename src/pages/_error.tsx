@@ -18,7 +18,7 @@ Error.getInitialProps = async ({ res, err }: any) => {
     ({ statusCode } = err);
   }
   return {
-    namespacesRequired: ["common"],
+    namespacesRequired: ["common", "projects"],
     statusCode,
   };
 };

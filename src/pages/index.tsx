@@ -4,7 +4,7 @@ import Header from "../components/header";
 import ProjectsList from "../components/projects-list/index";
 import TechsList from "../components/techs-list/index";
 
-const Homepage = ({ t }: { t: any }) => {
+const Homepage = () => {
   return (
     <>
       <main>

@@ -14,6 +14,9 @@ module.exports = {
     localeSubpaths,
   },
   poweredByHeader: false,
+  images: {
+    disableStaticImages: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
