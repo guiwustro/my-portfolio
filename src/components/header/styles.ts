@@ -5,7 +5,12 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  z-index: 999;
   & > div > svg path {
     fill: ${(props) => props.theme.colors["text"]};
   }
@@ -36,6 +41,10 @@ export const Container = styled.div`
     }
   }
 
+  @media screen and (min-width: 768px) {
+    padding: 0 20px;
+  }
+
   @media screen and (min-width: 1024px) {
     nav {
       gap: 60px;
@@ -50,5 +59,15 @@ export const ContainerTheme = styled.div`
 
   @media screen and (min-width: 1024px) {
     gap: 60px;
+  }
+`;
+
+export const ButtonMenu = styled.button`
+  width: 32px;
+  height: 28px;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: ${(props) => props.theme.colors.text};
   }
 `;

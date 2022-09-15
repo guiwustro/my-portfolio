@@ -1,3 +1,4 @@
+import { MenuDropDownProvider } from "contexts/menuDropDownProvider";
 import App, { AppContext, AppProps } from "next/app";
 
 import { appWithTranslation } from "../../i18n";
@@ -7,8 +8,10 @@ import GlobalStyles from "../styles/GlobalStyles";
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <AppThemeProvider>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <MenuDropDownProvider>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </MenuDropDownProvider>
     </AppThemeProvider>
   );
 };

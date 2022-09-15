@@ -50,6 +50,7 @@ const TranslationMenu = () => {
           <button
             onClick={() => {
               i18n.changeLanguage("pt");
+              setIsOpenTranslationMenu((state) => !state);
             }}
           >
             <BrazilFlag />
@@ -58,6 +59,7 @@ const TranslationMenu = () => {
           <button
             onClick={() => {
               i18n.changeLanguage("en");
+              setIsOpenTranslationMenu((state) => !state);
             }}
           >
             <UsaFlag />

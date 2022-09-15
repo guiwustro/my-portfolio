@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  margin-top: 40px;
+  margin-top: 90px;
   flex-direction: column;
 
   #about__description {
@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    margin-top: 80px;
+    margin-top: 110px;
   }
 `;
 
@@ -72,7 +72,6 @@ export const PhotoContainer = styled.div`
     min-width: 340px;
     width: 340px;
     height: 340px;
-    /* align-self: auto; */
   }
 `;
 
