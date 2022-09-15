@@ -1,0 +1,20 @@
+{
+  "header": {
+    "home": "Home",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hello": "Hello, I'm",
+  "front-end-developer": "Front-End Developer",
+  "about-me": "Undergraduate civil engineer, I develop modern web-sites, focused on performance, responsiveness, animations and SEO. I build and turn ideas into reality.",
+  "techs": "Technologies",
+  "projects": "Projects",
+  "contact": {
+    "title": "Contact",
+    "description": "I'm interested in freelance project opportunities and job opportunities. But if you have any questions or doubts, you can message me!",
+    "label-name": "Name",
+    "label-subject": "Subject",
+    "label-message": "Message"
+  }
+}

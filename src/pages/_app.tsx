@@ -1,8 +1,20 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
+import App, { AppContext, AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+import { appWithTranslation } from "../../i18n";
+import { AppThemeProvider } from "../contexts/themeProvider";
+import GlobalStyles from "../styles/GlobalStyles";
 
-export default MyApp;
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <AppThemeProvider>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </AppThemeProvider>
+  );
+};
+
+MyApp.getInitialProps = async (appContext: AppContext) => ({
+  ...(await App.getInitialProps(appContext)),
+});
+
+export default appWithTranslation(MyApp);

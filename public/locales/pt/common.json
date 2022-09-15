@@ -1,0 +1,20 @@
+{
+  "header": {
+    "home": "Início",
+    "technologies": "Tecnologias",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hello": "Olá, eu sou",
+  "front-end-developer": "Desenvolvedor front-end",
+  "about-me": "Engenheiro civil de graduação, desenvolvo web-sites modernos, concentrados em performance, responsividade, animações e SEO. Construo e transformo ideias em realidade.",
+  "techs": "Tecnologias",
+  "projects": "Projetos",
+  "contact": {
+    "title": "Contato",
+    "description": "Eu estou interessado em oportunidades projetos freelance e oportunidades de emprego. Mas se você tiver qualquer questão ou dúvida, pode me mandar mensagem!",
+    "label-name": "Nome",
+    "label-subject": "Assunto",
+    "label-message": "Mensagem"
+  }
+}
