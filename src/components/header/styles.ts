@@ -47,13 +47,6 @@ export const ContainerTheme = styled.div`
   display: flex;
   flex-direction: row;
   gap: 30px;
-  #theme-button {
-    & > svg {
-      width: 17px;
-      height: 17px;
-      fill: ${(props) => props.theme.colors.text};
-    }
-  }
 
   @media screen and (min-width: 1024px) {
     gap: 60px;

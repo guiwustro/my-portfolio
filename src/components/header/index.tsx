@@ -1,32 +1,60 @@
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { useMediaQuery } from "react-responsive";
+
+import MenuDropDown from "components/menu-drop-down";
+import ThemeButton from "components/theme-button";
 
 import { withTranslation } from "../../../i18n";
 import LogoGW from "../../assets/icons/gw.svg";
-import { useThemeContext } from "../../contexts/themeProvider";
-import TranslationMenu from "../translationMenu";
+import TranslationMenu from "../translation-menu";
 import { Container, ContainerTheme } from "./styles";
 const Header = ({ t }: { t: any }) => {
-  const { themeName, toggleTheme } = useThemeContext();
+  const [isOpenMenuDropDown, setIsOpenMenuDropDown] = useState(false);
+
   return (
     <Container>
       <div>
         <LogoGW />
       </div>
-      <nav>
-        <a href="#home"> {t("header.home")}</a>
-        <a href="#technologies"> {t("header.technologies")}</a>
-        <a href="#projects"> {t("header.projects")}</a>
-        <a href="#contact"> {t("header.contact")}</a>
-      </nav>
-      <ContainerTheme>
-        <TranslationMenu />
-        <button id="theme-button" onClick={() => toggleTheme()}>
-          {themeName === "light" ? <BsFillMoonFill /> : <BsFillSunFill />}
+      <Desktop>
+        <nav>
+          <a href="#home"> {t("header.home")}</a>
+          <a href="#technologies"> {t("header.technologies")}</a>
+          <a href="#projects"> {t("header.projects")}</a>
+          <a href="#contact"> {t("header.contact")}</a>
+        </nav>
+        <ContainerTheme>
+          <TranslationMenu />
+          <ThemeButton />
+        </ContainerTheme>
+      </Desktop>
+      <Mobile>
+        <button onClick={() => setIsOpenMenuDropDown((state) => !state)}>
+          <AiOutlineMenu />
         </button>
-      </ContainerTheme>
-      {/* Theme Toogle */}
+        {isOpenMenuDropDown && <MenuDropDown />}
+      </Mobile>
     </Container>
   );
+};
+
+const Desktop = ({ children }: any) => {
+  const useDesktopMediaQuery = () =>
+    useMediaQuery({
+      minWidth: 769,
+    });
+
+  return <>{useDesktopMediaQuery() && children}</>;
+};
+
+const Mobile = ({ children }: any) => {
+  const useMobileMediaQuery = () =>
+    useMediaQuery({
+      maxWidth: 768,
+    });
+
+  return <>{useMobileMediaQuery() && children}</>;
 };
 
 Header.getInitialProps = async () => ({
