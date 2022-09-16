@@ -5,6 +5,8 @@ export const darkBlueTheme = {
 
     body: "#557A95",
 
+    "text-white": "#F5F2F2",
+
     "border-color": "#CCCCDB",
 
     "blue-200": "#7395AE", //header

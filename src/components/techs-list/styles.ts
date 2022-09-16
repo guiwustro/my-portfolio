@@ -7,23 +7,33 @@ export const TechsContainer = styled.div`
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 43px;
   }
   .tech-list {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    column-gap: 50px;
+    row-gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+
     .tech-item {
       display: flex;
       flex-direction: column;
       align-items: center;
+
       gap: 10px;
+      width: 70px;
+      height: 100px;
       & > h4 {
+        text-align: center;
         color: ${(props) => props.theme.colors["blue-700"]};
         font-size: 1rem;
         line-height: 24px;
+        height: 48px;
+        display: flex;
+        align-items: center;
       }
       & > svg {
         fill: ${(props) => props.theme.colors["blue-500"]};
@@ -33,10 +43,16 @@ export const TechsContainer = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    & > svg {
-      fill: ${(props) => props.theme.colors["blue-500"]};
-      width: 60px;
-      height: 60px;
+    padding-top: 100px;
+    .tech-list {
+      justify-content: flex-start;
+      .tech-item {
+        & > svg {
+          fill: ${(props) => props.theme.colors["blue-500"]};
+          width: 50px;
+          height: 50px;
+        }
+      }
     }
   }
 `;

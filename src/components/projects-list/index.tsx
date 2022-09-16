@@ -1,32 +1,49 @@
+import { BsGithub } from "react-icons/bs";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { withTranslation } from "../../../i18n";
-import Blog from "../../assets/images/projects/blog/Blog-login.png";
 import projects from "../../database/projects";
-import { Container } from "./styles";
+import { Container, ImageContainer } from "./styles";
 
 const ProjectsList = ({ t }: { t: any }) => {
   return (
-    <Container>
-      <h1 id="projects">{t("projects")}</h1>
-      <Link href="projects/2">Clique aqui</Link>
+    <Container id="projects">
+      <h3>{t("projects")}</h3>
       <ul>
         {projects.map((project, i) => {
+          console.log(t(`projects_description.${i}`));
           return (
             <li key={project["project-name"]}>
-              <h3>{project["project-name"]}</h3>
+              <div className="item-header">
+                <h4>{project["project-name"]}</h4>
+                <a
+                  target="_blank"
+                  href={project["github-link"]}
+                  rel="noreferrer"
+                >
+                  <BsGithub />
+                </a>
+              </div>
               <Link href={`projects/${i}`}>
-                <Image
-                  src={project.images[0]}
-                  alt={project["project-name"]}
-                  width={280}
-                  height={200}
-                  objectFit={"cover"}
-                  className="project-image"
-                />
+                <ImageContainer>
+                  <Image
+                    src={project.images[0]}
+                    alt={project["project-name"]}
+                    width={9}
+                    height={16}
+                    layout="responsive"
+                    objectFit={"cover"}
+                    className="project-image"
+                  />
+                  <div className="image-overlay">
+                    <p className="image-description">
+                      {t(`projects_description.${i}`)}
+                    </p>
+                  </div>
+                </ImageContainer>
               </Link>
-              {/* icone */}
             </li>
           );
         })}

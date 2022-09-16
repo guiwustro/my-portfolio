@@ -4,9 +4,9 @@ export const lightBlueTheme = {
     text: "#1F1C1C",
 
     body: "#CEE1EE",
+    "text-white": "#F5F2F2",
 
     "border-color": "#CCCCDB",
-
     "blue-200": "#AACCE5", //header
     "blue-250": "#9EC1DB", //border
 

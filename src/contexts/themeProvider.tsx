@@ -23,7 +23,7 @@ interface IThemeChildren {
 const ThemeContext = createContext({} as IThemeContextData);
 
 export const AppThemeProvider = ({ children }: IThemeChildren) => {
-  const [themeName, setThemeName] = useState<"light" | "dark">("light");
+  const [themeName, setThemeName] = useState<"light" | "dark">("dark");
 
   const theme = useMemo(() => {
     if (themeName === "light") return lightBlueTheme;

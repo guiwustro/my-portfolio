@@ -7,9 +7,18 @@
   },
   "hello": "Hello, I'm",
   "front-end-developer": "Front-End Developer",
-  "about-me": "Undergraduate civil engineer, I develop modern web-sites, focused on performance, responsiveness, animations and SEO. I build and turn ideas into reality.",
+  "about-me": "Undergraduate civil engineer, I develop modern web-sites, focused on performance, responsiveness, animations and SEO.",
   "techs": "Technologies",
   "projects": "Projects",
+  "projects_description": [
+    "The application allows the user to place an order from several restaurants, being able to filter restaurants according to their dietary restrictions until finalizing their order.",
+    "It is an application developed for the user to manage the technologies learned and the projects created.",
+    "It is a single-page e-commerce application, which has a showcase with products with add-to-cart buttons, a shopping cart and a filter bar, a search field.",
+    "It is an expense control platform, where it is possible to register a description, an amount and the type of that amount (input or output)",
+    "The idea of this project is to simulate a community, where all registered members can consume, create, update and delete text publications. It was developed using Object Oriented Programming.",
+    "It is a single-page e-commerce application, which has a showcase with products with add-to-cart buttons, a shopping cart, a filter bar and a search field.",
+    "Based on the game The Oregon Trail, it's an application in which the user rides his own wagon, chooses how many wagons it will have, and in it he can add three types of travelers. Each traveler has specific actions, which can be to hunt for food, eat and /or cure. Developed using Object Oriented Programming."
+  ],
   "contact": {
     "title": "Contact",
     "description": "I'm interested in freelance project opportunities and job opportunities. But if you have any questions or doubts, you can message me!",

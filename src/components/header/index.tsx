@@ -1,42 +1,56 @@
-import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useMediaQuery } from "react-responsive";
 
 import MenuDropDown from "components/menu-drop-down";
 import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
+import Link from "next/link";
 
 import { withTranslation } from "../../../i18n";
 import LogoGW from "../../assets/icons/gw.svg";
 import TranslationMenu from "../translation-menu";
-import { ButtonMenu, Container, ContainerTheme } from "./styles";
+import {
+  ButtonMenu,
+  CenterContainer,
+  Container,
+  ContainerTheme,
+} from "./styles";
 const Header = ({ t }: { t: any }) => {
   const { isOpenMenuDropDown, toogleMenuDropDown } = useMenuDropDownContext();
-
   return (
-    <Container>
-      <div>
-        <LogoGW />
-      </div>
-      <Desktop>
-        <nav>
-          <a href="#home"> {t("header.home")}</a>
-          <a href="#technologies"> {t("header.technologies")}</a>
-          <a href="#projects"> {t("header.projects")}</a>
-          <a href="#contact"> {t("header.contact")}</a>
-        </nav>
-        <ContainerTheme>
-          <TranslationMenu />
-          <ThemeButton />
-        </ContainerTheme>
-      </Desktop>
-      <Mobile>
-        <ButtonMenu onClick={() => toogleMenuDropDown(undefined)}>
-          {isOpenMenuDropDown ? <AiOutlineClose /> : <AiOutlineMenu />}
-        </ButtonMenu>
-        {isOpenMenuDropDown && <MenuDropDown />}
-      </Mobile>
-    </Container>
+    <CenterContainer>
+      <Container>
+        <div>
+          <LogoGW />
+        </div>
+        <Desktop>
+          <nav>
+            <Link href="/#home">
+              <a>{t("header.home")}</a>
+            </Link>
+            <Link href="/#technologies">
+              <a>{t("header.technologies")}</a>
+            </Link>
+            <Link href="/#projects">
+              <a>{t("header.projects")}</a>
+            </Link>
+            <Link href="/#contact">
+              <a>{t("header.contact")}</a>
+            </Link>
+          </nav>
+          <ContainerTheme>
+            <TranslationMenu />
+            <ThemeButton />
+          </ContainerTheme>
+        </Desktop>
+        <Mobile>
+          <ButtonMenu onClick={() => toogleMenuDropDown(undefined)}>
+            {isOpenMenuDropDown ? <AiOutlineClose /> : <AiOutlineMenu />}
+          </ButtonMenu>
+          {isOpenMenuDropDown && <MenuDropDown />}
+        </Mobile>
+      </Container>
+    </CenterContainer>
   );
 };
 

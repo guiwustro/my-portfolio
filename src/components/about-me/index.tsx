@@ -15,7 +15,7 @@ import {
 
 const AboutMe = ({ t }: { t: any }) => {
   return (
-    <Container>
+    <Container id="home">
       <LeftSideContainer>
         <NameContainer>
           <span id="about__hello">{t("hello")}</span>

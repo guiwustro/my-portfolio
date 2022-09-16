@@ -8,7 +8,7 @@ import { TechsContainer } from "./styles";
 
 const TechsList = ({ t }: { t: any }) => {
   return (
-    <TechsContainer>
+    <TechsContainer id="technologies">
       <h3>{t("techs")}</h3>
       <div className="tech-list">
         <div className="tech-item">

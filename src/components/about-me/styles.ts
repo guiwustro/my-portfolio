@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  margin-top: 90px;
+  padding-top: 90px;
   flex-direction: column;
 
   #about__description {
@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    margin-top: 110px;
+    padding-top: 100px;
   }
 `;
 

@@ -54,7 +54,9 @@ const MenuDropDown = ({ t }: { t: any }) => {
           <UsaFlag />
           English
         </button>
-        <ThemeButton />
+        <div className="center-div">
+          <ThemeButton />
+        </div>
       </div>
     </ContainerMenu>
   );
