@@ -1,4 +1,8 @@
 {
+  "see-website": "Ver site",
+  "techs": "Tecnologias",
+  "features": "Funcionalidades",
+  "about-project": "Sobre o projeto",
   "projects": [
     {
       "project-name": "HealthyGo",
@@ -36,7 +40,7 @@
         "O carrinho do usuário fica salvo na API , ou seja, enquanto o usuário, ou seja, o carrinho estará lá até remover os produtos ou o usuário finalizar o pedido;",
         "Página com os pedidos do usuário;",
         "Responsivo para todas as telas entre 320px e 4k;",
-        " Dark-Mode;"
+        "Dark-Mode;"
       ],
       "images": []
     },
@@ -87,13 +91,13 @@
       "techs": ["React", "CSS", "Axios", "Styled Components", "ContextAPI"],
       "features": [
         "Vitrine com os produtos do e-commerce;",
-        " Botão com a opção de adicionar ao carrinho em cada produto do e-commerce;",
-        " Campo de pesquisa funcional para pesquisar por categoria ou nome do produto;",
-        " Opção de aumentar, diminuir quantidade e remover pelo carrinho de compras;",
-        " Cálculo total do carrinho de compras;",
-        " Opção de remover todos os produtos do carrinho;",
-        " Responsivo para qualquer tela;",
-        " Dark-mode."
+        "Botão com a opção de adicionar ao carrinho em cada produto do e-commerce;",
+        "Campo de pesquisa funcional para pesquisar por categoria ou nome do produto;",
+        "Opção de aumentar, diminuir quantidade e remover pelo carrinho de compras;",
+        "Cálculo total do carrinho de compras;",
+        "Opção de remover todos os produtos do carrinho;",
+        "Responsivo para qualquer tela;",
+        "Dark-mode."
       ],
       "images": [
         "../../../src/assets/images/projects/kenzie-burguer/HomePage-LightTheme-EmptyCart.jpg",

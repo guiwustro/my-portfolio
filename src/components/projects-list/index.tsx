@@ -13,7 +13,6 @@ const ProjectsList = ({ t }: { t: any }) => {
       <h3>{t("projects")}</h3>
       <ul>
         {projects.map((project, i) => {
-          console.log(t(`projects_description.${i}`));
           return (
             <li key={project["project-name"]}>
               <div className="item-header">
@@ -40,6 +39,7 @@ const ProjectsList = ({ t }: { t: any }) => {
                   <div className="image-overlay">
                     <p className="image-description">
                       {t(`projects_description.${i}`)}
+                      <span>{t(`see-project`)}</span>
                     </p>
                   </div>
                 </ImageContainer>

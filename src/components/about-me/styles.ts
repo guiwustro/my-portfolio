@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   padding-top: 90px;
   flex-direction: column;
-
+  justify-content: space-between;
   #about__description {
     font-size: 1.1rem;
     color: ${(props) => props.theme.colors.text};
@@ -21,6 +21,25 @@ export const LeftSideContainer = styled.div`
   gap: 25px;
 `;
 
+const animate = keyframes`
+ from {
+      background-position: 0%;
+    }
+    to {
+      background-position: 400%;
+    }
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 export const NameContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,14 +54,22 @@ export const NameContainer = styled.div`
   }
   #about__name {
     font-size: 4rem;
-    color: ${(props) => props.theme.colors["blue-gradient"]};
+    width: 320px;
+    /* color: ${(props) => props.theme.colors["blue-gradient"]}; */
     font-weight: 700;
     background: linear-gradient(
       ${(props) => props.theme.colors["blue-gradient"]}
     );
 
+    background-size: 400%;
+    animation: ${animate} 10s reverse infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  @media screen and (min-width: 768px) {
+    #about__name {
+      width: 550px;
+    }
   }
 `;
 

@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 
 import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
+import Link from "next/link";
 
 import { withTranslation } from "../../../i18n";
 import { i18n } from "../../../i18n.js";
@@ -32,10 +33,18 @@ const MenuDropDown = ({ t }: { t: any }) => {
   return (
     <ContainerMenu ref={modalRef}>
       <nav>
-        <a href="#home"> {t("header.home")}</a>
-        <a href="#technologies"> {t("header.technologies")}</a>
-        <a href="#projects"> {t("header.projects")}</a>
-        <a href="#contact"> {t("header.contact")}</a>
+        <Link href="/#home">
+          <a>{t("header.home")}</a>
+        </Link>
+        <Link href="/#technologies">
+          <a>{t("header.technologies")}</a>
+        </Link>
+        <Link href="/#projects">
+          <a>{t("header.projects")}</a>
+        </Link>
+        <Link href="/#contact">
+          <a>{t("header.contact")}</a>
+        </Link>
       </nav>
       <div>
         <button

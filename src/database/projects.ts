@@ -10,7 +10,7 @@ import kenzieBurguerLight from "../assets/images/projects/kenzie-burguer/HomePag
 import kenzieBurguerLight2 from "../assets/images/projects/kenzie-burguer/HomePage-LightTheme.jpg";
 import kenzieHubHome from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
 import Hometelagrande from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
-import kenzieHubLogin from "../assets/images/projects/kenzie-hub/Login-1440px.png";
+import kenzieHubLogin from "../assets/images/projects/kenzie-hub/kenzie-hub-login.png";
 import kenzieHubMobile from "../assets/images/projects/kenzie-hub/mobile-montage.jpg";
 import kenzieHubRegister from "../assets/images/projects/kenzie-hub/Register-1440px.png";
 import nuKenzieHome from "../assets/images/projects/nu-kenzie/home-page-1440px.png";
@@ -18,7 +18,17 @@ import nuKenzieLight from "../assets/images/projects/nu-kenzie/main-page-1440px-
 import nuKenzieDark from "../assets/images/projects/nu-kenzie/main-page-1440px.png";
 import oregonTrail from "../assets/images/projects/oregon-trail/Oregon-trail-HomePage.png";
 
-const projects = [
+export interface IProjects {
+  "project-name": string;
+  "github-link": string;
+  "project-url": string;
+  description: string;
+  "about-project": string[];
+  techs: string[];
+  features: string[];
+  images: string[];
+}
+const projects: IProjects[] = [
   {
     "project-name": "HealthyGo",
     "github-link": "https://github.com/guiwustro/healthy-go-project",

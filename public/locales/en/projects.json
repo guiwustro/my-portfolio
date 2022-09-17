@@ -1,4 +1,8 @@
 {
+  "see-website": "See website",
+  "techs": "Technologies",
+  "features": "Features",
+  "about-project": "About project",
   "projects": [
     {
       "project-name": "HealthyGo",

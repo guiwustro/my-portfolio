@@ -7,9 +7,10 @@ declare module "styled-components" {
     colors: {
       text: string;
       body: string;
-
+      "text-white": string;
       "border-color": string;
       "blue-200": string;
+      "blue-300": string;
       "blue-500": string;
       "blue-700": string;
       "blue-250": string;
