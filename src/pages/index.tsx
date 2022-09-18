@@ -16,22 +16,23 @@ const Homepage = ({ t }: { t: any }) => {
   return (
     <ContainerMain>
       <Header />
-      <motion.div
-        initial={{ x: "-20%", opacity: 0 }}
-        animate={{ x: "0", opacity: 1 }}
-        exit={{ x: "0", opacity: 0 }}
-      >
-        <>
-          <ContainerImage>
+      <>
+        <ContainerImage>
+          <motion.div
+            initial={{ x: "-20%", opacity: 0 }}
+            animate={{ x: "0", opacity: 1 }}
+            exit={{ x: "0", opacity: 0 }}
+          >
             <AboutMe />
-            <TechsList />
-          </ContainerImage>
-          <DivAngle />
-          <ContainerBackGround>
-            <ProjectsList />
-          </ContainerBackGround>
-        </>
-      </motion.div>
+          </motion.div>
+          <TechsList />
+        </ContainerImage>
+
+        <DivAngle />
+        <ContainerBackGround>
+          <ProjectsList />
+        </ContainerBackGround>
+      </>
     </ContainerMain>
   );
 };

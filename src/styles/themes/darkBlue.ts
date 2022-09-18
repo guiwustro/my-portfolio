@@ -4,12 +4,13 @@ export const darkBlueTheme = {
     text: "#F5F2F2",
 
     body: "#557A95",
+    // Header #040d1a #7395AE
 
     "text-white": "#F5F2F2",
 
     "border-color": "#CCCCDB",
 
-    "blue-200": "#7395AE", //header
+    "blue-200": "#040d1a", //header
     "blue-500": "#CEE1EE",
     "blue-700": "#E9F2FF", //title Eu sou
     "blue-300": "#8EB5D1",

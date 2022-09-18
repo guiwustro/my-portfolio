@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from "react";
 import { BsGithub } from "react-icons/bs";
 
 import Image from "next/image";
