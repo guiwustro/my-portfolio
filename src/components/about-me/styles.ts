@@ -5,6 +5,8 @@ export const Container = styled.div`
   padding-top: 90px;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
   #about__description {
     font-size: 1.1rem;
     color: ${(props) => props.theme.colors.text};

@@ -4,6 +4,8 @@ export const TechsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
     font-weight: 700;

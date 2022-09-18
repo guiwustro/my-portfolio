@@ -11,36 +11,34 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     width: 100vw;
     height: 100vh;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
 
     background: ${(props) => props.theme.colors.body};
-    ::-webkit-scrollbar {
-      width: 5px;
-      border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-      background-color: ${(props) => props.theme.colors["blue-500"]};
-    }
+}
+::-webkit-scrollbar {
+  width: 5px;
+
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  background-color: ${(props) => props.theme.colors["blue-500"]};
 }
 
 #__next{
-    max-width: 1440px;
     width: 100%;
 
 }
 @media screen and (min-width: 768px) {
-    body{
+    /* body{
         padding: 0 20px;
-    }
+    } */
 
 }
 
