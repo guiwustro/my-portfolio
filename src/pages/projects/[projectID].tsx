@@ -33,7 +33,9 @@ const Projects = ({ t }: { t: any }) => {
             <div className="project-title">
               <h1>{t(`projects.${projectIndex}.project-name`)}</h1>
               <Link href={t(`projects.${projectIndex}.project-url`)}>
-                <a className="website-link__mobile">{t(`see-website`)}</a>
+                <a target="_blank" className="website-link__mobile">
+                  {t(`see-website`)}
+                </a>
               </Link>
             </div>
 
@@ -45,7 +47,9 @@ const Projects = ({ t }: { t: any }) => {
             <div className="project-techs-list">
               <div className="background-techs">
                 <Link href={t(`projects.${projectIndex}.project-url`)}>
-                  <a className="website-link__desktop">{t(`see-website`)}</a>
+                  <a target="_blank" className="website-link__desktop">
+                    {t(`see-website`)}
+                  </a>
                 </Link>
                 <h3>{t(`techs`)}</h3>
                 <ul>

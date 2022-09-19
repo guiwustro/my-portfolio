@@ -43,10 +43,40 @@ export const Container = styled.div`
         font-size: 1.5rem;
         color: ${(props) => props.theme.colors["blue-500"]};
       }
-      & > a > svg {
-        fill: ${(props) => props.theme.colors["blue-500"]};
+
+      & > a {
+        position: relative;
         width: 25px;
         height: 25px;
+        border-radius: 50%;
+        z-index: 12;
+      }
+      & > a > svg {
+        width: 25px;
+        height: 25px;
+      }
+
+      & > a:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        transition: 0.5s;
+        transform: scale(0.9);
+        z-index: -1;
+        border-radius: 50%;
+      }
+
+      & > a:hover:before {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
+        background: #0f558d;
+        filter: blur(3px);
+      }
+      & > a:hover {
       }
     }
   }
@@ -121,12 +151,13 @@ export const Container = styled.div`
 
 export const ImageContainer = styled.div`
   & > div {
+    height: 100%;
     width: 100%;
-    height: calc(100% - 50px);
   }
   width: 100%;
   position: relative;
-  height: 100%;
+  height: calc(100% - 50px);
+
   cursor: pointer;
 
   .project-image {
@@ -185,7 +216,7 @@ export const ImageContainer = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
-    height: calc(100% - 50px);
+    height: 100%;
   }
 
   @media screen and (min-width: 768px) {

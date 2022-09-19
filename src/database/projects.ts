@@ -72,7 +72,7 @@ const projects: IProjects[] = [
   },
   {
     "project-name": "Kenzie Hub",
-    "github-link": "https://github.com/guiwustro",
+    "github-link": "https://github.com/guiwustro/kenzie-hub",
     "project-url": "https://kenzie-hub-guiwustro.vercel.app/",
     description:
       "É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas e os projetos criados.",

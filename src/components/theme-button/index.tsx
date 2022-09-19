@@ -5,7 +5,12 @@ import { Button } from "./styles";
 const ThemeButton = () => {
   const { themeName, toggleTheme } = useThemeContext();
   return (
-    <Button className="theme-button" onClick={() => toggleTheme()}>
+    <Button
+      className="theme-button"
+      onClick={() => {
+        // Desativado por enquanto toggleTheme();
+      }}
+    >
       {themeName === "light" ? <BsFillMoonFill /> : <BsFillSunFill />}
     </Button>
   );

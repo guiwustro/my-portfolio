@@ -30,6 +30,7 @@ const ProjectsList = ({ t }: { t: any }) => {
                 <ImageContainer>
                   <Image
                     src={project.images[0]}
+                    loading="eager"
                     alt={project["project-name"]}
                     width={9}
                     height={16}

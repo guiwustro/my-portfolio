@@ -17,6 +17,8 @@ export const ContainerMain = styled.div`
 export const ContainerImage = styled.div`
   background-image: url(${image});
   background-image: url(${bgc3});
+  background-size: cover;
+
   .landingImage {
     z-index: 0;
     height: 100%;
@@ -28,9 +30,10 @@ export const ContainerImage = styled.div`
 export const ContainerBackGround = styled.div`
   background-image: url(${background});
   background-image: url(${bgc4});
+
+  background-size: cover;
   border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
   background-repeat: no-repeat;
-  background-size: cover;
   padding-bottom: 70px;
   width: 100vw;
   margin-top: -80px;

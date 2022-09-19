@@ -82,10 +82,41 @@ export const IconsContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  svg {
+  & > a {
+    position: relative;
+  }
+  & > a > svg {
     width: 33px;
     height: 100%;
+
     fill: ${(props) => props.theme.colors["blue-500"]};
+  }
+  & > a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: 0.5s;
+    transform: scale(0.9);
+    z-index: -1;
+  }
+  & > a:nth-child(2):before {
+    border-radius: 50%;
+  }
+  & > a:hover:before {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
+    background: #0f558d;
+
+    filter: blur(3px);
+  }
+  & > a:hover {
+    color: linear-gradient(45deg, transparent, #2196f3);
+    box-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
+    text-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
   }
 `;
 
