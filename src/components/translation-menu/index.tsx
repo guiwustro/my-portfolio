@@ -1,16 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 
+import {
+  AnimatePresence,
+  AnimatePresenceProps,
+} from "framer-motion/dist/framer-motion";
+import { UnderLineAnimationButton } from "styles/buttons";
+
 import { i18n } from "../../../i18n.js";
 import BrazilFlag from "../../assets/icons/brazil-flag.svg";
 import UsaFlag from "../../assets/icons/usa-flag.svg";
-import {
-  ActualLanguageContainer,
-  MenuContainer,
-  TranslationContainer,
-} from "./styles";
+import { MenuContainer, TranslationContainer } from "./styles";
+export interface NewAnimatePresenceProps
+  extends Omit<AnimatePresenceProps, "children"> {
+  children: React.ReactNode;
+}
 
 const TranslationMenu = () => {
-  // const [actualLanguage, setActualLanguage]
+  const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
+
   const [isOpenTranslationMenu, setIsOpenTranslationMenu] = useState(false);
   const modalRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -30,7 +37,7 @@ const TranslationMenu = () => {
 
   return (
     <TranslationContainer ref={modalRef}>
-      <ActualLanguageContainer>
+      <UnderLineAnimationButton>
         <button onClick={() => setIsOpenTranslationMenu((state) => !state)}>
           {i18n.language === "pt" ? (
             <>
@@ -44,29 +51,37 @@ const TranslationMenu = () => {
             </>
           )}
         </button>
-      </ActualLanguageContainer>
-      {isOpenTranslationMenu && (
-        <MenuContainer>
-          <button
-            onClick={() => {
-              i18n.changeLanguage("pt");
-              setIsOpenTranslationMenu((state) => !state);
-            }}
+      </UnderLineAnimationButton>
+      <NewAnimatePresence>
+        {isOpenTranslationMenu && (
+          <MenuContainer
+            initial={{ y: "-25%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            exit={{ y: "-25%", opacity: 0, duration: 0.25 }}
+            transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
           >
-            <BrazilFlag />
-            Português-BR
-          </button>
-          <button
-            onClick={() => {
-              i18n.changeLanguage("en");
-              setIsOpenTranslationMenu((state) => !state);
-            }}
-          >
-            <UsaFlag />
-            English
-          </button>
-        </MenuContainer>
-      )}
+            <button
+              onClick={() => {
+                i18n.changeLanguage("pt");
+                setIsOpenTranslationMenu((state) => !state);
+              }}
+            >
+              <BrazilFlag />
+              Português-BR
+            </button>
+
+            <button
+              onClick={() => {
+                i18n.changeLanguage("en");
+                setIsOpenTranslationMenu((state) => !state);
+              }}
+            >
+              <UsaFlag />
+              English
+            </button>
+          </MenuContainer>
+        )}
+      </NewAnimatePresence>
     </TranslationContainer>
   );
 };

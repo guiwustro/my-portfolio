@@ -4,6 +4,8 @@ export const Container = styled.div`
   padding-top: 80px;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 50px 20px;
+
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
     font-weight: 700;
@@ -144,9 +146,8 @@ export const ImageContainer = styled.div`
     opacity: 1;
   }
 
-  .image-overlay > p {
+  .image-overlay > .image-description {
     position: absolute;
-    font-size: 1.2rem;
     top: 0;
     margin: 10%;
     left: 0;
@@ -154,17 +155,22 @@ export const ImageContainer = styled.div`
     display: flex;
     align-items: center;
     height: 100%;
-    line-height: 25px;
-    height: 100%;
-    overflow: hidden;
-    max-height: 155px;
-    display: block;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
+    max-height: 150px;
+    min-height: 150px;
+    justify-content: space-between;
     opacity: 0;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
+    & > p {
+      line-height: 25px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      font-size: 1.1rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      word-wrap: break-word;
+      max-height: 130px;
+    }
 
     &:hover {
       opacity: 1;
@@ -184,4 +190,20 @@ export const ImageContainer = styled.div`
 
   @media screen and (min-width: 768px) {
   }
+
+  .image-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+`;
+
+export const ContainerSeeProject = styled.span`
+  padding: 5px 30px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  background: ${(props) => props.theme.colors["blue-see-website"]};
+  text-align: center;
+  justify-self: end;
+  color: ${(props) => props.theme.colors["text"]};
 `;

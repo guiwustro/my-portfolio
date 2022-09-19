@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { BsGithub } from "react-icons/bs";
 
 import Image from "next/image";
@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { withTranslation } from "../../../i18n";
 import projects from "../../database/projects";
-import { Container, ImageContainer } from "./styles";
+import { Container, ContainerSeeProject, ImageContainer } from "./styles";
 
 const ProjectsList = ({ t }: { t: any }) => {
   return (
@@ -38,10 +38,12 @@ const ProjectsList = ({ t }: { t: any }) => {
                     className="project-image"
                   />
                   <div className="image-overlay">
-                    <p className="image-description">
-                      {t(`projects_description.${i}`)}
-                      <span>{t(`see-project`)}</span>
-                    </p>
+                    <div className="image-description">
+                      <p>{t(`projects_description.${i}`)}</p>
+                      <ContainerSeeProject>
+                        {t(`see-project`)}
+                      </ContainerSeeProject>
+                    </div>
                   </div>
                 </ImageContainer>
               </Link>

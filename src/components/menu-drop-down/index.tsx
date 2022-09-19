@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
 import Link from "next/link";
+import { UnderLineAnimation, UnderLineAnimationButton } from "styles/buttons";
 
 import { withTranslation } from "../../../i18n";
 import { i18n } from "../../../i18n.js";
@@ -31,38 +32,72 @@ const MenuDropDown = ({ t }: { t: any }) => {
   }, []);
 
   return (
-    <ContainerMenu ref={modalRef}>
+    <ContainerMenu
+      ref={modalRef}
+      initial={{ x: 20, opacity: 0 }}
+      animate={{
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+          type: "spring",
+          stiffness: 100,
+        },
+      }}
+      exit={{
+        x: "30%",
+        opacity: 0,
+        transition: {
+          duration: 0.5,
+          type: "spring",
+          stiffness: 100,
+        },
+      }}
+    >
       <nav>
-        <Link href="/#home">
-          <a>{t("header.home")}</a>
-        </Link>
-        <Link href="/#technologies">
-          <a>{t("header.technologies")}</a>
-        </Link>
-        <Link href="/#projects">
-          <a>{t("header.projects")}</a>
-        </Link>
-        <Link href="/#contact">
-          <a>{t("header.contact")}</a>
-        </Link>
+        <UnderLineAnimation>
+          <Link href="/#home">
+            <a>{t("header.home")}</a>
+          </Link>
+        </UnderLineAnimation>
+        <UnderLineAnimation>
+          <Link href="/#technologies">
+            <a>{t("header.technologies")}</a>
+          </Link>
+        </UnderLineAnimation>
+        <UnderLineAnimation>
+          <Link href="/#projects">
+            <a>{t("header.projects")}</a>
+          </Link>
+        </UnderLineAnimation>
+        <UnderLineAnimation>
+          <Link href="/#contact">
+            <a>{t("header.contact")}</a>
+          </Link>
+        </UnderLineAnimation>
       </nav>
       <div>
-        <button
-          onClick={() => {
-            i18n.changeLanguage("pt");
-          }}
-        >
-          <BrazilFlag />
-          Português-BR
-        </button>
-        <button
-          onClick={() => {
-            i18n.changeLanguage("en");
-          }}
-        >
-          <UsaFlag />
-          English
-        </button>
+        <UnderLineAnimationButton>
+          <button
+            onClick={() => {
+              i18n.changeLanguage("pt");
+            }}
+          >
+            <BrazilFlag />
+            Português-BR
+          </button>
+        </UnderLineAnimationButton>
+        <UnderLineAnimationButton>
+          <button
+            onClick={() => {
+              i18n.changeLanguage("en");
+            }}
+          >
+            <UsaFlag />
+            English
+          </button>
+        </UnderLineAnimationButton>
+
         <div className="center-div">
           <ThemeButton />
         </div>

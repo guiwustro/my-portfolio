@@ -4,11 +4,16 @@ import { useMediaQuery } from "react-responsive";
 import MenuDropDown from "components/menu-drop-down";
 import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
+import {
+  AnimatePresence,
+  AnimatePresenceProps,
+} from "framer-motion/dist/framer-motion";
 import Link from "next/link";
+import { UnderLineAnimation } from "styles/buttons";
 
 import { withTranslation } from "../../../i18n";
 import LogoGW from "../../assets/icons/gw.svg";
-import TranslationMenu from "../translation-menu";
+import TranslationMenu, { NewAnimatePresenceProps } from "../translation-menu";
 import {
   ButtonMenu,
   CenterContainer,
@@ -16,6 +21,8 @@ import {
   ContainerTheme,
 } from "./styles";
 const Header = ({ t }: { t: any }) => {
+  const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
+
   const { isOpenMenuDropDown, toogleMenuDropDown } = useMenuDropDownContext();
   return (
     <CenterContainer>
@@ -25,18 +32,26 @@ const Header = ({ t }: { t: any }) => {
         </div>
         <Desktop>
           <nav>
-            <Link href="/#home">
-              <a>{t("header.home")}</a>
-            </Link>
-            <Link href="/#technologies">
-              <a>{t("header.technologies")}</a>
-            </Link>
-            <Link href="/#projects">
-              <a>{t("header.projects")}</a>
-            </Link>
-            <Link href="/#contact">
-              <a>{t("header.contact")}</a>
-            </Link>
+            <UnderLineAnimation>
+              <Link href="/#home">
+                <a>{t("header.home")}</a>
+              </Link>
+            </UnderLineAnimation>
+            <UnderLineAnimation>
+              <Link href="/#technologies">
+                <a>{t("header.technologies")}</a>
+              </Link>
+            </UnderLineAnimation>
+            <UnderLineAnimation>
+              <Link href="/#projects">
+                <a>{t("header.projects")}</a>
+              </Link>
+            </UnderLineAnimation>
+            <UnderLineAnimation>
+              <Link href="/#contact">
+                <a>{t("header.contact")}</a>
+              </Link>
+            </UnderLineAnimation>
           </nav>
           <ContainerTheme>
             <TranslationMenu />
@@ -47,7 +62,9 @@ const Header = ({ t }: { t: any }) => {
           <ButtonMenu onClick={() => toogleMenuDropDown(undefined)}>
             {isOpenMenuDropDown ? <AiOutlineClose /> : <AiOutlineMenu />}
           </ButtonMenu>
-          {isOpenMenuDropDown && <MenuDropDown />}
+          <NewAnimatePresence>
+            {isOpenMenuDropDown && <MenuDropDown />}
+          </NewAnimatePresence>
         </Mobile>
       </Container>
     </CenterContainer>

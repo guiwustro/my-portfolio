@@ -15,24 +15,27 @@ export const ContainerMain = styled.div`
   overflow-x: hidden;
 `;
 export const ContainerImage = styled.div`
-  /* background-image: url(${image}); */
+  background-image: url(${image});
   background-image: url(${bgc3});
-
+  .landingImage {
+    z-index: 0;
+    height: 100%;
+  }
   width: 100vw;
   padding-bottom: 70px;
 `;
 
 export const ContainerBackGround = styled.div`
-  /* background-image: url(${background}); */
+  background-image: url(${background});
   background-image: url(${bgc4});
-
+  border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 70px;
   width: 100vw;
   margin-top: -80px;
-  /* clip-path: polygon(0 0, 100% 0, 25% 100%); */
 `;
+
 export const DivAngle = styled.div`
   background-image: url(${bgc3});
   background-repeat: no-repeat;

@@ -16,8 +16,8 @@ export const darkBlueTheme = {
     "blue-300": "#8EB5D1",
 
     "blue-250": "#9EC1DB",
-    "blue-see-website": "#8EB5D1",
-
+    // "blue-see-website2": "#8EB5D1",
+    "blue-see-website": "linear-gradient(45deg, transparent, #2196f3)",
     "blue-gradient": "45deg, #bddbf1, white",
   },
 };

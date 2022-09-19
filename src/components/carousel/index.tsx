@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { ImCircleLeft, ImCircleRight } from "react-icons/im";
 
@@ -6,47 +6,61 @@ import { IProjects } from "database/projects";
 import Image from "next/image";
 
 import { withTranslation } from "../../../i18n";
-import { CarouselContainer, CarouselItem } from "./styles";
+import {
+  CarouselArrow,
+  CarouselContainer,
+  CarouselIndicator,
+  CarouselIndicatorList,
+  CarouselItem,
+} from "./styles";
 
 interface ICarousel {
   projectSelected?: IProjects;
   t: any;
 }
 
+type IMenuEndAt = "left" | "right";
 const Carousel = ({ projectSelected, t }: ICarousel) => {
+  const [menuEndAt, setMenuEndAt] = useState<IMenuEndAt>();
+  const [currentImage, setCurrentImage] = useState<number>(0);
+
+  const numberOfImages = projectSelected?.images.length;
+
   const carouselRef = useRef<HTMLUListElement>(null);
   const handleRight = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft += carouselRef.current.offsetWidth;
 
-      const maximumWidth =
-        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth;
-      const actualWidth = carouselRef.current.scrollLeft;
-
-      if (maximumWidth === actualWidth) {
-        carouselRef.current.scrollLeft = 0;
+      if (numberOfImages !== currentImage + 1) {
+        setCurrentImage((state) => state + 1);
       }
     }
   };
 
   const handleLeft = () => {
     if (carouselRef.current) {
-      console.log(carouselRef.current.offsetWidth);
       carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth;
-      const maximumWidth =
-        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth;
-      const actualWidth = carouselRef.current.scrollLeft;
 
       //   Ajeitar comportamento dessa barra de carousel;
       // Ajustar tamanho da foto
-      if (actualWidth === 0) {
-        carouselRef.current.scrollLeft = maximumWidth;
+      if (currentImage !== 0) {
+        setCurrentImage((state) => state - 1);
       }
     }
   };
 
+  useEffect(() => {
+    if (currentImage === 0) {
+      setMenuEndAt("left");
+    } else if (numberOfImages === currentImage + 1) {
+      setMenuEndAt("right");
+    } else {
+      setMenuEndAt(undefined);
+    }
+  }, [currentImage, numberOfImages]);
+
   return (
-    <CarouselContainer className="project-carousel-image">
+    <CarouselContainer menuEndAt={menuEndAt} className="project-carousel-image">
       <ul ref={carouselRef}>
         {projectSelected?.images.map((image, i) => {
           return (
@@ -65,29 +79,31 @@ const Carousel = ({ projectSelected, t }: ICarousel) => {
         })}
       </ul>
 
-      <ul>
+      <CarouselIndicatorList>
         {projectSelected?.images.map((image, i) => {
           return (
             <li key={image + i}>
-              <button className="carousel__indicator"></button>
+              <CarouselIndicator
+                isCurrentImage={currentImage === i}
+              ></CarouselIndicator>
             </li>
           );
         })}
-      </ul>
+      </CarouselIndicatorList>
 
-      <button
+      <CarouselArrow
         className="arrow-right carousel-arrow"
-        onClick={(e) => handleRight(e)}
+        onClick={() => handleRight()}
       >
         <ImCircleRight />
-      </button>
+      </CarouselArrow>
 
-      <button
+      <CarouselArrow
         className="arrow-left carousel-arrow"
-        onClick={(e) => handleLeft(e)}
+        onClick={() => handleLeft()}
       >
         <ImCircleLeft />
-      </button>
+      </CarouselArrow>
     </CarouselContainer>
   );
 };

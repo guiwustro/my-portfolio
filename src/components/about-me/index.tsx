@@ -42,8 +42,8 @@ const AboutMe = ({ t }: { t: any }) => {
         </IconsContainer>
       </LeftSideContainer>
       <PhotoContainer>
-        <Image src={MyPhoto} width="275" height="275" alt="GW" />
         <Ellipse />
+        <Image src={MyPhoto} width="275" height="275" alt="GW" />
       </PhotoContainer>
     </Container>
   );

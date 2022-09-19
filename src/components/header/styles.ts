@@ -9,9 +9,8 @@ export const CenterContainer = styled.div`
   height: 70px;
   display: flex;
   justify-content: center;
-  padding: 0 10px;
+
   @media screen and (min-width: 1450px) {
-    padding: 0;
   }
 `;
 export const Container = styled.div`
@@ -21,8 +20,9 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1440px;
+  margin-left: 0 auto;
+  padding: 0 20px;
 
-  padding: 0 10px;
   z-index: 999;
   & > div > svg path {
     fill: ${(props) => props.theme.colors["text"]};
@@ -47,9 +47,10 @@ export const Container = styled.div`
     flex-direction: row;
     gap: 25px;
     a {
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
       :hover {
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
   }
@@ -58,10 +59,6 @@ export const Container = styled.div`
     nav {
       gap: 60px;
     }
-  }
-
-  @media screen and (min-width: 1450px) {
-    padding: 0;
   }
 `;
 

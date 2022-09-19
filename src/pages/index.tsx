@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
 
 import { withTranslation } from "../../i18n.js";
 import AboutMe from "../components/about-me/index";
@@ -12,7 +12,7 @@ import {
   DivAngle,
 } from "./styles";
 
-const Homepage = ({ t }: { t: any }) => {
+const Homepage = () => {
   return (
     <ContainerMain>
       <Header />
