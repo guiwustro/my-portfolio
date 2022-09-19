@@ -5,10 +5,10 @@ import Header from "components/header";
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import Link from "next/link.js";
 import { useRouter } from "next/router";
+import { Container, ContainerBackGround } from "styles/styles-projects";
 
 import { withTranslation } from "../../../i18n.js";
 import projects, { IProjects } from "../../database/projects";
-import { Container, ContainerBackGround } from "./styles";
 
 const Projects = ({ t }: { t: any }) => {
   const router = useRouter();

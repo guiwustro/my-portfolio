@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import bgc4 from "../../assets/images/bgc-4.jpg";
+import bgc4 from "../assets/images/bgc-4.jpg";
 
 export const ContainerBackGround = styled.div`
   background-image: url(${bgc4});

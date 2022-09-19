@@ -10,7 +10,7 @@ import {
   ContainerImage,
   ContainerMain,
   DivAngle,
-} from "./styles";
+} from "../styles/styles-index";
 
 const Homepage = () => {
   return (
