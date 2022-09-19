@@ -4,6 +4,10 @@ export const TechsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
     font-weight: 700;

@@ -2,16 +2,20 @@ import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  padding: 0 20px;
+
   padding-top: 90px;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
   #about__description {
     font-size: 1.1rem;
     color: ${(props) => props.theme.colors.text};
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    padding-top: 100px;
+    padding-top: 120px;
   }
 `;
 

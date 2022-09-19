@@ -1,8 +1,24 @@
 import styled from "styled-components";
+
+import bgc4 from "../../assets/images/bgc-4.jpg";
+
+export const ContainerBackGround = styled.div`
+  background-image: url(${bgc4});
+  border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 70px;
+  width: 100vw;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Container = styled.div`
-  margin-top: 90px;
   display: grid;
   column-gap: 30px;
+  max-width: 1440px;
   grid-template-areas:
     "title"
     "description"
@@ -43,6 +59,7 @@ export const Container = styled.div`
   .project-description {
     grid-area: description;
     font-weight: 400;
+    text-indent: 25px;
     font-size: 1.1rem;
     color: ${(props) => props.theme.colors.text};
   }
@@ -51,6 +68,8 @@ export const Container = styled.div`
     justify-self: center;
   }
   .project-techs-list {
+    padding-top: 25px;
+
     grid-area: techs;
   }
   .background-techs {
@@ -63,7 +82,6 @@ export const Container = styled.div`
     align-items: flex-start;
     background-color: ${(props) => props.theme.colors["blue-200"]};
     gap: 24px;
-    min-height: 500px;
     & > h3 {
       padding-left: 30px;
 
@@ -84,6 +102,11 @@ export const Container = styled.div`
         font-size: 1.1rem;
       }
     }
+    @media screen and (min-width: 768px) {
+      .background-techs {
+        min-height: 500px;
+      }
+    }
   }
   .website-link__desktop {
     padding: 5px 30px;
@@ -92,13 +115,16 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 36px;
-    background-color: ${(props) => props.theme.colors["blue-300"]};
+    background: ${(props) => props.theme.colors["blue-see-website"]};
+
     display: none;
     align-self: center;
     text-align: center;
     color: ${(props) => props.theme.colors["text"]};
   }
   .about-project {
+    padding-top: 25px;
+
     grid-area: about;
     & > h3 {
       font-weight: 700;
@@ -118,6 +144,8 @@ export const Container = styled.div`
   }
   .project-features {
     grid-area: features;
+    padding-top: 25px;
+
     & > h3 {
       font-weight: 700;
       font-size: 1.8rem;

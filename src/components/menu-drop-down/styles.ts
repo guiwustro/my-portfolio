@@ -1,6 +1,7 @@
+import { motion } from "framer-motion/dist/framer-motion";
 import styled from "styled-components";
 
-export const ContainerMenu = styled.div`
+export const ContainerMenu = styled(motion.div)`
   position: fixed;
   height: calc(100vh - 70px);
   justify-content: space-between;
@@ -8,7 +9,7 @@ export const ContainerMenu = styled.div`
   right: 0;
   display: flex;
   flex-direction: column;
-  width: 180px;
+  width: 230px;
   background-color: ${(props) => props.theme.colors["blue-200"]};
   border: 1px solid ${(props) => props.theme.colors["blue-250"]};
   padding: 24px;
@@ -19,11 +20,13 @@ export const ContainerMenu = styled.div`
   }
   & > div {
     display: flex;
-    align-self: flex-end;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
     margin-top: 29px;
+    display: flex;
+    align-self: flex-start;
     & > button {
       display: flex;
       gap: 5px;
