@@ -4,10 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import MenuDropDown from "components/menu-drop-down";
 import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
-import {
-  AnimatePresence,
-  AnimatePresenceProps,
-} from "framer-motion/dist/framer-motion";
+import { AnimatePresence } from "framer-motion/dist/framer-motion";
 import Link from "next/link";
 import { UnderLineAnimation } from "styles/buttons";
 
@@ -55,7 +52,7 @@ const Header = ({ t }: { t: any }) => {
           </nav>
           <ContainerTheme>
             <TranslationMenu />
-            <ThemeButton />
+            {/* <ThemeButton /> */}
           </ContainerTheme>
         </Desktop>
         <Mobile>

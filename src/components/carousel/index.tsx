@@ -64,14 +64,14 @@ const Carousel = ({ projectSelected, t }: ICarousel) => {
       <ul ref={carouselRef}>
         {projectSelected?.images.map((image, i) => {
           return (
-            <CarouselItem key={image}>
+            <CarouselItem key={i}>
               <Image
                 src={image}
                 alt={t(`projects.${i}.project-name`)}
                 width={9}
                 height={16}
                 layout="responsive"
-                objectFit={"cover"}
+                objectFit={"contain"}
                 className="project-figure"
               />
             </CarouselItem>

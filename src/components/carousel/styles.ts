@@ -12,6 +12,8 @@ export const CarouselContainer = styled.div<ICarouselArrow>`
   padding-top: 15px;
   width: 90%;
   max-height: 600px;
+  max-width: 90%;
+  /* width: auto; */
   position: relative;
   ul {
     overflow-x: hidden;
@@ -43,7 +45,7 @@ export const CarouselContainer = styled.div<ICarouselArrow>`
 
 export const CarouselItem = styled.li`
   min-width: 100%;
-
+  width: 100%;
   & > div {
     width: 100%;
     max-height: 100%;

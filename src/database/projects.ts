@@ -4,6 +4,16 @@ import blogRegister from "../assets/images/projects/blog/Blog-register.png";
 import ecommerceCart from "../assets/images/projects/ecommerce-js-vanilla/Home-1024px-CartInclude.png";
 import eccomerceHome2 from "../assets/images/projects/ecommerce-js-vanilla/Home-1024px.png";
 import ecommerceHome from "../assets/images/projects/ecommerce-js-vanilla/Home-1440px.png";
+import healthyGoAboutUs from "../assets/images/projects/healthy-go/healthyGoAboutUs.jpg";
+import healthyGoCart from "../assets/images/projects/healthy-go/healthyGoCart.jpg";
+import healthyGoCheckout from "../assets/images/projects/healthy-go/healthyGoCheckOut.jpg";
+import healthyGoHomee from "../assets/images/projects/healthy-go/healthyGoHome1.png";
+import healthyGoHome from "../assets/images/projects/healthy-go/healthyGoHome1.png";
+import healthyGoLogin from "../assets/images/projects/healthy-go/healthyGoLogin.jpg";
+import healthyGoProfile from "../assets/images/projects/healthy-go/healthyGoProfile.jpg";
+import healthyGoRegister from "../assets/images/projects/healthy-go/healthyGoRegister.jpg";
+import healthyGoRestaurant from "../assets/images/projects/healthy-go/healthyGoRestaurant.jpg";
+import healthyGoSuccess from "../assets/images/projects/healthy-go/healthyGoSuccess.jpg";
 import kenzieBurguerDark from "../assets/images/projects/kenzie-burguer/HomePage-DarkTheme-EmptyCart.jpg";
 import kenzieBurguerDark2 from "../assets/images/projects/kenzie-burguer/HomePage-DarkTheme.jpg";
 import kenzieBurguerLight from "../assets/images/projects/kenzie-burguer/HomePage-LightTheme-EmptyCart.jpg";
@@ -11,7 +21,7 @@ import kenzieBurguerLight2 from "../assets/images/projects/kenzie-burguer/HomePa
 import kenzieHubHome from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
 import Hometelagrande from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
 import kenzieHubLogin from "../assets/images/projects/kenzie-hub/kenzie-hub-login.png";
-import kenzieHubMobile from "../assets/images/projects/kenzie-hub/mobile-montage.jpg";
+// import kenzieHubMobile from "../assets/images/projects/kenzie-hub/mobile-montage.jpg";
 import kenzieHubRegister from "../assets/images/projects/kenzie-hub/Register-1440px.png";
 import nuKenzieHome from "../assets/images/projects/nu-kenzie/home-page-1440px.png";
 import nuKenzieLight from "../assets/images/projects/nu-kenzie/main-page-1440px-light-mode.png";
@@ -68,7 +78,18 @@ const projects: IProjects[] = [
       "Responsivo para todas as telas entre 320px e 4k;",
       " Dark-Mode;",
     ],
-    images: [Hometelagrande],
+    images: [
+      healthyGoHome,
+      healthyGoHomee,
+      healthyGoRestaurant,
+      healthyGoAboutUs,
+      healthyGoCart,
+      healthyGoCheckout,
+      healthyGoLogin,
+      healthyGoProfile,
+      healthyGoRegister,
+      healthyGoSuccess,
+    ],
   },
   {
     "project-name": "Kenzie Hub",
@@ -99,7 +120,7 @@ const projects: IProjects[] = [
       "O usuário é capaz de alterar e remover as tecnologias e os projetos já existentes;",
       "Responsivo para todas as telas.",
     ],
-    images: [kenzieHubHome, kenzieHubLogin, kenzieHubMobile, kenzieHubRegister],
+    images: [kenzieHubHome, kenzieHubLogin, kenzieHubRegister],
   },
   {
     "project-name": "Hamburgueria da Kenzie",

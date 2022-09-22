@@ -1,3 +1,4 @@
+import ContactMe from "components/contact-me";
 import { motion } from "framer-motion/dist/framer-motion";
 
 import { withTranslation } from "../../i18n.js";
@@ -27,11 +28,11 @@ const Homepage = () => {
           </motion.div>
           <TechsList />
         </ContainerImage>
-
         <DivAngle />
         <ContainerBackGround>
           <ProjectsList />
         </ContainerBackGround>
+        {/* <ContactMe /> */}
       </>
     </ContainerMain>
   );
