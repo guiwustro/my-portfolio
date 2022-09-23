@@ -2,7 +2,7 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 import Image from "next/image";
 
-import { withTranslation } from "../../../i18n";
+// import { withTranslation } from "../../../i18nt";
 import MyPhoto from "../../assets/images/myPhoto.png";
 import {
   Container,
@@ -13,16 +13,16 @@ import {
   PhotoContainer,
 } from "./styles";
 
-const AboutMe = ({ t }: { t: any }) => {
+const AboutMe = () => {
   return (
     <Container id="home">
       <LeftSideContainer>
         <NameContainer>
-          <span id="about__hello">{t("hello")}</span>
+          {/* <span id="about__hello">{t("hello")}</span>
           <span id="about__name">Guilherme Wustro</span>
-          <span id="about__dev">{t("front-end-developer")}</span>
+          <span id="about__dev">{t("front-end-developer")}</span> */}
         </NameContainer>
-        <p id="about__description">{t("about-me")}</p>
+        {/* <p id="about__description">{t("about-me")}</p> */}
 
         <IconsContainer>
           <a
@@ -53,4 +53,5 @@ AboutMe.getInitialProps = async () => ({
   namespacesRequired: ["common"],
 });
 
-export default withTranslation("common")(AboutMe);
+export default AboutMe;
+// export default withTranslation("common")(AboutMe);

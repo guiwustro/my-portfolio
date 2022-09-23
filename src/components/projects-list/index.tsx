@@ -4,14 +4,14 @@ import { BsGithub } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 
-import { withTranslation } from "../../../i18n";
+// import { withTranslation } from "../../../i18nt";
 import projects from "../../database/projects";
 import { Container, ContainerSeeProject, ImageContainer } from "./styles";
 
-const ProjectsList = ({ t }: { t: any }) => {
+const ProjectsList = () => {
   return (
     <Container id="projects">
-      <h3>{t("projects")}</h3>
+      {/* <h3>{t("projects")}</h3> */}
       <ul>
         {projects.map((project, i) => {
           return (
@@ -40,9 +40,9 @@ const ProjectsList = ({ t }: { t: any }) => {
                   />
                   <div className="image-overlay">
                     <div className="image-description">
-                      <p>{t(`projects_description.${i}`)}</p>
+                      {/* <p>{t(`projects_description.${i}`)}</p> */}
                       <ContainerSeeProject>
-                        {t(`see-project`)}
+                        {/* {t(`see-project`)} */}
                       </ContainerSeeProject>
                     </div>
                   </div>
@@ -59,5 +59,5 @@ const ProjectsList = ({ t }: { t: any }) => {
 ProjectsList.getInitialProps = async () => ({
   namespacesRequired: ["common"],
 });
-
-export default withTranslation("common")(ProjectsList);
+export default ProjectsList;
+// export default withTranslation("common")(ProjectsList);

@@ -1,12 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
-import {
-  AnimatePresence,
-  AnimatePresenceProps,
-} from "framer-motion/dist/framer-motion";
+import { AnimatePresence, AnimatePresenceProps } from "framer-motion";
 import { UnderLineAnimationButton } from "styles/buttons";
 
-import { i18n } from "../../../i18n.js";
+// import { i18n } from "../../../i18nt.js/index.js";
 import BrazilFlag from "../../assets/icons/brazil-flag.svg";
 import UsaFlag from "../../assets/icons/usa-flag.svg";
 import { MenuContainer, TranslationContainer } from "./styles";
@@ -38,7 +35,7 @@ const TranslationMenu = () => {
   return (
     <TranslationContainer ref={modalRef}>
       <UnderLineAnimationButton>
-        <button onClick={() => setIsOpenTranslationMenu((state) => !state)}>
+        {/* <button onClick={() => setIsOpenTranslationMenu((state) => !state)}>
           {i18n.language === "pt" ? (
             <>
               <BrazilFlag />
@@ -50,19 +47,19 @@ const TranslationMenu = () => {
               English
             </>
           )}
-        </button>
+        </button> */}
       </UnderLineAnimationButton>
       <NewAnimatePresence>
         {isOpenTranslationMenu && (
           <MenuContainer
             initial={{ y: "-25%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: "-25%", opacity: 0, duration: 0.25 }}
-            transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
+            // animate={{ y: "0%", opacity: 1 }}
+            // exit={{ y: "-25%", opacity: 0, duration: 0.25 }}
+            // transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
           >
             <button
               onClick={() => {
-                i18n.changeLanguage("pt");
+                // i18n.changeLanguage("pt");
                 setIsOpenTranslationMenu((state) => !state);
               }}
             >
@@ -72,7 +69,7 @@ const TranslationMenu = () => {
 
             <button
               onClick={() => {
-                i18n.changeLanguage("en");
+                // i18n.changeLanguage("en");
                 setIsOpenTranslationMenu((state) => !state);
               }}
             >

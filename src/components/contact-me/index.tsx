@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { withTranslation } from "../../../i18n";
+// import { withTranslation } from "../../../i18nt";
 import {
   FormGroup,
   Container,
@@ -12,7 +12,7 @@ import {
   ContainerMaxWidth,
 } from "./styles";
 
-const ContactMe = ({ t }: { t: any }) => {
+export const ContactMe = () => {
   const formSchema = yup.object().shape({
     name: yup.string(),
     email: yup.string().required().email(),
@@ -31,13 +31,13 @@ const ContactMe = ({ t }: { t: any }) => {
   return (
     <ContainerMaxWidth>
       <Container>
-        <h1>{t("contact.title")}</h1>
-        <p>{t("contact.description")}</p>
+        {/* <h1>{t("contact.title")}</h1>
+        <p>{t("contact.description")}</p> */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formGroup--inline">
             <FormGroup>
               <input placeholder=" " type="text" {...register("name")} />
-              <label>{t("contact.label-name")}</label>
+              {/* <label>{t("contact.label-name")}</label> */}
               <span></span>
             </FormGroup>
             <FormGroup>
@@ -48,12 +48,12 @@ const ContactMe = ({ t }: { t: any }) => {
           </div>
           <FormGroup>
             <input placeholder=" " type="text" {...register("subject")} />
-            <label>{t("contact.label-subject")}</label>
+            {/* <label>{t("contact.label-subject")}</label> */}
             <span></span>
           </FormGroup>
           <FormGroupArea>
             <textarea placeholder=" " {...register("message")} />
-            <label>{t("contact.label-message")}</label>
+            {/* <label>{t("contact.label-message")}</label> */}
             <span></span>
           </FormGroupArea>
           <button>Enviar</button>
@@ -67,4 +67,4 @@ ContactMe.getInitialProps = async () => ({
   namespacesRequired: ["common"],
 });
 
-export default withTranslation("common")(ContactMe);
+// export default withTranslation("common")(ContactMe);
