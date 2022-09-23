@@ -3,13 +3,13 @@ import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiTypescript, SiStyledcomponents } from "react-icons/si";
 
-import { withTranslation } from "../../../i18n";
+// import { withTranslation } from "../../../i18nt";
 import { TechsContainer } from "./styles";
 
-const TechsList = ({ t }: { t: any }) => {
+const TechsList = () => {
   return (
     <TechsContainer id="technologies">
-      <h3>{t("techs")}</h3>
+      {/* <h3>{t("techs")}</h3> */}
       <div className="tech-list">
         <div className="tech-item">
           <h4>React</h4>
@@ -44,4 +44,5 @@ TechsList.getInitialProps = async () => ({
   namespacesRequired: ["common"],
 });
 
-export default withTranslation("common")(TechsList);
+export default TechsList;
+// export default withTranslation("common")(TechsList);

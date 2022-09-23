@@ -1,7 +1,7 @@
-import ContactMe from "components/contact-me";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
+import { GetStaticPropsContext } from "next";
 
-import { withTranslation } from "../../i18n.js";
+// import { withTranslation } from "../../i18nt.js/index.js";
 import AboutMe from "../components/about-me/index";
 import Header from "../components/header";
 import ProjectsList from "../components/projects-list/index";
@@ -13,9 +13,28 @@ import {
   DivAngle,
 } from "../styles/styles-index";
 
-const Homepage = () => {
+interface ITranslate {
+  [key: string]: Record<string, string>;
+}
+
+interface IHomepageProps {
+  locale: string;
+}
+
+const Homepage = ({ locale }: IHomepageProps) => {
+  const translate: ITranslate = {
+    en: {
+      title: "teste ingles",
+    },
+    default: {
+      title: "teste pt",
+    },
+  };
+
+  // console.log(props.context.locale);
   return (
     <ContainerMain>
+      <h1>{translate[locale].title}</h1>
       <Header />
       <>
         <ContainerImage>
@@ -38,8 +57,17 @@ const Homepage = () => {
   );
 };
 
-Homepage.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
+// Homepage.getInitialProps = async () => ({
+//   namespacesRequired: ["common"],
+// });
 
-export default withTranslation("common")(Homepage);
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return {
+    props: {
+      locale: context.locale,
+    },
+  };
+}
+
+export default Homepage;
+// export default withTranslation("common")(Homepage);

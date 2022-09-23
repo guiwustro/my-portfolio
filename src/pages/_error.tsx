@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 
-import { withTranslation } from "../../i18n";
+// import { withTranslation } from "../../i18nt";
 
-const Error = ({ statusCode, t }: any) => (
+const Error = ({ statusCode }: any) => (
   <p>
-    {statusCode
+    {/* {statusCode
       ? t("error-with-status", { statusCode })
-      : t("error-without-status")}
+      : t("error-without-status")} */}
   </p>
 );
 
@@ -32,4 +32,6 @@ Error.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation("common")(Error);
+export default Error;
+
+// export default withTranslation("common")(Error);

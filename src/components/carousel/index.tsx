@@ -5,7 +5,7 @@ import { ImCircleLeft, ImCircleRight } from "react-icons/im";
 import { IProjects } from "database/projects";
 import Image from "next/image";
 
-import { withTranslation } from "../../../i18n";
+// import { withTranslation } from "../../../i18nt";
 import {
   CarouselArrow,
   CarouselContainer,
@@ -16,11 +16,10 @@ import {
 
 interface ICarousel {
   projectSelected?: IProjects;
-  t: any;
 }
 
 type IMenuEndAt = "left" | "right";
-const Carousel = ({ projectSelected, t }: ICarousel) => {
+export const Carousel = ({ projectSelected }: ICarousel) => {
   const [menuEndAt, setMenuEndAt] = useState<IMenuEndAt>();
   const [currentImage, setCurrentImage] = useState<number>(0);
 
@@ -67,7 +66,7 @@ const Carousel = ({ projectSelected, t }: ICarousel) => {
             <CarouselItem key={i}>
               <Image
                 src={image}
-                alt={t(`projects.${i}.project-name`)}
+                // alt={t(`projects.${i}.project-name`)}
                 width={9}
                 height={16}
                 layout="responsive"
@@ -111,4 +110,4 @@ Carousel.getInitialProps = async () => ({
   namespacesRequired: ["projects"],
 });
 
-export default withTranslation("projects")(Carousel);
+// export default withTranslation("projects")(Carousel);

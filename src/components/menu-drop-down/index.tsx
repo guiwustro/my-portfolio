@@ -6,13 +6,13 @@ import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
 import Link from "next/link";
 import { UnderLineAnimation, UnderLineAnimationButton } from "styles/buttons";
 
-import { withTranslation } from "../../../i18n";
-import { i18n } from "../../../i18n.js";
+// import { withTranslation } from "../../../i18nt";
+// import { i18n } from "../../../i18nt.js/index.js";
 import BrazilFlag from "../../assets/icons/brazil-flag.svg";
 import UsaFlag from "../../assets/icons/usa-flag.svg";
 import { ContainerMenu } from "./styles";
 
-const MenuDropDown = ({ t }: { t: any }) => {
+export const MenuDropDown = () => {
   const { toogleMenuDropDown } = useMenuDropDownContext();
 
   const modalRef = useRef<HTMLHeadingElement>(null);
@@ -56,31 +56,25 @@ const MenuDropDown = ({ t }: { t: any }) => {
     >
       <nav>
         <UnderLineAnimation>
-          <Link href="/#home">
-            <a>{t("header.home")}</a>
-          </Link>
+          <Link href="/#home">t{/* <a>{t("header.home")}</a> */}</Link>
         </UnderLineAnimation>
         <UnderLineAnimation>
           <Link href="/#technologies">
-            <a>{t("header.technologies")}</a>
+            t{/* <a>{t("header.technologies")}</a> */}
           </Link>
         </UnderLineAnimation>
         <UnderLineAnimation>
-          <Link href="/#projects">
-            <a>{t("header.projects")}</a>
-          </Link>
+          <Link href="/#projects">t{/* <a>{t("header.projects")}</a> */}</Link>
         </UnderLineAnimation>
         <UnderLineAnimation>
-          <Link href="/#contact">
-            <a>{t("header.contact")}</a>
-          </Link>
+          <Link href="/#contact">t{/* <a>{t("header.contact")}</a> */}</Link>
         </UnderLineAnimation>
       </nav>
       <div>
         <UnderLineAnimationButton>
           <button
             onClick={() => {
-              i18n.changeLanguage("pt");
+              // i18n.changeLanguage("pt");
             }}
           >
             <BrazilFlag />
@@ -90,7 +84,7 @@ const MenuDropDown = ({ t }: { t: any }) => {
         <UnderLineAnimationButton>
           <button
             onClick={() => {
-              i18n.changeLanguage("en");
+              // i18n.changeLanguage("en");
             }}
           >
             <UsaFlag />
@@ -110,4 +104,4 @@ MenuDropDown.getInitialProps = async () => ({
   namespacesRequired: ["common"],
 });
 
-export default withTranslation("common")(MenuDropDown);
+// export default withTranslation("common")(MenuDropDown);
