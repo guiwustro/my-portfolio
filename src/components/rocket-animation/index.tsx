@@ -1,5 +1,5 @@
-const LightBulbAnimation = () => {
+const RocketAnimation = () => {
   return <div>LightBulbAnimation</div>;
 };
 
-export default LightBulbAnimation;
+export default RocketAnimation;

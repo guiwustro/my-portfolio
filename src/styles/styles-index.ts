@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+import backGround from "../../public/images/backgroundHome.jpg";
 import image from "../assets/images/background-about.png";
 import background from "../assets/images/background-projects.png";
+import backgroundHome from "../assets/images/backgroundHome.jpg";
 import bgc from "../assets/images/bgc-1.jpg";
 import bgc2 from "../assets/images/bgc-2.jpg";
-import bgc3 from "../assets/images/bgc-3.jpg";
+// import bgc3 from "../assets/images/bgc-3.jpg";
 import bgc4 from "../assets/images/bgc-4.jpg";
 
 export const ContainerMain = styled.div`
@@ -14,9 +16,12 @@ export const ContainerMain = styled.div`
   scroll-behavior: smooth;
   overflow-x: hidden;
 `;
+
 export const ContainerImage = styled.div`
-  background-image: url(${image});
-  background-image: url(${bgc3});
+  /* background-image: url(${image}); */
+  /* background-image: url(${backgroundHome}); */
+  background-image: url(${backGround});
+
   background-size: cover;
 
   .landingImage {
@@ -28,7 +33,7 @@ export const ContainerImage = styled.div`
 `;
 
 export const ContainerBackGround = styled.div`
-  background-image: url(${background});
+  /* background-image: url(${background}); */
   background-image: url(${bgc4});
 
   background-size: cover;
@@ -40,7 +45,7 @@ export const ContainerBackGround = styled.div`
 `;
 
 export const DivAngle = styled.div`
-  background-image: url(${bgc3});
+  background-image: url(${backgroundHome});
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 70px;

@@ -1,9 +1,14 @@
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const TranslationContainer = styled.div`
   position: relative;
   min-width: 130px;
+
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 export const MenuContainer = styled(motion.div)`

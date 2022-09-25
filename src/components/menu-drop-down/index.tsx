@@ -4,19 +4,24 @@ import { useEffect, useRef } from "react";
 import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { IHomepageProps } from "pages";
 import { UnderLineAnimation, UnderLineAnimationButton } from "styles/buttons";
+import { homePageInfo } from "translations/home";
 
-import { withTranslation } from "../../../i18n";
-import { i18n } from "../../../i18n.js";
 import BrazilFlag from "../../assets/icons/brazil-flag.svg";
 import UsaFlag from "../../assets/icons/usa-flag.svg";
 import { ContainerMenu } from "./styles";
 
-const MenuDropDown = ({ t }: { t: any }) => {
+const MenuDropDown = ({ locale }: IHomepageProps) => {
   const { toogleMenuDropDown } = useMenuDropDownContext();
+  const { contact, home, projects, technologies } = homePageInfo[locale].header;
+  const { pathname, asPath, query } = useRouter();
+  const router = useRouter();
 
   const modalRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function handleOutClick(event: any) {
       const value = modalRef?.current;
 
@@ -29,7 +34,7 @@ const MenuDropDown = ({ t }: { t: any }) => {
     return () => {
       document.removeEventListener("mousedown", handleOutClick);
     };
-  }, []);
+  });
 
   return (
     <ContainerMenu
@@ -57,22 +62,22 @@ const MenuDropDown = ({ t }: { t: any }) => {
       <nav>
         <UnderLineAnimation>
           <Link href="/#home">
-            <a>{t("header.home")}</a>
+            <a>{home}</a>
           </Link>
         </UnderLineAnimation>
         <UnderLineAnimation>
           <Link href="/#technologies">
-            <a>{t("header.technologies")}</a>
+            <a>{technologies}</a>
           </Link>
         </UnderLineAnimation>
         <UnderLineAnimation>
           <Link href="/#projects">
-            <a>{t("header.projects")}</a>
+            <a>{projects}</a>
           </Link>
         </UnderLineAnimation>
         <UnderLineAnimation>
           <Link href="/#contact">
-            <a>{t("header.contact")}</a>
+            <a>{contact}</a>
           </Link>
         </UnderLineAnimation>
       </nav>
@@ -80,7 +85,9 @@ const MenuDropDown = ({ t }: { t: any }) => {
         <UnderLineAnimationButton>
           <button
             onClick={() => {
-              i18n.changeLanguage("pt");
+              router.push({ pathname, query }, asPath, {
+                locale: "default",
+              });
             }}
           >
             <BrazilFlag />
@@ -90,7 +97,9 @@ const MenuDropDown = ({ t }: { t: any }) => {
         <UnderLineAnimationButton>
           <button
             onClick={() => {
-              i18n.changeLanguage("en");
+              router.push({ pathname, query }, asPath, {
+                locale: "en",
+              });
             }}
           >
             <UsaFlag />
@@ -106,8 +115,4 @@ const MenuDropDown = ({ t }: { t: any }) => {
   );
 };
 
-MenuDropDown.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-export default withTranslation("common")(MenuDropDown);
+export default MenuDropDown;

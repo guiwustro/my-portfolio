@@ -1,11 +1,11 @@
-import ContactMe from "components/contact-me";
-import { motion } from "framer-motion/dist/framer-motion";
+// import ContactMe from "components/contact-me";
+import { motion } from "framer-motion";
+import { GetStaticPropsContext } from "next";
 
-import { withTranslation } from "../../i18n.js";
-import AboutMe from "../components/about-me/index";
+import AboutMe from "../components/about-me";
 import Header from "../components/header";
-import ProjectsList from "../components/projects-list/index";
-import TechsList from "../components/techs-list/index";
+import ProjectsList from "../components/projects-list";
+import TechsList from "../components/techs-list";
 import {
   ContainerBackGround,
   ContainerImage,
@@ -13,10 +13,14 @@ import {
   DivAngle,
 } from "../styles/styles-index";
 
-const Homepage = () => {
+export interface IHomepageProps {
+  locale: "en" | "default";
+}
+
+const Homepage = ({ locale }: IHomepageProps) => {
   return (
     <ContainerMain>
-      <Header />
+      <Header locale={locale} />
       <>
         <ContainerImage>
           <motion.div
@@ -24,13 +28,13 @@ const Homepage = () => {
             animate={{ x: "0", opacity: 1 }}
             exit={{ x: "0", opacity: 0 }}
           >
-            <AboutMe />
+            <AboutMe locale={locale} />
           </motion.div>
-          <TechsList />
+          <TechsList locale={locale} />
         </ContainerImage>
         <DivAngle />
         <ContainerBackGround>
-          <ProjectsList />
+          <ProjectsList locale={locale} />
         </ContainerBackGround>
         {/* <ContactMe /> */}
       </>
@@ -38,8 +42,12 @@ const Homepage = () => {
   );
 };
 
-Homepage.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return {
+    props: {
+      locale: context.locale,
+    },
+  };
+}
 
-export default withTranslation("common")(Homepage);
+export default Homepage;

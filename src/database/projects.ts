@@ -7,8 +7,7 @@ import ecommerceHome from "../assets/images/projects/ecommerce-js-vanilla/Home-1
 import healthyGoAboutUs from "../assets/images/projects/healthy-go/healthyGoAboutUs.jpg";
 import healthyGoCart from "../assets/images/projects/healthy-go/healthyGoCart.jpg";
 import healthyGoCheckout from "../assets/images/projects/healthy-go/healthyGoCheckOut.jpg";
-import healthyGoHomee from "../assets/images/projects/healthy-go/healthyGoHome1.png";
-import healthyGoHome from "../assets/images/projects/healthy-go/healthyGoHome1.png";
+import healthyGoHome from "../assets/images/projects/healthy-go/healthyGoHome.jpg";
 import healthyGoLogin from "../assets/images/projects/healthy-go/healthyGoLogin.jpg";
 import healthyGoProfile from "../assets/images/projects/healthy-go/healthyGoProfile.jpg";
 import healthyGoRegister from "../assets/images/projects/healthy-go/healthyGoRegister.jpg";
@@ -19,9 +18,7 @@ import kenzieBurguerDark2 from "../assets/images/projects/kenzie-burguer/HomePag
 import kenzieBurguerLight from "../assets/images/projects/kenzie-burguer/HomePage-LightTheme-EmptyCart.jpg";
 import kenzieBurguerLight2 from "../assets/images/projects/kenzie-burguer/HomePage-LightTheme.jpg";
 import kenzieHubHome from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
-import Hometelagrande from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
 import kenzieHubLogin from "../assets/images/projects/kenzie-hub/kenzie-hub-login.png";
-// import kenzieHubMobile from "../assets/images/projects/kenzie-hub/mobile-montage.jpg";
 import kenzieHubRegister from "../assets/images/projects/kenzie-hub/Register-1440px.png";
 import nuKenzieHome from "../assets/images/projects/nu-kenzie/home-page-1440px.png";
 import nuKenzieLight from "../assets/images/projects/nu-kenzie/main-page-1440px-light-mode.png";
@@ -38,7 +35,7 @@ export interface IProjects {
   features: string[];
   images: string[];
 }
-const projects: IProjects[] = [
+const dataProjects: IProjects[] = [
   {
     "project-name": "HealthyGo",
     "github-link": "https://github.com/guiwustro/healthy-go-project",
@@ -80,7 +77,6 @@ const projects: IProjects[] = [
     ],
     images: [
       healthyGoHome,
-      healthyGoHomee,
       healthyGoRestaurant,
       healthyGoAboutUs,
       healthyGoCart,
@@ -249,4 +245,4 @@ const projects: IProjects[] = [
   },
 ];
 
-export default projects;
+export default dataProjects;

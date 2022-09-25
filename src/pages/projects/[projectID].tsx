@@ -1,28 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import Carousel from "components/carousel";
+import { Carousel } from "components/carousel";
 import Header from "components/header";
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { GetStaticPaths, GetStaticPropsContext } from "next";
 import Link from "next/link.js";
 import { useRouter } from "next/router";
+import { ParsedUrlQuery } from "querystring";
 import { Container, ContainerBackGround } from "styles/styles-projects";
+import { projectsInfo } from "translations/projects";
 
-import { withTranslation } from "../../../i18n.js";
 import projects, { IProjects } from "../../database/projects";
 
-const Projects = ({ t }: { t: any }) => {
-  const router = useRouter();
-  const projectIndex = router.query.projectID;
+const Projects = ({
+  locale,
+  project: projectSelected,
+}: {
+  locale: "default" | "en";
+  project: IProjects;
+}) => {
+  const {
+    "about-project": about,
+    "see-website": seeWebsite,
+    features,
+    projects,
+    techs,
+  } = projectsInfo[locale];
 
-  let projectSelected: IProjects | undefined;
-
-  if (projectIndex) {
-    projectSelected = projects[+projectIndex];
-  }
+  const projectIndex = projects.findIndex(
+    (project) => project["project-name"] === projectSelected["project-name"],
+  );
 
   return (
     <React.Fragment>
-      <Header />
+      <Header locale={locale} />
       <ContainerBackGround>
         <motion.div
           initial={{ x: "-20%", opacity: 0 }}
@@ -31,32 +42,31 @@ const Projects = ({ t }: { t: any }) => {
         >
           <Container>
             <div className="project-title">
-              <h1>{t(`projects.${projectIndex}.project-name`)}</h1>
-              <Link href={t(`projects.${projectIndex}.project-url`)}>
+              <h1>{projectSelected["project-name"]}</h1>
+              <Link href={projectSelected["project-url"]}>
                 <a target="_blank" className="website-link__mobile">
-                  {t(`see-website`)}
+                  {seeWebsite}
                 </a>
               </Link>
             </div>
 
             <p className="project-description">
-              {t(`projects.${projectIndex}.description`)}
+              {projects[projectIndex].description}
             </p>
-            <Carousel projectSelected={projectSelected} />
-
+            <Carousel images={projectSelected.images} />
             <div className="project-techs-list">
               <div className="background-techs">
-                <Link href={t(`projects.${projectIndex}.project-url`)}>
+                <Link href={projectSelected["project-url"]}>
                   <a target="_blank" className="website-link__desktop">
-                    {t(`see-website`)}
+                    {seeWebsite}
                   </a>
                 </Link>
-                <h3>{t(`techs`)}</h3>
+                <h3>{techs}</h3>
                 <ul>
                   {projectSelected?.techs.map((e, i) => {
                     return (
                       <li key={e}>
-                        {t(`projects.${projectIndex}.techs.${i}`)}
+                        {projectSelected.techs[i]}
                         {+i + 1 === projectSelected?.techs.length ? "." : ";"}
                       </li>
                     );
@@ -66,27 +76,21 @@ const Projects = ({ t }: { t: any }) => {
             </div>
 
             <div className="about-project">
-              <h3>{t(`about-project`)}</h3>
+              <h3>{about}</h3>
               <ul>
                 {projectSelected?.["about-project"].map((e, i) => {
                   return (
-                    <p key={e}>
-                      {t(`projects.${projectIndex}.about-project.${i}`)}
-                    </p>
+                    <p key={e}>{projects[projectIndex]["about-project"][i]}</p>
                   );
                 })}
               </ul>
             </div>
 
             <div className="project-features">
-              <h3>{t(`features`)}</h3>
+              <h3>{features}</h3>
               <ul>
                 {projectSelected?.features.map((e, i) => {
-                  return (
-                    <li key={e}>
-                      {t(`projects.${projectIndex}.features.${i}`)}
-                    </li>
-                  );
+                  return <li key={e}>{projects[projectIndex].features[i]}</li>;
                 })}
               </ul>
             </div>
@@ -97,8 +101,35 @@ const Projects = ({ t }: { t: any }) => {
   );
 };
 
-Projects.getInitialProps = async () => ({
-  namespacesRequired: ["projects"],
-});
+export default Projects;
 
-export default withTranslation("projects")(Projects);
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  console.log(locales);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const paths = projects.map((project) => ({
+    params: { projectID: projectNameURL(project["project-name"]) },
+  }));
+
+  return { paths, fallback: true };
+};
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const { projectID } = context.params as IParams;
+  const projectFound = projects.find(
+    (project) => projectNameURL(project["project-name"]) === projectID,
+  );
+
+  return {
+    props: {
+      locale: context.locale,
+      project: projectFound,
+    },
+  };
+}
+interface IParams extends ParsedUrlQuery {
+  projectID: string;
+}
+
+function projectNameURL(projectName: string) {
+  return projectName.toLowerCase().replaceAll(" ", "-");
+}

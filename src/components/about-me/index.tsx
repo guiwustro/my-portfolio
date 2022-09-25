@@ -1,8 +1,9 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 import Image from "next/image";
+import { IHomepageProps } from "pages";
+import { homePageInfo } from "translations/home";
 
-import { withTranslation } from "../../../i18n";
 import MyPhoto from "../../assets/images/myPhoto.png";
 import {
   Container,
@@ -13,16 +14,22 @@ import {
   PhotoContainer,
 } from "./styles";
 
-const AboutMe = ({ t }: { t: any }) => {
+const AboutMe = ({ locale }: IHomepageProps) => {
+  const {
+    "about-me": about,
+    "front-end-developer": dev,
+    hello,
+  } = homePageInfo[locale];
+
   return (
     <Container id="home">
       <LeftSideContainer>
         <NameContainer>
-          <span id="about__hello">{t("hello")}</span>
+          <span id="about__hello">{hello}</span>
           <span id="about__name">Guilherme Wustro</span>
-          <span id="about__dev">{t("front-end-developer")}</span>
+          <span id="about__dev">{dev}</span>
         </NameContainer>
-        <p id="about__description">{t("about-me")}</p>
+        <p id="about__description">{about}</p>
 
         <IconsContainer>
           <a
@@ -49,8 +56,4 @@ const AboutMe = ({ t }: { t: any }) => {
   );
 };
 
-AboutMe.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-export default withTranslation("common")(AboutMe);
+export default AboutMe;

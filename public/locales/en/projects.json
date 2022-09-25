@@ -41,8 +41,7 @@
         "Page with user requests;",
         "Responsive for all screens between 320px and 4k;",
         " Dark-Mode;"
-      ],
-      "images": []
+      ]
     },
     {
       "project-name": "Kenzie Hub",
@@ -71,11 +70,6 @@
         "The user is able to insert new technologies and new projects;",
         "The user is able to change and remove existing technologies and designs;",
         "Responsive for all screens."
-      ],
-      "images": [
-        "../../../src/assets/images/projects/kenzie-hub/Home-tela-grande.png",
-        "../../../src/assets/images/projects/kenzie-hub/Register-1440px.png",
-        "../../../src/assets/images/projects/kenzie-hub/mobile-montage.JPG"
       ]
     },
     {
@@ -97,12 +91,6 @@
         "Option to remove all products from cart;",
         " Responsive for any screen;",
         "Dark mode."
-      ],
-      "images": [
-        "../../../src/assets/images/projects/kenzie-burguer/HomePage-LightTheme-EmptyCart.jpg",
-        "../../../src/assets/images/projects/kenzie-burguer/HomePage-DarkTheme-EmptyCart.jpg",
-        "../../../src/assets/images/projects/kenzie-burguer/HomePage-LightTheme.jpg",
-        "../../../src/assets/images/projects/kenzie-burguer/HomePage-DarkTheme.jpg"
       ]
     },
     {
@@ -122,11 +110,6 @@
         "Option to remove input/expense entered;",
         "Responsive for all screens;",
         "Dark-mode;"
-      ],
-      "images": [
-        "../../../src/assets/images/projects/nu-kenzie/main-page-1440px-light-mode.png",
-        "../../../src/assets/images/projects/nu-kenzie/home-page-1440px.png",
-        "../../../src/assets/images/projects/nu-kenzie/main-page-1440px.png"
       ]
     },
     {
@@ -176,11 +159,6 @@
         "Shopping cart total calculation;",
         "Option to remove all products from cart;",
         "Responsive to any screen;"
-      ],
-      "images": [
-        "../../../src/assets/images/projects/ecommerce-js-vanilla/Home-1440px.png",
-        "../../../src/assets/images/projects/ecommerce-js-vanilla/Home-1024px-CartInclude.png",
-        "../../../src/assets/images/projects/ecommerce-js-vanilla/Home-1024px.png"
       ]
     },
     {
@@ -207,9 +185,6 @@
         "Responsive for all screens;",
         "User notification modes in case of food transfer without having enough food, eating sick, among others;",
         "Button to return to the start menu to create another wagon from scratch, choosing a new amount of wagons."
-      ],
-      "images": [
-        "../../../src/assets/images/projects/oregon-trail/Oregon-trail-HomePage.png"
       ]
     }
   ]

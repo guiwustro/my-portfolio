@@ -1,7 +1,7 @@
 import { MenuDropDownProvider } from "contexts/menuDropDownProvider";
 import App, { AppContext, AppProps } from "next/app";
 
-import { appWithTranslation } from "../../i18n";
+// import { appWithTranslation } from "../../i18nt";
 import { AppThemeProvider } from "../contexts/themeProvider";
 import GlobalStyles from "../styles/GlobalStyles";
 
@@ -20,4 +20,6 @@ MyApp.getInitialProps = async (appContext: AppContext) => ({
   ...(await App.getInitialProps(appContext)),
 });
 
-export default appWithTranslation(MyApp);
+export default MyApp;
+
+// export default appWithTranslation(MyApp);

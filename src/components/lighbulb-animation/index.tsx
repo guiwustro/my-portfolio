@@ -1,5 +1,5 @@
-const Techs = () => {
-  return <div>Techs</div>;
+const LightBulbAnimation = () => {
+  return <div>LightBulbAnimation</div>;
 };
 
-export default Techs;
+export default LightBulbAnimation;
