@@ -31,7 +31,9 @@ const AboutMe = ({ locale }: IHomepageProps) => {
             <span id="about__hello">{hello}</span>
           </TextAnimation>
           <TextAnimation>
-            <span className="retroshadow">Guilherme Wustro</span>
+            <span data-text="Guilherme Wustro" className="retroshadow">
+              Guilherme Wustro
+            </span>
           </TextAnimation>
           <TextAnimation>
             <span id="about__dev">{dev}</span>

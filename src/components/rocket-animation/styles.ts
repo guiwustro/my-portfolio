@@ -15,7 +15,6 @@ const Container = styled.div`
   display: none;
 
   .rocket__animation {
-    z-index: 999;
     animation: ${spin} 12s infinite linear;
     position: absolute;
     border-radius: 50%;
