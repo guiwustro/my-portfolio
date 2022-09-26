@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@hookform/resolvers": "^2.9.8",
     "@svgr/webpack": "^6.3.1",
     "@types/styled-components": "^5.1.26",
@@ -28,6 +29,7 @@
     "react-hook-form": "^7.35.0",
     "react-icons": "^4.4.0",
     "react-responsive": "^9.0.0-beta.10",
+    "react-toastify": "^9.0.8",
     "styled-components": "^5.3.5",
     "webpack": "^5.74.0",
     "yup": "^0.32.11"

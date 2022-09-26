@@ -1,7 +1,7 @@
 import { AiFillHtml5 } from "react-icons/ai";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript, SiStyledcomponents } from "react-icons/si";
+import { SiTypescript, SiStyledcomponents, SiNextdotjs } from "react-icons/si";
 
 import { IHomepageProps } from "pages";
 
@@ -37,6 +37,10 @@ const TechsList = ({ locale }: IHomepageProps) => {
         <div className="tech-item">
           <h4>Styled Components</h4>
           <SiStyledcomponents />
+        </div>
+        <div className="tech-item">
+          <h4>Next JS</h4>
+          <SiNextdotjs />
         </div>
       </div>
     </TechsContainer>

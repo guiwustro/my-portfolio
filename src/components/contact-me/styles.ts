@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
+import arrow from "../../assets/images/arrow-forward.png";
 const animate = keyframes`
     0%{
         background-position-x: 0;
@@ -15,14 +16,13 @@ export const ContainerMaxWidth = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 650px;
   padding: 40px 20px;
   min-height: 600px;
   h1 {
     color: #e9f2ff;
     font-weight: 700;
     font-size: 1.8rem;
-    line-height: 43px;
+    padding-bottom: 20px;
   }
   p {
     line-height: 25px;
@@ -38,38 +38,52 @@ export const Container = styled.div`
     padding-top: 20px;
 
     gap: 30px;
-    align-items: center;
     flex-direction: column;
   }
   @media screen and (min-width: 768px) {
+    width: 650px;
+    max-width: 530px;
+    & > form {
+      & > div:nth-child(2),
+      & > div:nth-child(3) {
+        max-width: 530px;
+      }
+    }
     .formGroup--inline {
       flex-direction: row;
+      align-items: center;
     }
   }
 `;
-export const FormGroup = styled.div`
+interface IFormProps {
+  errors?: boolean;
+}
+export const FormGroup = styled.div<IFormProps>`
   position: relative;
-  width: 250px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
   & > input {
     width: 100%;
     background: transparent;
-    color: #fff;
+    color: ${(props) => props.theme.colors["blue-250"]};
+    color: #ffff;
     border: none;
     outline: none;
     box-shadow: none;
+    ::placeholder {
+      letter-spacing: 0.1rem;
+    }
     padding: 10px 0 5px;
     font-size: 1rem;
-    background-color: ${(props) => props.theme.colors["blue-250"]};
-    letter-spacing: 0.1rem;
+    background-color: #9ec1db21;
   }
 
   & > label {
     position: absolute;
     left: 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
     pointer-events: none;
     letter-spacing: 0.1rem;
@@ -90,7 +104,7 @@ export const FormGroup = styled.div`
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #fff;
+    background: ${({ errors }) => (errors ? "red" : "#fff")};
     overflow: hidden;
   }
   & > span:before {
@@ -107,9 +121,10 @@ export const FormGroup = styled.div`
     left: 0;
   }
 `;
-export const FormGroupArea = styled.div`
+export const FormGroupArea = styled.div<IFormProps>`
   position: relative;
-  width: 250px;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   & > textarea {
@@ -120,16 +135,16 @@ export const FormGroupArea = styled.div`
     outline: none;
     box-shadow: none;
     font-size: 1rem;
-    background-color: ${(props) => props.theme.colors["blue-250"]};
+    background-color: #9ec1db21;
 
     letter-spacing: 0.1rem;
-    height: 100px;
+    height: 150px;
   }
 
   & > label {
     position: absolute;
     left: 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
     pointer-events: none;
     letter-spacing: 0.1rem;
@@ -150,7 +165,8 @@ export const FormGroupArea = styled.div`
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #fff;
+    background: ${({ errors }) => (errors ? "red" : "#fff")};
+
     overflow: hidden;
   }
   & > span:before {
@@ -165,5 +181,69 @@ export const FormGroupArea = styled.div`
   & > textarea:not(:placeholder-shown) ~ span:before,
   & > textarea:focus ~ span:before {
     left: 0;
+  }
+
+  @media (min-width: 768px) {
+  }
+`;
+
+export const SubmitButton = styled.div`
+  align-self: end;
+  button {
+    position: relative;
+    transform: 50% translate(-50%, -50%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0.5em 2em;
+    border: 2px solid #fff;
+    max-height: 50px;
+    background-color: #9ec1db21;
+  }
+
+  transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  & > button::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #2196f3;
+    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1),
+      left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: -1;
+  }
+  & > button::after {
+    content: "";
+    display: inline-block;
+    background-image: url(${arrow});
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3em);
+    right: 3em;
+    bottom: 0;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  & > button:hover {
+    padding: 0.5em 3.5em 0.5em 0.5em;
+  }
+  & > button:hover::before {
+    left: calc(100% - 3em);
+    right: 0;
+    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1),
+      left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: 1;
+  }
+  & > button:hover::after {
+    right: 0;
+    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: 1;
   }
 `;

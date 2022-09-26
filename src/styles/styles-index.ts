@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
-import backGround from "../../public/images/backgroundHome.jpg";
-import image from "../assets/images/background-about.png";
 import background from "../assets/images/background-projects.png";
 import backgroundHome from "../assets/images/backgroundHome.jpg";
 import bgc from "../assets/images/bgc-1.jpg";
-import bgc2 from "../assets/images/bgc-2.jpg";
-// import bgc3 from "../assets/images/bgc-3.jpg";
 import bgc4 from "../assets/images/bgc-4.jpg";
 
 export const ContainerMain = styled.div`
@@ -18,9 +14,7 @@ export const ContainerMain = styled.div`
 `;
 
 export const ContainerImage = styled.div`
-  /* background-image: url(${image}); */
-  /* background-image: url(${backgroundHome}); */
-  background-image: url(${backGround});
+  background-image: url(${backgroundHome});
 
   background-size: cover;
 
@@ -51,4 +45,13 @@ export const DivAngle = styled.div`
   padding-bottom: 70px;
   width: 100vw;
   height: 80px;
+`;
+
+export const BackgroundContact = styled.div`
+  background-image: url(${bgc});
+  background-image: url(${backgroundHome});
+  background-image: url(${bgc4});
+  border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
+  background-repeat: no-repeat;
+  background-size: cover;
 `;

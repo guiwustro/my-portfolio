@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Carousel } from "components/carousel";
 import Header from "components/header";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
 import Link from "next/link.js";
-import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { Container, ContainerBackGround } from "styles/styles-projects";
 import { projectsInfo } from "translations/projects";
@@ -103,14 +102,19 @@ const Projects = ({
 
 export default Projects;
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  console.log(locales);
+export const getStaticPaths: GetStaticPaths = async () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const paths = projects.map((project) => ({
-    params: { projectID: projectNameURL(project["project-name"]) },
-  }));
-
-  return { paths, fallback: true };
+  // Array of locales that will be used for created the static pages
+  const locales = ["", "en"];
+  const paths = locales
+    ?.map((locale) => {
+      return projects.map((project) => ({
+        params: { projectID: projectNameURL(project["project-name"]) },
+        locale,
+      }));
+    })
+    .flat();
+  return { paths, fallback: false };
 };
 
 export async function getStaticProps(context: GetStaticPropsContext) {

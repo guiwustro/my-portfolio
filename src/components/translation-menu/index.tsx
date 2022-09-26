@@ -58,9 +58,25 @@ const TranslationMenu = () => {
       <NewAnimatePresence>
         {isOpenTranslationMenu && (
           <MenuContainer
-            initial={{ y: "-25%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: "-25%", opacity: 0 }}
+            initial={{ y: "-30%", opacity: 0 }}
+            animate={{
+              y: "0%",
+              opacity: 1,
+
+              transition: {
+                duration: 0.2,
+                stiffness: 100,
+              },
+            }}
+            exit={{
+              y: "-30%",
+              opacity: 0,
+
+              transition: {
+                duration: 0.2,
+                stiffness: 100,
+              },
+            }}
             // transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
           >
             <button

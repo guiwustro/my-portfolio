@@ -6,7 +6,7 @@ module.exports = withImages({
   i18n: {
     locales: ["default", "en"],
     defaultLocale: "default",
-    localeDetection: true,
+    localeDetection: false,
   },
   trailingSlash: true,
   poweredByHeader: false,

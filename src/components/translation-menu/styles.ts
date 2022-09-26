@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const TranslationContainer = styled.div`
   position: relative;
   min-width: 130px;
-
+  margin-right: 15px;
   display: none;
   @media (min-width: 768px) {
     display: block;
@@ -16,7 +16,7 @@ export const MenuContainer = styled(motion.div)`
   top: 35px;
   left: -25px;
   margin: 0 10px 10px 10px;
-
+  overflow-y: hidden;
   /* padding-top: 14px; */
   /* z-index: 1; */
   min-width: 168px;
@@ -33,6 +33,13 @@ export const MenuContainer = styled(motion.div)`
     display: flex;
     align-items: center;
     gap: 6px;
+    & > a {
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
   }
 
   & > button:hover {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 
-import ThemeButton from "components/theme-button";
+// import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -39,22 +39,21 @@ const MenuDropDown = ({ locale }: IHomepageProps) => {
   return (
     <ContainerMenu
       ref={modalRef}
-      initial={{ x: 20, opacity: 0 }}
+      initial={{ x: "50%", opacity: 0 }}
       animate={{
-        x: 0,
+        x: "0%",
         opacity: 1,
+
         transition: {
           duration: 0.5,
-          type: "spring",
           stiffness: 100,
         },
       }}
       exit={{
-        x: "30%",
+        x: "50%",
         opacity: 0,
         transition: {
           duration: 0.5,
-          type: "spring",
           stiffness: 100,
         },
       }}
@@ -107,9 +106,7 @@ const MenuDropDown = ({ locale }: IHomepageProps) => {
           </button>
         </UnderLineAnimationButton>
 
-        <div className="center-div">
-          <ThemeButton />
-        </div>
+        <div className="center-div">{/* <ThemeButton /> */}</div>
       </div>
     </ContainerMenu>
   );

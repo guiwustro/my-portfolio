@@ -18,7 +18,11 @@ interface IHomePageInfo {
     "label-name": string;
     "label-subject": string;
     "label-message": string;
+    submitMessage: string;
+    errorSubmit: string;
+    sucessSubmit: string;
   };
+  footer: string;
 }
 interface IHomePageInfoProps {
   en: IHomePageInfo;
@@ -56,7 +60,11 @@ export const homePageInfo: IHomePageInfoProps = {
       "label-name": "Name",
       "label-subject": "Subject",
       "label-message": "Message",
+      submitMessage: "Submit",
+      errorSubmit: "Fill in all information!",
+      sucessSubmit: "E-mail sent successfully!",
     },
+    footer: "© Copyright 2022 by Guilherme Wustro.",
   },
   default: {
     header: {
@@ -88,6 +96,10 @@ export const homePageInfo: IHomePageInfoProps = {
       "label-name": "Nome",
       "label-subject": "Assunto",
       "label-message": "Mensagem",
+      submitMessage: "Enviar",
+      errorSubmit: "Preencha todas as informações",
+      sucessSubmit: "E-mail enviado com sucesso!",
     },
+    footer: "© Copyright 2022 por Guilherme Wustro.",
   },
 };

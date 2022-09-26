@@ -1,5 +1,9 @@
+import { ToastContainer } from "react-toastify";
+
 import { MenuDropDownProvider } from "contexts/menuDropDownProvider";
 import App, { AppContext, AppProps } from "next/app";
+
+import "react-toastify/dist/ReactToastify.min.css";
 
 // import { appWithTranslation } from "../../i18nt";
 import { AppThemeProvider } from "../contexts/themeProvider";
@@ -11,6 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <MenuDropDownProvider>
         <GlobalStyles />
         <Component {...pageProps} />
+        <ToastContainer />
       </MenuDropDownProvider>
     </AppThemeProvider>
   );

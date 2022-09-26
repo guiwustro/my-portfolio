@@ -1,5 +1,6 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
+import LightBulbAnimation from "components/lighbulb-animation";
 import Image from "next/image";
 import { IHomepageProps } from "pages";
 import { homePageInfo } from "translations/home";
@@ -49,6 +50,7 @@ const AboutMe = ({ locale }: IHomepageProps) => {
         </IconsContainer>
       </LeftSideContainer>
       <PhotoContainer>
+        <LightBulbAnimation />
         <Ellipse />
         <Image src={MyPhoto} width="275" height="275" alt="GW" />
       </PhotoContainer>
