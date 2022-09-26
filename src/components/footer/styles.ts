@@ -10,6 +10,7 @@ export const Container = styled.footer`
 
   span {
     font-family: "Lato";
+    text-align: center;
     font-style: normal;
     font-weight: 400;
     font-size: 1.1rem;

@@ -33,15 +33,6 @@ export const LeftSideContainer = styled.div`
   gap: 25px;
 `;
 
-const animate = keyframes`
- from {
-      background-position: 0%;
-    }
-    to {
-      background-position: 400%;
-    }
-`;
-
 export const NameContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,25 +50,59 @@ export const NameContainer = styled.div`
   span.retroshadow {
     font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
     font-size: 2.5rem;
-
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
-  }
-
-  span.retroshadow {
-    color: #e9f2ff;
+    color: #bbd2f3;
+    position: relative;
     letter-spacing: 0.05em;
     text-shadow: 4px 4px 0px #788aa1, 7px 7px 0px rgba(0, 0, 0, 0.5);
+  }
+  @keyframes animate {
+    0%,
+    10%,
+    100% {
+      width: 0;
+    }
+
+    60%,
+    70%,
+    90% {
+      width: 100%;
+      width: 140%;
+    }
+  }
+  .retroshadow::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 140%;
+    font-size: 2.5rem;
+    word-wrap: normal;
+    color: #e9f2ff;
+    text-shadow: 4px 4px 0px #7a838e, 7px 7px 0px rgba(0, 0, 0, 0.5),
+      0 0 10px #fff, 0 0 5px #fff;
+    overflow: hidden;
+
+    animation: animate 15s linear infinite;
   }
 
   @media screen and (min-width: 380px) {
     span.retroshadow {
       font-size: 3.1rem;
     }
+    .retroshadow::before {
+      font-size: 3.1rem;
+    }
   }
-
+  @media screen and (min-width: 768px) {
+    .retroshadow::before {
+      white-space: nowrap;
+    }
+  }
   @media screen and (min-width: 1440px) {
     span.retroshadow {
+      font-size: 4.5rem;
+    }
+    .retroshadow::before {
       font-size: 4.5rem;
     }
   }
