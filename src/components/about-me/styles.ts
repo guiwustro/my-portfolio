@@ -93,7 +93,7 @@ export const NameContainer = styled.div`
       font-size: 3.1rem;
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 651px) {
     .retroshadow::before {
       white-space: nowrap;
     }
