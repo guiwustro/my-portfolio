@@ -29,11 +29,13 @@ export const UnderLineAnimationButton = styled.div`
   button {
     padding-bottom: 0.35rem;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
     gap: 6px;
     align-items: center;
+    font-weight: 400;
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
   }
 
   button::before {

@@ -1,45 +1,52 @@
 import ContactMe from "components/contact-me";
-import { motion } from "framer-motion/dist/framer-motion";
+import Footer from "components/footer";
+import { AnimatePresence } from "framer-motion";
+import { GetStaticPropsContext } from "next";
 
-import { withTranslation } from "../../i18n.js";
-import AboutMe from "../components/about-me/index";
+import AboutMe from "../components/about-me";
 import Header from "../components/header";
-import ProjectsList from "../components/projects-list/index";
-import TechsList from "../components/techs-list/index";
+import ProjectsList from "../components/projects-list";
+import TechsList from "../components/techs-list";
 import {
+  BackgroundContact,
   ContainerBackGround,
   ContainerImage,
   ContainerMain,
   DivAngle,
 } from "../styles/styles-index";
 
-const Homepage = () => {
+export interface IHomepageProps {
+  locale: "en" | "default";
+}
+
+const Homepage = ({ locale }: IHomepageProps) => {
   return (
     <ContainerMain>
-      <Header />
+      <Header locale={locale} />
       <>
         <ContainerImage>
-          <motion.div
-            initial={{ x: "-20%", opacity: 0 }}
-            animate={{ x: "0", opacity: 1 }}
-            exit={{ x: "0", opacity: 0 }}
-          >
-            <AboutMe />
-          </motion.div>
-          <TechsList />
+          <AboutMe locale={locale} />
+          <TechsList locale={locale} />
         </ContainerImage>
         <DivAngle />
         <ContainerBackGround>
-          <ProjectsList />
+          <ProjectsList locale={locale} />
         </ContainerBackGround>
-        {/* <ContactMe /> */}
+        <BackgroundContact>
+          <ContactMe locale={locale} />
+          <Footer locale={locale} />
+        </BackgroundContact>
       </>
     </ContainerMain>
   );
 };
 
-Homepage.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return {
+    props: {
+      locale: context.locale,
+    },
+  };
+}
 
-export default withTranslation("common")(Homepage);
+export default Homepage;

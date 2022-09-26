@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TechsContainer = styled.div`
+export const TechsContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -10,9 +11,10 @@ export const TechsContainer = styled.div`
 
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.8rem;
     line-height: 43px;
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
   }
   .tech-list {
     display: flex;
@@ -38,6 +40,8 @@ export const TechsContainer = styled.div`
         height: 48px;
         display: flex;
         align-items: center;
+        font-weight: 400;
+        font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
       }
       & > svg {
         fill: ${(props) => props.theme.colors["blue-500"]};
@@ -47,7 +51,9 @@ export const TechsContainer = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    padding-top: 100px;
+    padding-top: 120px;
+    padding-bottom: 30px;
+
     .tech-list {
       justify-content: flex-start;
       .tech-item {

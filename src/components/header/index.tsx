@@ -1,66 +1,75 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { useMediaQuery } from "react-responsive";
 
 import MenuDropDown from "components/menu-drop-down";
-import ThemeButton from "components/theme-button";
+// import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
-import { AnimatePresence } from "framer-motion/dist/framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { IHomepageProps } from "pages";
 import { UnderLineAnimation } from "styles/buttons";
+import { homePageInfo } from "translations/home";
 
-import { withTranslation } from "../../../i18n";
-import LogoGW from "../../assets/icons/gw.svg";
+import LogoGW2 from "../../assets/icons/LogoGW.svg";
+import LogoGWMobile from "../../assets/icons/LogoGWMobile.svg";
 import TranslationMenu, { NewAnimatePresenceProps } from "../translation-menu";
 import {
   ButtonMenu,
   CenterContainer,
   Container,
   ContainerTheme,
+  Mobile,
 } from "./styles";
-const Header = ({ t }: { t: any }) => {
-  const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
+const Header = ({ locale }: IHomepageProps) => {
+  const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
+  const { contact, home, projects, technologies } = homePageInfo[locale].header;
   const { isOpenMenuDropDown, toogleMenuDropDown } = useMenuDropDownContext();
   return (
     <CenterContainer>
       <Container>
-        <div>
-          <LogoGW />
-        </div>
-        <Desktop>
-          <nav>
-            <UnderLineAnimation>
-              <Link href="/#home">
-                <a>{t("header.home")}</a>
-              </Link>
-            </UnderLineAnimation>
-            <UnderLineAnimation>
-              <Link href="/#technologies">
-                <a>{t("header.technologies")}</a>
-              </Link>
-            </UnderLineAnimation>
-            <UnderLineAnimation>
-              <Link href="/#projects">
-                <a>{t("header.projects")}</a>
-              </Link>
-            </UnderLineAnimation>
-            <UnderLineAnimation>
-              <Link href="/#contact">
-                <a>{t("header.contact")}</a>
-              </Link>
-            </UnderLineAnimation>
-          </nav>
-          <ContainerTheme>
-            <TranslationMenu />
-            {/* <ThemeButton /> */}
-          </ContainerTheme>
-        </Desktop>
+        <Link href="/#home">
+          <a>
+            <div className="logo__desktop">
+              <LogoGW2 />
+            </div>
+            <div className="logo__mobile">
+              <LogoGWMobile />
+            </div>
+          </a>
+        </Link>
+
+        <nav>
+          <UnderLineAnimation>
+            <Link href="/#home">
+              <a>{home}</a>
+            </Link>
+          </UnderLineAnimation>
+          <UnderLineAnimation>
+            <Link href="/#technologies">
+              <a>{technologies}</a>
+            </Link>
+          </UnderLineAnimation>
+          <UnderLineAnimation>
+            <Link href="/#projects">
+              <a>{projects}</a>
+            </Link>
+          </UnderLineAnimation>
+          <UnderLineAnimation>
+            <Link href="/#contact">
+              <a>{contact}</a>
+            </Link>
+          </UnderLineAnimation>
+        </nav>
+        <ContainerTheme>
+          <TranslationMenu />
+          {/* <ThemeButton /> */}
+        </ContainerTheme>
         <Mobile>
           <ButtonMenu onClick={() => toogleMenuDropDown(undefined)}>
             {isOpenMenuDropDown ? <AiOutlineClose /> : <AiOutlineMenu />}
           </ButtonMenu>
           <NewAnimatePresence>
-            {isOpenMenuDropDown && <MenuDropDown />}
+            {isOpenMenuDropDown && <MenuDropDown locale={locale} />}
           </NewAnimatePresence>
         </Mobile>
       </Container>
@@ -68,26 +77,4 @@ const Header = ({ t }: { t: any }) => {
   );
 };
 
-const Desktop = ({ children }: any) => {
-  const useDesktopMediaQuery = () =>
-    useMediaQuery({
-      minWidth: 769,
-    });
-
-  return <>{useDesktopMediaQuery() && children}</>;
-};
-
-const Mobile = ({ children }: any) => {
-  const useMobileMediaQuery = () =>
-    useMediaQuery({
-      maxWidth: 768,
-    });
-
-  return <>{useMobileMediaQuery() && children}</>;
-};
-
-Header.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-export default withTranslation("common")(Header);
+export default Header;

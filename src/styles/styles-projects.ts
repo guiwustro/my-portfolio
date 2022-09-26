@@ -164,7 +164,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-template-columns: 250px auto;
     grid-template-areas:
       "techs title"

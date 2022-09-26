@@ -1,15 +1,24 @@
 import { AiFillHtml5 } from "react-icons/ai";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript, SiStyledcomponents } from "react-icons/si";
+import { SiTypescript, SiStyledcomponents, SiNextdotjs } from "react-icons/si";
 
-import { withTranslation } from "../../../i18n";
+import { IHomepageProps } from "pages";
+
+import { homePageInfo } from "../../translations/home";
 import { TechsContainer } from "./styles";
 
-const TechsList = ({ t }: { t: any }) => {
+const TechsList = ({ locale }: IHomepageProps) => {
+  const { techs } = homePageInfo[locale];
   return (
-    <TechsContainer id="technologies">
-      <h3>{t("techs")}</h3>
+    <TechsContainer
+      id="technologies"
+      initial={{ y: "20%", opacity: 0 }}
+      animate={{ y: "0", opacity: 1 }}
+      transition={{ duration: 2 }}
+      exit={{ y: "0", opacity: 0 }}
+    >
+      <h3>{techs}</h3>
       <div className="tech-list">
         <div className="tech-item">
           <h4>React</h4>
@@ -35,13 +44,13 @@ const TechsList = ({ t }: { t: any }) => {
           <h4>Styled Components</h4>
           <SiStyledcomponents />
         </div>
+        <div className="tech-item">
+          <h4>Next JS</h4>
+          <SiNextdotjs />
+        </div>
       </div>
     </TechsContainer>
   );
 };
 
-TechsList.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-export default withTranslation("common")(TechsList);
+export default TechsList;

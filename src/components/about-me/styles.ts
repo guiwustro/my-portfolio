@@ -9,13 +9,21 @@ export const Container = styled.div`
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
+
   #about__description {
     font-size: 1.1rem;
     color: ${(props) => props.theme.colors.text};
+    line-height: 30px;
+    letter-spacing: 0.03rem;
   }
   @media screen and (min-width: 768px) {
-    flex-direction: row;
     padding-top: 120px;
+  }
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    #about__description {
+      width: 600px;
+    }
   }
 `;
 
@@ -34,16 +42,6 @@ const animate = keyframes`
     }
 `;
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
 export const NameContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,27 +50,35 @@ export const NameContainer = styled.div`
   #about__hello,
   #about__dev {
     font-size: 1.875rem;
-    font-weight: 700;
+    font-weight: 500;
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
 
     color: ${(props) => props.theme.colors["blue-700"]};
   }
-  #about__name {
-    font-size: 4rem;
-    width: 320px;
-    /* color: ${(props) => props.theme.colors["blue-gradient"]}; */
-    font-weight: 700;
-    background: linear-gradient(
-      ${(props) => props.theme.colors["blue-gradient"]}
-    );
 
-    background-size: 400%;
-    animation: ${animate} 10s reverse infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  span.retroshadow {
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 2.5rem;
+
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
   }
-  @media screen and (min-width: 768px) {
-    #about__name {
-      width: 550px;
+
+  span.retroshadow {
+    color: #e9f2ff;
+    letter-spacing: 0.05em;
+    text-shadow: 4px 4px 0px #788aa1, 7px 7px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (min-width: 380px) {
+    span.retroshadow {
+      font-size: 3.1rem;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    span.retroshadow {
+      font-size: 4.5rem;
     }
   }
 `;
@@ -131,9 +137,9 @@ export const PhotoContainer = styled.div`
   align-self: center;
 
   @media screen and (min-width: 768px) {
-    min-width: 340px;
-    width: 340px;
-    height: 340px;
+    min-width: 370px;
+    width: 370px;
+    height: 370px;
   }
 `;
 

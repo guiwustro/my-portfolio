@@ -1,14 +1,6 @@
 import PropTypes from "prop-types";
 
-import { withTranslation } from "../../i18n";
-
-const Error = ({ statusCode, t }: any) => (
-  <p>
-    {statusCode
-      ? t("error-with-status", { statusCode })
-      : t("error-without-status")}
-  </p>
-);
+const Error = ({ statusCode }: any) => <p>Error</p>;
 
 Error.getInitialProps = async ({ res, err }: any) => {
   let statusCode = null;
@@ -29,7 +21,6 @@ Error.defaultProps = {
 
 Error.propTypes = {
   statusCode: PropTypes.number,
-  t: PropTypes.func.isRequired,
 };
 
-export default withTranslation("common")(Error);
+export default Error;

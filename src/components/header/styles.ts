@@ -43,21 +43,43 @@ export const Container = styled.div`
   #logo {
   }
   & > nav {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
+    display: none;
     a {
-      font-weight: 600;
       font-size: 1.1rem;
+      font-weight: 500;
+      font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
       :hover {
         text-decoration: none;
       }
     }
   }
 
+  .logo__mobile {
+    display: block;
+    margin-top: 8px;
+  }
+  .logo__desktop {
+    display: none;
+    margin-top: 8px;
+  }
+
+  @media screen and (min-width: 768px) {
+    & > nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
   @media screen and (min-width: 1024px) {
-    nav {
-      gap: 60px;
+    & > nav {
+      gap: 40px;
+    }
+    .logo__mobile {
+      display: none;
+    }
+    .logo__desktop {
+      display: block;
     }
   }
 `;
@@ -79,5 +101,37 @@ export const ButtonMenu = styled.button`
     width: 100%;
     height: 100%;
     fill: ${(props) => props.theme.colors.text};
+  }
+`;
+
+export const Mobile = styled.div`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+export const Desktop = styled.div`
+  display: none;
+  & > nav {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    a {
+      font-weight: 600;
+      font-size: 1.1rem;
+      :hover {
+        text-decoration: none;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+  }
+  @media screen and (min-width: 1024px) {
+    nav {
+      gap: 60px;
+    }
   }
 `;

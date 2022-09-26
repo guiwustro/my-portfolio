@@ -11,6 +11,8 @@ export const Container = styled.div`
     font-weight: 700;
     font-size: 1.8rem;
     line-height: 43px;
+    font-weight: 500;
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
   }
 
   & > ul {
@@ -37,10 +39,9 @@ export const Container = styled.div`
       justify-content: space-between;
       padding: 10px;
       & > h4 {
-        font-family: "Lato";
-        font-style: normal;
-        font-weight: 700;
         font-size: 1.5rem;
+        font-weight: 400;
+        font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
         color: ${(props) => props.theme.colors["blue-500"]};
       }
 

@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 
-import {
-  AnimatePresence,
-  AnimatePresenceProps,
-} from "framer-motion/dist/framer-motion";
+import { AnimatePresence, AnimatePresenceProps } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { UnderLineAnimationButton } from "styles/buttons";
 
-import { i18n } from "../../../i18n.js";
 import BrazilFlag from "../../assets/icons/brazil-flag.svg";
 import UsaFlag from "../../assets/icons/usa-flag.svg";
 import { MenuContainer, TranslationContainer } from "./styles";
@@ -16,11 +14,16 @@ export interface NewAnimatePresenceProps
 }
 
 const TranslationMenu = () => {
+  const { pathname, asPath, query, locale } = useRouter();
+  const router = useRouter();
+
   const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
-  const [isOpenTranslationMenu, setIsOpenTranslationMenu] = useState(false);
+  const [isOpenTranslationMenu, setIsOpenTranslationMenu] =
+    useState<boolean>(false);
   const modalRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function handleOutClick(event: any) {
       const value = modalRef?.current;
 
@@ -39,7 +42,7 @@ const TranslationMenu = () => {
     <TranslationContainer ref={modalRef}>
       <UnderLineAnimationButton>
         <button onClick={() => setIsOpenTranslationMenu((state) => !state)}>
-          {i18n.language === "pt" ? (
+          {locale === "default" ? (
             <>
               <BrazilFlag />
               Português-BR
@@ -55,29 +58,53 @@ const TranslationMenu = () => {
       <NewAnimatePresence>
         {isOpenTranslationMenu && (
           <MenuContainer
-            initial={{ y: "-25%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: "-25%", opacity: 0, duration: 0.25 }}
-            transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
+            initial={{ y: "-30%", opacity: 0 }}
+            animate={{
+              y: "0%",
+              opacity: 1,
+
+              transition: {
+                duration: 0.2,
+                stiffness: 100,
+              },
+            }}
+            exit={{
+              y: "-30%",
+              opacity: 0,
+
+              transition: {
+                duration: 0.2,
+                stiffness: 100,
+              },
+            }}
+            // transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
           >
             <button
               onClick={() => {
-                i18n.changeLanguage("pt");
-                setIsOpenTranslationMenu((state) => !state);
+                setIsOpenTranslationMenu(false);
+                router.push({ pathname, query }, asPath, {
+                  locale: "default",
+                });
               }}
             >
-              <BrazilFlag />
-              Português-BR
+              <a>
+                <BrazilFlag />
+                Português-BR
+              </a>
             </button>
 
             <button
               onClick={() => {
-                i18n.changeLanguage("en");
-                setIsOpenTranslationMenu((state) => !state);
+                setIsOpenTranslationMenu(false);
+                router.push({ pathname, query }, asPath, {
+                  locale: "en",
+                });
               }}
             >
-              <UsaFlag />
-              English
+              <a>
+                <UsaFlag />
+                English
+              </a>
             </button>
           </MenuContainer>
         )}

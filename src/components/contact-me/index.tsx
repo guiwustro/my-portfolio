@@ -1,18 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
+import emailjs from "@emailjs/browser";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { IHomepageProps } from "pages";
 import * as yup from "yup";
 
-import { withTranslation } from "../../../i18n";
+import { homePageInfo } from "../../translations/home";
 import {
   FormGroup,
   Container,
   FormGroupArea,
   ContainerMaxWidth,
+  SubmitButton,
 } from "./styles";
 
-const ContactMe = ({ t }: { t: any }) => {
+const ContactMe = ({ locale }: IHomepageProps) => {
   const formSchema = yup.object().shape({
     name: yup.string(),
     email: yup.string().required().email(),
@@ -25,22 +29,56 @@ const ContactMe = ({ t }: { t: any }) => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(formSchema) });
   console.log(errors);
-  const onSubmit = () => {
-    return;
+  const {
+    "label-message": message,
+    "label-name": name,
+    "label-subject": subject,
+    description,
+    title,
+    submitMessage,
+    errorSubmit,
+    sucessSubmit,
+  } = homePageInfo[locale].contact;
+  const onSubmit = (data: any) => {
+    emailjs
+      .send("service_i5z3n3g", "template_z7hgswm", data, "_LtrfipZj8-bIIOTE")
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          toast(sucessSubmit, {
+            hideProgressBar: true,
+            autoClose: 2000,
+            style: { backgroundColor: "#557A95", color: "white" },
+
+            type: "success",
+          });
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        },
+      );
+  };
+  const onError = () => {
+    toast(errorSubmit, {
+      hideProgressBar: true,
+      style: { backgroundColor: "#557A95", color: "white" },
+      autoClose: 2000,
+      type: "error",
+    });
   };
   return (
     <ContainerMaxWidth>
       <Container>
-        <h1>{t("contact.title")}</h1>
-        <p>{t("contact.description")}</p>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <h1 id="contact">{title}</h1>
+        <p>{description}</p>
+        <form onSubmit={handleSubmit(onSubmit, onError)}>
           <div className="formGroup--inline">
             <FormGroup>
               <input placeholder=" " type="text" {...register("name")} />
-              <label>{t("contact.label-name")}</label>
+              <label>{name}</label>
               <span></span>
             </FormGroup>
-            <FormGroup>
+            <FormGroup errors={!!errors.email}>
               <input placeholder=" " type="text" {...register("email")} />
               <label>E-mail</label>
               <span></span>
@@ -48,23 +86,21 @@ const ContactMe = ({ t }: { t: any }) => {
           </div>
           <FormGroup>
             <input placeholder=" " type="text" {...register("subject")} />
-            <label>{t("contact.label-subject")}</label>
+            <label>{subject}</label>
             <span></span>
           </FormGroup>
-          <FormGroupArea>
+          <FormGroupArea errors={!!errors.message}>
             <textarea placeholder=" " {...register("message")} />
-            <label>{t("contact.label-message")}</label>
+            <label>{message}</label>
             <span></span>
           </FormGroupArea>
-          <button>Enviar</button>
+          <SubmitButton>
+            <button>{submitMessage}</button>
+          </SubmitButton>
         </form>
       </Container>
     </ContainerMaxWidth>
   );
 };
 
-ContactMe.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-export default withTranslation("common")(ContactMe);
+export default ContactMe;

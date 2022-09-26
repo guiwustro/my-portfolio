@@ -1,56 +1,75 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
+import { ImageAnimation, TextAnimation } from "components/about-me-animation";
+import LightBulbAnimation from "components/lighbulb-animation";
+import RocketAnimation from "components/rocket-animation";
 import Image from "next/image";
+import { IHomepageProps } from "pages";
+import { homePageInfo } from "translations/home";
 
-import { withTranslation } from "../../../i18n";
 import MyPhoto from "../../assets/images/myPhoto.png";
 import {
   Container,
-  Ellipse,
   IconsContainer,
   LeftSideContainer,
   NameContainer,
   PhotoContainer,
 } from "./styles";
 
-const AboutMe = ({ t }: { t: any }) => {
+const AboutMe = ({ locale }: IHomepageProps) => {
+  const {
+    "about-me": about,
+    "front-end-developer": dev,
+    hello,
+  } = homePageInfo[locale];
+
   return (
     <Container id="home">
       <LeftSideContainer>
         <NameContainer>
-          <span id="about__hello">{t("hello")}</span>
-          <span id="about__name">Guilherme Wustro</span>
-          <span id="about__dev">{t("front-end-developer")}</span>
+          <TextAnimation>
+            <span id="about__hello">{hello}</span>
+          </TextAnimation>
+          <TextAnimation>
+            <span className="retroshadow">Guilherme Wustro</span>
+          </TextAnimation>
+          <TextAnimation>
+            <span id="about__dev">{dev}</span>
+          </TextAnimation>
         </NameContainer>
-        <p id="about__description">{t("about-me")}</p>
 
-        <IconsContainer>
-          <a
-            target="_blank"
-            href={"https://www.linkedin.com/in/guilhermewustro/"}
-            rel="noreferrer"
-          >
-            <BsLinkedin />
-          </a>
-          <a
-            target="_blank"
-            href={"https://github.com/guiwustro"}
-            rel="noreferrer"
-          >
-            <BsGithub />
-          </a>
-        </IconsContainer>
+        <TextAnimation>
+          <p id="about__description">{about}</p>
+        </TextAnimation>
+        <TextAnimation>
+          <IconsContainer>
+            <a
+              target="_blank"
+              href={"https://www.linkedin.com/in/guilhermewustro/"}
+              rel="noreferrer"
+            >
+              <BsLinkedin />
+            </a>
+            <a
+              target="_blank"
+              href={"https://github.com/guiwustro"}
+              rel="noreferrer"
+            >
+              <BsGithub />
+            </a>
+          </IconsContainer>
+        </TextAnimation>
       </LeftSideContainer>
-      <PhotoContainer>
-        <Ellipse />
-        <Image src={MyPhoto} width="275" height="275" alt="GW" />
-      </PhotoContainer>
+      <ImageAnimation>
+        <PhotoContainer>
+          {/* <LightBulbAnimation /> */}
+          {/* <Ellipse /> */}
+          <Image src={MyPhoto} width="275" height="275" alt="GW" />
+          <RocketAnimation />
+        </PhotoContainer>
+      </ImageAnimation>
     </Container>
   );
 };
 
-AboutMe.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-export default withTranslation("common")(AboutMe);
+export default AboutMe;
