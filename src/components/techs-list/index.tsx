@@ -5,7 +5,7 @@ import { SiTypescript, SiStyledcomponents, SiNextdotjs } from "react-icons/si";
 
 import { IHomepageProps } from "pages";
 
-import { homePageInfo } from "../../../public/locales/en/common";
+import { homePageInfo } from "../../translations/home";
 import { TechsContainer } from "./styles";
 
 const TechsList = ({ locale }: IHomepageProps) => {

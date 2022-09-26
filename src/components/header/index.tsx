@@ -10,6 +10,8 @@ import { UnderLineAnimation } from "styles/buttons";
 import { homePageInfo } from "translations/home";
 
 import LogoGW from "../../assets/icons/gw.svg";
+import LogoGW2 from "../../assets/icons/LogoGW.svg";
+import LogoGWMobile from "../../assets/icons/LogoGWMobile.svg";
 import TranslationMenu, { NewAnimatePresenceProps } from "../translation-menu";
 import {
   ButtonMenu,
@@ -26,8 +28,12 @@ const Header = ({ locale }: IHomepageProps) => {
   return (
     <CenterContainer>
       <Container>
-        <div>
-          <LogoGW />
+        <div className="logo__desktop">
+          {/* <LogoGW /> */}
+          <LogoGW2 />
+        </div>
+        <div className="logo__mobile">
+          <LogoGWMobile />
         </div>
         <nav>
           <UnderLineAnimation>

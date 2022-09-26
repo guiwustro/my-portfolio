@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { IHomepageProps } from "pages";
 
-import { homePageInfo } from "../../../public/locales/en/common";
 import dataProjects from "../../database/projects";
+import { homePageInfo } from "../../translations/home";
 import { Container, ContainerSeeProject, ImageContainer } from "./styles";
 
 const ProjectsList = ({ locale }: IHomepageProps) => {

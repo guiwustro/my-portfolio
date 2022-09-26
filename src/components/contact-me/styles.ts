@@ -23,6 +23,8 @@ export const Container = styled.div`
     font-weight: 700;
     font-size: 1.8rem;
     padding-bottom: 20px;
+    font-weight: 500;
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
   }
   p {
     line-height: 25px;

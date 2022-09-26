@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-interface IContainerProps {
-  isMoreThan5Images: boolean;
-}
-export const Container = styled.div<IContainerProps>`
+export const Container = styled.div`
   .embla {
     position: relative;
     max-width: 750px;
@@ -95,9 +92,6 @@ export const Container = styled.div<IContainerProps>`
   .embla__container--thumb {
     cursor: default;
     margin-left: -8px;
-    display: flex;
-    justify-content: ${({ isMoreThan5Images }) =>
-      isMoreThan5Images ? "flex-start" : "center"};
   }
 
   .embla__slide--thumb {

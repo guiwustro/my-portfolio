@@ -13,17 +13,16 @@ interface IEmblaCarousel {
 const EmblaCarousel = ({ slides }: IEmblaCarousel) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isMoreThan5Images, setIsMoreThan5Images] = useState(false);
-  const [mainViewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
+  const [mainViewportRef, embla] = useEmblaCarousel({
+    skipSnaps: false,
+  });
   const [thumbViewportRef, emblaThumbs] = useEmblaCarousel({
     containScroll: "keepSnaps",
     // selectedClass: "",
+    align: "center",
     dragFree: true,
+    draggable: true,
   });
-  useEffect(() => {
-    slides.length > 4
-      ? setIsMoreThan5Images(true)
-      : setIsMoreThan5Images(false);
-  }, []);
 
   const onThumbClick = useCallback(
     (index: number) => {
@@ -45,7 +44,7 @@ const EmblaCarousel = ({ slides }: IEmblaCarousel) => {
     embla.on("select", onSelect);
   }, [embla, onSelect]);
   return (
-    <Container isMoreThan5Images={isMoreThan5Images}>
+    <Container>
       <div className="embla">
         <div className="embla__viewport" ref={mainViewportRef}>
           <div className="embla__container">

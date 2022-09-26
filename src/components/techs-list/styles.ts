@@ -10,9 +10,10 @@ export const TechsContainer = styled.div`
 
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.8rem;
     line-height: 43px;
+    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
   }
   .tech-list {
     display: flex;
@@ -38,6 +39,8 @@ export const TechsContainer = styled.div`
         height: 48px;
         display: flex;
         align-items: center;
+        font-weight: 400;
+        font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
       }
       & > svg {
         fill: ${(props) => props.theme.colors["blue-500"]};

@@ -1,6 +1,7 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 import LightBulbAnimation from "components/lighbulb-animation";
+import RocketAnimation from "components/rocket-animation";
 import Image from "next/image";
 import { IHomepageProps } from "pages";
 import { homePageInfo } from "translations/home";
@@ -27,7 +28,8 @@ const AboutMe = ({ locale }: IHomepageProps) => {
       <LeftSideContainer>
         <NameContainer>
           <span id="about__hello">{hello}</span>
-          <span id="about__name">Guilherme Wustro</span>
+          {/* <span id="about__name">Guilherme Wustro</span> */}
+          <span className="retroshadow">Guilherme Wustro</span>
           <span id="about__dev">{dev}</span>
         </NameContainer>
         <p id="about__description">{about}</p>
@@ -50,9 +52,10 @@ const AboutMe = ({ locale }: IHomepageProps) => {
         </IconsContainer>
       </LeftSideContainer>
       <PhotoContainer>
-        <LightBulbAnimation />
-        <Ellipse />
+        {/* <LightBulbAnimation /> */}
+        {/* <Ellipse /> */}
         <Image src={MyPhoto} width="275" height="275" alt="GW" />
+        <RocketAnimation />
       </PhotoContainer>
     </Container>
   );
