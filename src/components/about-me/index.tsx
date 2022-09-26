@@ -1,5 +1,6 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
+import { ImageAnimation, TextAnimation } from "components/about-me-animation";
 import LightBulbAnimation from "components/lighbulb-animation";
 import RocketAnimation from "components/rocket-animation";
 import Image from "next/image";
@@ -9,7 +10,6 @@ import { homePageInfo } from "translations/home";
 import MyPhoto from "../../assets/images/myPhoto.png";
 import {
   Container,
-  Ellipse,
   IconsContainer,
   LeftSideContainer,
   NameContainer,
@@ -27,36 +27,47 @@ const AboutMe = ({ locale }: IHomepageProps) => {
     <Container id="home">
       <LeftSideContainer>
         <NameContainer>
-          <span id="about__hello">{hello}</span>
-          {/* <span id="about__name">Guilherme Wustro</span> */}
-          <span className="retroshadow">Guilherme Wustro</span>
-          <span id="about__dev">{dev}</span>
+          <TextAnimation>
+            <span id="about__hello">{hello}</span>
+          </TextAnimation>
+          <TextAnimation>
+            <span className="retroshadow">Guilherme Wustro</span>
+          </TextAnimation>
+          <TextAnimation>
+            <span id="about__dev">{dev}</span>
+          </TextAnimation>
         </NameContainer>
-        <p id="about__description">{about}</p>
 
-        <IconsContainer>
-          <a
-            target="_blank"
-            href={"https://www.linkedin.com/in/guilhermewustro/"}
-            rel="noreferrer"
-          >
-            <BsLinkedin />
-          </a>
-          <a
-            target="_blank"
-            href={"https://github.com/guiwustro"}
-            rel="noreferrer"
-          >
-            <BsGithub />
-          </a>
-        </IconsContainer>
+        <TextAnimation>
+          <p id="about__description">{about}</p>
+        </TextAnimation>
+        <TextAnimation>
+          <IconsContainer>
+            <a
+              target="_blank"
+              href={"https://www.linkedin.com/in/guilhermewustro/"}
+              rel="noreferrer"
+            >
+              <BsLinkedin />
+            </a>
+            <a
+              target="_blank"
+              href={"https://github.com/guiwustro"}
+              rel="noreferrer"
+            >
+              <BsGithub />
+            </a>
+          </IconsContainer>
+        </TextAnimation>
       </LeftSideContainer>
-      <PhotoContainer>
-        {/* <LightBulbAnimation /> */}
-        {/* <Ellipse /> */}
-        <Image src={MyPhoto} width="275" height="275" alt="GW" />
-        <RocketAnimation />
-      </PhotoContainer>
+      <ImageAnimation>
+        <PhotoContainer>
+          {/* <LightBulbAnimation /> */}
+          {/* <Ellipse /> */}
+          <Image src={MyPhoto} width="275" height="275" alt="GW" />
+          <RocketAnimation />
+        </PhotoContainer>
+      </ImageAnimation>
     </Container>
   );
 };

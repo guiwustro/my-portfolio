@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TechsContainer = styled.div`
+export const TechsContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -50,7 +51,9 @@ export const TechsContainer = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    padding-top: 100px;
+    padding-top: 120px;
+    padding-bottom: 30px;
+
     .tech-list {
       justify-content: flex-start;
       .tech-item {

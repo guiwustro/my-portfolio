@@ -11,7 +11,13 @@ import { TechsContainer } from "./styles";
 const TechsList = ({ locale }: IHomepageProps) => {
   const { techs } = homePageInfo[locale];
   return (
-    <TechsContainer id="technologies">
+    <TechsContainer
+      id="technologies"
+      initial={{ y: "20%", opacity: 0 }}
+      animate={{ y: "0", opacity: 1 }}
+      transition={{ duration: 2 }}
+      exit={{ y: "0", opacity: 0 }}
+    >
       <h3>{techs}</h3>
       <div className="tech-list">
         <div className="tech-item">

@@ -21,6 +21,9 @@ export const Container = styled.div`
   }
   @media screen and (min-width: 1024px) {
     flex-direction: row;
+    #about__description {
+      width: 600px;
+    }
   }
 `;
 
@@ -52,20 +55,6 @@ export const NameContainer = styled.div`
 
     color: ${(props) => props.theme.colors["blue-700"]};
   }
-  #about__name {
-    font-size: 4rem;
-    width: 320px;
-    /* color: ${(props) => props.theme.colors["blue-gradient"]}; */
-    font-weight: 700;
-    background: linear-gradient(
-      ${(props) => props.theme.colors["blue-gradient"]}
-    );
-
-    background-size: 400%;
-    animation: ${animate} 10s reverse infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 
   span.retroshadow {
     font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
@@ -84,12 +73,6 @@ export const NameContainer = styled.div`
   @media screen and (min-width: 380px) {
     span.retroshadow {
       font-size: 3.1rem;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    #about__name {
-      width: 550px;
     }
   }
 
