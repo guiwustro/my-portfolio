@@ -191,6 +191,10 @@ export const ImageContainer = styled.div`
     min-height: 150px;
     justify-content: space-between;
     opacity: 0;
+    margin-top: 10px;
+    @media screen and (min-width: 425px) {
+      margin-top: 10%;
+    }
     & > p {
       line-height: 25px;
       display: -webkit-box;

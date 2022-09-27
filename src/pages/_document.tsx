@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
+import logo from "../assets/icons/iconLogo.png";
 export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
@@ -15,11 +15,12 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
             rel="stylesheet"
           />
-
+          <title>Guiilherme Wustro</title>
           <link
             href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" type="image/x-icon" href={logo} />
         </Head>
         <body>
           <Main />
