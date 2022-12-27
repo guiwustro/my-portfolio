@@ -1,9 +1,3 @@
-import blogLogin from "../assets/images/projects/blog/Blog-login.png";
-import blogMain from "../assets/images/projects/blog/Blog-main-page.png";
-import blogRegister from "../assets/images/projects/blog/Blog-register.png";
-import ecommerceCart from "../assets/images/projects/ecommerce-js-vanilla/Home-1024px-CartInclude.png";
-import eccomerceHome2 from "../assets/images/projects/ecommerce-js-vanilla/Home-1024px.png";
-import ecommerceHome from "../assets/images/projects/ecommerce-js-vanilla/Home-1440px.png";
 import healthyGoAboutUs from "../assets/images/projects/healthy-go/healthyGoAboutUs.jpg";
 import healthyGoCart from "../assets/images/projects/healthy-go/healthyGoCart.jpg";
 import healthyGoCheckout from "../assets/images/projects/healthy-go/healthyGoCheckOut.jpg";
@@ -20,10 +14,10 @@ import kenzieBurguerLight2 from "../assets/images/projects/kenzie-burguer/HomePa
 import kenzieHubHome from "../assets/images/projects/kenzie-hub/Home-tela-grande.png";
 import kenzieHubLogin from "../assets/images/projects/kenzie-hub/kenzie-hub-login.png";
 import kenzieHubRegister from "../assets/images/projects/kenzie-hub/Register-1440px.png";
+import MeAuHome from "../assets/images/projects/me-au/Home.jpg";
 import nuKenzieHome from "../assets/images/projects/nu-kenzie/home-page-1440px.png";
 import nuKenzieLight from "../assets/images/projects/nu-kenzie/main-page-1440px-light-mode.png";
 import nuKenzieDark from "../assets/images/projects/nu-kenzie/main-page-1440px.png";
-import oregonTrail from "../assets/images/projects/oregon-trail/Oregon-trail-HomePage.png";
 
 export interface IProjects {
   "project-name": string;
@@ -31,11 +25,57 @@ export interface IProjects {
   "project-url": string;
   description: string;
   "about-project": string[];
+  "back-end-links"?: {
+    docs?: string;
+    github?: string;
+  };
   techs: string[];
   features: string[];
   images: string[];
 }
 const dataProjects: IProjects[] = [
+  {
+    "project-name": "Me Au Pet Hotel",
+    "github-link": "https://github.com/guiwustro/me-au-front-end",
+    "project-url": "https://me-au.vercel.app/",
+    "back-end-links": {
+      docs: "https://m4-projeto-final.github.io/me-au-docs/",
+      github: "https://github.com/M4-PROJETO-FINAL/me-au-back-end",
+    },
+    description:
+      "Aplicação de um PET Hotel onde permite ao usuário fazer reservas para o seu animalzinho de estimação, podendo escolher serviços personalizados para o seu pet.",
+    "about-project": [
+      "A aplicação representa um pet hotel, pensado para pais e mães de pets que precisam se ausentar e não têm onde deixar os seus animais, com a liberdade criativa, foi criado um hotel que permite ao usuário fazer uma reserva para o seu animalzinho de estimação, podendo escolher serviços personalizados desde natação até SPA. Para realização desse projeto front-end foi criado uma API para o armazenamento dos dados do servidor.",
+    ],
+    techs: [
+      "React",
+      "TypeScript",
+      "Styled Components",
+      "NodeJS",
+      "TypeORM",
+      "PostgreSQL",
+      "Axios",
+      "ContextAPI",
+      "React Router DOM",
+      "Hot-Toastify",
+      "Framer motion",
+      "react-google-auth",
+      "react-input-mask",
+    ],
+    features: [
+      "Registro e login de um usuário",
+      "Login do usuário através de uma conta do google",
+      "Criação, edição e remoção de um pet",
+      "Dashboard contendo as informações do usuários, seus pets e suas reservas",
+      "Realização de uma reserva em uma determinada data, podendo escolher entre 3 tipos de quartos",
+      "Seleção de serviços personalizados para o pet na criação de uma reserva",
+      "Site em duas línguas (Português e Inglês)",
+      "Responsivo para todas as telas",
+      "Possibilidade de cancelamento e avaliação das reservas",
+      "Página sobre nós - mostrando informações do hotel e dos desenvolvedores da aplicação",
+    ],
+    images: [MeAuHome],
+  },
   {
     "project-name": "HealthyGo",
     "github-link": "https://github.com/guiwustro/healthy-go-project",
@@ -49,9 +89,9 @@ const dataProjects: IProjects[] = [
     techs: [
       "React",
       "TypeScript",
+      "Styled Components",
       "Axios",
       "ContextAPI",
-      "Styled Components",
       "React Router DOM",
       "Hot-Toastify",
       "Framer motion",
@@ -73,7 +113,7 @@ const dataProjects: IProjects[] = [
       "O carrinho do usuário fica salvo na API , ou seja, enquanto o usuário, ou seja, o carrinho estará lá até remover os produtos ou o usuário finalizar o pedido;",
       "Página com os pedidos do usuário;",
       "Responsivo para todas as telas entre 320px e 4k;",
-      " Dark-Mode;",
+      "Dark-Mode;",
     ],
     images: [
       healthyGoHome,
@@ -94,8 +134,7 @@ const dataProjects: IProjects[] = [
     description:
       "É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas e os projetos criados.",
     "about-project": [
-      "É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas, escolhendo o nível de entendimento da tecnologia (básico, intermediário ou avançado). Além da adição de novas tecnologias na plataforma, o usuário é capaz de editar e remover tecnologias.",
-      "A aplicação também conta com uma página de Login e Registro para novos usuários, tendo seus dados salvos numa API.",
+      "A aplicação tem o objetivo de facilitar a organização de um usuário ao estudar novas tecnologias. É possível, através dela, registrar novas tecnologias aprendidas, registrando seu nível (básico, intermediário ou avançado), também sendo capaz de editar e remove-las. A plataforma, permite também ao usuário fazer o registro e atualização de seus projetos.",
     ],
     techs: [
       "React",
@@ -166,82 +205,6 @@ const dataProjects: IProjects[] = [
       "Dark-mode;",
     ],
     images: [nuKenzieLight, nuKenzieDark, nuKenzieHome],
-  },
-  {
-    "project-name": "Blog",
-    "github-link": "https://github.com/guiwustro/blog",
-    "project-url": "https://guiwustro.github.io/blog/",
-    description:
-      "A ideia desse projeto é simular uma comunidade, onde todos os membros cadastrados podem consumir, criar, atualizar e deletar publicações de texto. Foi desenvolvido utilizando Programação Orientada a Objetos.",
-    "about-project": [
-      "O projeto conta com 3 páginas, uma para registro, outra para login e por último, a página principal, onde é possível criar, editar e deletar mensagens.",
-      "Na página de registro, o usuário é capaz de fazer registro caso preencha os campos corretamente, caso não for preenchido corretamente algum campo, é disparado um erro ao usuário. Logo após o registro, o usuário é direcionado a página principal, não havendo a necessidade de passar pelo Login. Caso o usuário já tenha uma conta criada, é possível acessar pela página de Login.",
-      "A página do blog, conta com as últimas mensagens enviadas pelos usuários. Nela o usuário é capaz de enviar mensagens, editar a mensagem já enviada e também deleta-la. Também há um botão de Logout para o usuário desconectar de sua conta.",
-    ],
-    techs: ["JavaScript", "CSS - Metodologia BEM", "HTML"],
-    features: [
-      "Página de registro do usuário contando com 4 campos (nome de usuário, e-mail, foto de perfil e senha);",
-      "Página de login;",
-      "Redirecionamento automático ao blog após o registro ou realização do login;",
-      "Página do blog com exibição das últimas mensagens enviadas pelos usuários ativos do blog;",
-      "Campo para criação de uma nova mensagem;",
-      "Possibilidade de edição da mensagem realizada pelo usuário;",
-      "Possibilidade de remoção da mensagem do usuário;",
-      "Responsivo para todas as telas.",
-    ],
-    images: [blogMain, blogRegister, blogLogin],
-  },
-  {
-    "project-name": "E-commerce single-page",
-    "github-link": "https://github.com/guiwustro/e-commerce-single-page",
-    "project-url": "https://guiwustro.github.io/e-commerce-single-page/",
-    description:
-      "É uma aplicação de página única de um e-commerce, o qual possui uma vitrine com produtos com botões de adicionar ao carrinho, um carrinho de compras,uma barra de filtros e um campo de pesquisa.",
-    "about-project": [
-      "O projeto possui uma vitrine de produtos, o qual é possível adicionar o produto ao carrinho clicando no botão Comprar.",
-      "O carrinho de compras só é visível ao usuário quando algum produto é adicionado ao carrinho. Dentro dele o usuário é capaz de aumentar, diminuir a quantidade do produto através dos botões + e - ou remover o produto. É feito automaticamente o cálculo ao cliente do carrinho a cada adição, diminuição ou remoção de produto. O número de produtos do carrinho é atualizado automaticamente também no ícone de carrinho na barra de navegação.",
-      "O projeto também conta com uma barra de pesquisa por produto e categoria, e uma barra de filtros de categorias.",
-    ],
-    techs: ["JavaScript", "CSS - Metodologia BEM", "HTML"],
-    features: [
-      "Vitrine com os produtos do e-commerce;",
-      "Botão com a opção de adicionar ao carrinho em cada produto do e-commerce;",
-      "Campo de pesquisa funcional para pesquisar por categoria ou nome do produto;",
-      "Barra de filtros por categoria;",
-      "Opção de aumentar, diminuir quantidade e remover pelo carrinho de compras;",
-      "Cálculo total do carrinho de compras;",
-      "Opção de remover todos os produtos do carrinho;",
-      "Responsivo para qualquer tela;",
-    ],
-    images: [ecommerceHome, ecommerceCart, eccomerceHome2],
-  },
-  {
-    "project-name": "Oregon Trail",
-    "github-link": "https://github.com/guiwustro/oregon-trail-game",
-    "project-url": "https://guiwustro.github.io/oregon-trail-game/",
-    description:
-      "Baseado no jogo The Oregon Trail, é uma aplicação em que o usuário monta sua própria carroça, escolhe quantos vagões ela terá , e nela consegue adicionar três tipos de viajantes. Cada viajante possui ações específicas, podendo ser a de caçar comida, comer e/ou curar. Desenvolvido utilizando Programação Orientada a Objetos. ",
-    "about-project": [
-      "Essa aplicação é composta por duas páginas, a primeira, o usuário deve escolher, o número de vagões que a carroça deverá ter e assim que escolhida, o usuário é redirecionado para página do jogo.",
-      "Na página do jogo, o usuário é capaz de adicionar novos viajantes ao vagão. É disparado um erro, caso o usuário não digite um nome para o viajante, digite um nome com mais de 15 caracteres ou tente adicionar viajantes sem possuir vagas na carroça.",
-      "Cada tipo de viajante tem seu cartão personalizado, tendo ações específicas para cada tipo de viajante.",
-      "A aplicação possui um espaço específico em que mostra o Status da carroça, ou seja, o número de viajantes doentes, a comida total e as vagas restantes.",
-    ],
-    techs: ["JavaScript", "CSS -Metodologia BEM", "HTML"],
-    features: [
-      "Escolha do número de vagões (até 20);",
-      "Formulário para o usuário cadastrar novos viajantes;",
-      "Modais de notificação ao usuário, avisando ao usuário em casos de: viajante adicionado não possui nome definido, possui mais de 15 caractéres ou não há mais espaço na carroça;",
-      "Uma vitrine contendo todos os viajantes adicionados;",
-      "Card personalizado acordo com o tipo do viajante adicionado;",
-      "Ação de comer e caçar para o viajante comum;",
-      "Ação de comer, caçar e transferir comida para o Caçador;",
-      "Ação de comer, caçar e curar outro viajante para o Doutor;",
-      "Responsivo para todas as telas;",
-      "Modais de notificação ao usuário em caso de transferência de comida sem ter a comida suficiente, comer doente, entre outros;",
-      "Botão para voltar ao menu inicial para criar outra carroça do zero, escolhendo uma nova quantidade de vagões.",
-    ],
-    images: [oregonTrail],
   },
 ];
 

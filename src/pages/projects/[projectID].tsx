@@ -48,7 +48,6 @@ const Projects = ({
                 </a>
               </Link>
             </div>
-
             <p className="project-description">
               {projects[projectIndex].description}
             </p>
@@ -84,14 +83,17 @@ const Projects = ({
                 })}
               </ul>
             </div>
-
             <div className="project-features">
-              <h3>{features}</h3>
-              <ul>
-                {projectSelected?.features.map((e, i) => {
-                  return <li key={e}>{projects[projectIndex].features[i]}</li>;
-                })}
-              </ul>
+              <>
+                <h3>{features}</h3>
+                <ul>
+                  {projectSelected?.features.map((e, i) => {
+                    return (
+                      <li key={e}>{projects[projectIndex].features[i]}</li>
+                    );
+                  })}
+                </ul>
+              </>
             </div>
           </Container>
         </motion.div>
