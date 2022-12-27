@@ -1,12 +1,114 @@
-import { AiFillHtml5 } from "react-icons/ai";
-import { FaReact, FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript, SiStyledcomponents, SiNextdotjs } from "react-icons/si";
-
+import Image from "next/image";
 import { IHomepageProps } from "pages";
 
+import {
+  BootStrap,
+  CSS,
+  Django,
+  Docker,
+  JS,
+  Jest,
+  MaterialUI,
+  MongoDB,
+  MySQL,
+  NextJS,
+  NodeJS,
+  PostGreSQL,
+  Python,
+  React,
+  Redux,
+  StyledComponents,
+  TS,
+  HTML,
+} from "../../assets/images/techs";
 import { homePageInfo } from "../../translations/home";
 import { TechsContainer } from "./styles";
+
+interface ITechList {
+  name: string;
+  width?: number;
+  height?: number;
+  image: string;
+}
+
+const TechList: ITechList[] = [
+  {
+    name: "React",
+    image: React,
+  },
+  {
+    name: "Html",
+    image: HTML,
+  },
+  {
+    name: "CSS",
+    image: CSS,
+  },
+  {
+    name: "JavaScript",
+    image: JS,
+  },
+  {
+    name: "TypeScript",
+    image: TS,
+  },
+  {
+    name: "NextJS",
+    image: NextJS,
+  },
+  {
+    name: "Styled Components",
+    image: StyledComponents,
+  },
+  {
+    name: "BootStrap",
+    image: BootStrap,
+  },
+  {
+    name: "MaterialUI",
+    image: MaterialUI,
+  },
+  {
+    name: "Jest",
+    image: Jest,
+  },
+  {
+    name: "Redux",
+    image: Redux,
+  },
+  {
+    name: "NodeJS",
+    image: NodeJS,
+    width: 30,
+  },
+  {
+    name: "Python",
+    image: Python,
+  },
+  {
+    name: "Django",
+    image: Django,
+    width: 45,
+  },
+  {
+    name: "Docker",
+    image: Docker,
+    width: 30,
+  },
+  {
+    name: "mySQL",
+    image: MySQL,
+    width: 45,
+  },
+  {
+    name: "PostgreSQL",
+    image: PostGreSQL,
+  },
+  {
+    name: "MongoDB",
+    image: MongoDB,
+  },
+];
 
 const TechsList = ({ locale }: IHomepageProps) => {
   const { techs } = homePageInfo[locale];
@@ -20,34 +122,19 @@ const TechsList = ({ locale }: IHomepageProps) => {
     >
       <h3>{techs}</h3>
       <div className="tech-list">
-        <div className="tech-item">
-          <h4>React</h4>
-          <FaReact />
-        </div>
-        <div className="tech-item">
-          <h4>HTML</h4>
-          <AiFillHtml5 />
-        </div>
-        <div className="tech-item">
-          <h4>CSS</h4>
-          <FaCss3Alt />
-        </div>
-        <div className="tech-item">
-          <h4>JavaScript</h4>
-          <IoLogoJavascript />
-        </div>
-        <div className="tech-item">
-          <h4>TypeScript</h4>
-          <SiTypescript />
-        </div>
-        <div className="tech-item">
-          <h4>Styled Components</h4>
-          <SiStyledcomponents />
-        </div>
-        <div className="tech-item">
-          <h4>Next JS</h4>
-          <SiNextdotjs />
-        </div>
+        {TechList.map(({ image, name, width, height }, index) => {
+          return (
+            <div key={index} className="tech-item">
+              <h4>{name}</h4>
+              <Image
+                src={image}
+                width={width || 25}
+                height={height || 25}
+                alt="React"
+              />
+            </div>
+          );
+        })}
       </div>
     </TechsContainer>
   );

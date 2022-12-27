@@ -30,7 +30,7 @@ export const TechsContainer = styled(motion.div)`
       align-items: center;
 
       gap: 10px;
-      width: 70px;
+      width: 90px;
       height: 100px;
       & > h4 {
         text-align: center;
