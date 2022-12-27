@@ -39,7 +39,7 @@ const ProjectsList = ({ locale }: IHomepageProps) => {
                     src={project.images[0]}
                     alt={project["project-name"]}
                     layout="fill"
-                    objectFit={"contain"}
+                    objectFit={"cover"}
                     className="project-image"
                   />
                   <div className="image-overlay">

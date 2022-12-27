@@ -88,7 +88,7 @@ const TechList: ITechList[] = [
   {
     name: "Django",
     image: Django,
-    width: 45,
+    width: 65,
   },
   {
     name: "Docker",
@@ -98,7 +98,7 @@ const TechList: ITechList[] = [
   {
     name: "mySQL",
     image: MySQL,
-    width: 45,
+    width: 55,
   },
   {
     name: "PostgreSQL",
@@ -128,8 +128,8 @@ const TechsList = ({ locale }: IHomepageProps) => {
               <h4>{name}</h4>
               <Image
                 src={image}
-                width={width || 25}
-                height={height || 25}
+                width={width || 35}
+                height={height || 35}
                 alt="React"
               />
             </div>
