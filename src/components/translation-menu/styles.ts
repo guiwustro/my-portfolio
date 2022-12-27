@@ -30,7 +30,7 @@ export const MenuContainer = styled(motion.div)`
     font-weight: 600;
     font-size: 1rem;
     font-weight: 400;
-    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+    /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
     display: flex;
     align-items: center;
     gap: 6px;
@@ -38,7 +38,7 @@ export const MenuContainer = styled(motion.div)`
       font-weight: 600;
       font-size: 1rem;
       font-weight: 400;
-      font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+      /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
       display: flex;
       align-items: center;
       gap: 6px;

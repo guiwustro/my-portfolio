@@ -12,7 +12,7 @@ export const Container = styled.footer`
     font-family: "Lato";
     text-align: center;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.1rem;
     line-height: 26px;
     color: #ffffff;

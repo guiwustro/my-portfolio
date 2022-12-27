@@ -79,7 +79,7 @@ const TechList: ITechList[] = [
   {
     name: "NodeJS",
     image: NodeJS,
-    width: 30,
+    width: 50,
   },
   {
     name: "Python",
@@ -88,7 +88,7 @@ const TechList: ITechList[] = [
   {
     name: "Django",
     image: Django,
-    width: 65,
+    width: 75,
   },
   {
     name: "Docker",

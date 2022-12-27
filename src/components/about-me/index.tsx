@@ -19,7 +19,8 @@ import {
 const AboutMe = ({ locale }: IHomepageProps) => {
   const {
     "about-me": about,
-    "front-end-developer": dev,
+    "full-stack-developer": dev,
+
     hello,
   } = homePageInfo[locale];
 

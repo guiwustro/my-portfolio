@@ -11,8 +11,8 @@ export const Container = styled.div`
     font-weight: 700;
     font-size: 1.8rem;
     line-height: 43px;
-    font-weight: 500;
-    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+    font-weight: 700;
+    /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
   }
 
   & > ul {
@@ -40,8 +40,8 @@ export const Container = styled.div`
       padding: 10px;
       & > h4 {
         font-size: 1.5rem;
-        font-weight: 400;
-        font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+        font-weight: 700;
+        /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
         color: ${(props) => props.theme.colors["blue-500"]};
       }
 
@@ -122,7 +122,7 @@ export const Container = styled.div`
       flex-direction: row;
       flex-wrap: wrap;
       gap: 25px;
-      justify-content: space-between;
+      justify-content: flex-start;
       li {
         width: 48%;
         height: 300px;
@@ -132,22 +132,21 @@ export const Container = styled.div`
 
   @media screen and (min-width: 1024px) {
     & > ul > li {
-      width: 31%;
+      width: 31.5%;
       height: 250px;
     }
   }
   @media screen and (min-width: 1200px) {
     & > ul > li {
-      width: 31%;
+      width: 31.5%;
       height: 300px;
     }
   }
-  /* @media screen and (min-width: 1440px) {
-    & > ul > li {
-      width: 31%;
-      height: 350px;
-    } */
-  /* } */
+  @media screen and (min-width: 1440px) {
+    & > ul {
+      column-gap: 38px;
+    }
+  }
 `;
 
 export const ImageContainer = styled.div`

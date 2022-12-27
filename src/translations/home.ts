@@ -7,7 +7,7 @@ interface IHomePageInfo {
   };
   "see-project": string;
   hello: string;
-  "front-end-developer": string;
+  "full-stack-developer": string;
   "about-me": string;
   techs: string;
   projects: string;
@@ -39,7 +39,7 @@ export const homePageInfo: IHomePageInfoProps = {
     },
     "see-project": "See Project",
     hello: "Hello, I'm",
-    "front-end-developer": "Front-End Developer",
+    "full-stack-developer": "Full-stack Developer",
     "about-me":
       "Undergraduate civil engineer, I develop modern web-sites, focused on performance, responsiveness, animations and SEO.",
     techs: "Technologies",
@@ -75,7 +75,7 @@ export const homePageInfo: IHomePageInfoProps = {
     },
     "see-project": "Ver projeto",
     hello: "Olá, eu sou",
-    "front-end-developer": "Desenvolvedor front-end",
+    "full-stack-developer": "Desenvolvedor full-stack",
     "about-me":
       "Engenheiro civil de graduação, desenvolvo web-sites modernos, concentrados em performance, responsividade, animações e SEO.",
     techs: "Tecnologias",

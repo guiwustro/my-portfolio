@@ -41,8 +41,8 @@ export const NameContainer = styled.div`
   #about__hello,
   #about__dev {
     font-size: 1.875rem;
-    font-weight: 500;
-    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+    font-weight: 700;
+    /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
 
     color: ${(props) => props.theme.colors["blue-700"]};
   }

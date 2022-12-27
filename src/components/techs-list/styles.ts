@@ -11,10 +11,10 @@ export const TechsContainer = styled(motion.div)`
 
   & > h3 {
     color: ${(props) => props.theme.colors["blue-700"]};
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.8rem;
     line-height: 43px;
-    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+    /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
   }
   .tech-list {
     display: flex;
@@ -40,8 +40,8 @@ export const TechsContainer = styled(motion.div)`
         height: 48px;
         display: flex;
         align-items: center;
-        font-weight: 400;
-        font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+        font-weight: 700;
+        /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
       }
       & > svg {
         fill: ${(props) => props.theme.colors["blue-500"]};

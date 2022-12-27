@@ -35,7 +35,7 @@ export const UnderLineAnimationButton = styled.div`
     gap: 6px;
     align-items: center;
     font-weight: 400;
-    font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+    /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
   }
 
   button::before {

@@ -46,8 +46,8 @@ export const Container = styled.div`
     display: none;
     a {
       font-size: 1.1rem;
-      font-weight: 500;
-      font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif;
+      font-weight: 700;
+      /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
       :hover {
         text-decoration: none;
       }
