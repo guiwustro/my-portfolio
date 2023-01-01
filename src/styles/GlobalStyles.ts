@@ -28,7 +28,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-  background-color: ${(props) => props.theme.colors["blue-500"]};
+  background-color: ${(props) => props.theme.colors["primary-color-500"]};
 }
 
 #__next{

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import background from "../assets/images/background-projects.png";
 import backgroundHome from "../assets/images/backgroundHome.jpg";
 import bgc from "../assets/images/bgc-1.jpg";
 import bgc4 from "../assets/images/bgc-4.jpg";
@@ -14,10 +13,11 @@ export const ContainerMain = styled.div`
 `;
 
 export const ContainerImage = styled.div`
-  background-image: url(${backgroundHome});
+  /* background-image: url(${backgroundHome}); */
+  background-image: url(${(props) => props.theme.colors["background-image"]});
+  transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
 
   background-size: cover;
-
   .landingImage {
     z-index: 0;
     height: 100%;
@@ -27,11 +27,9 @@ export const ContainerImage = styled.div`
 `;
 
 export const ContainerBackGround = styled.div`
-  /* background-image: url(${background}); */
-  background-image: url(${bgc4});
-
+  background-image: url(${(props) => props.theme.colors["background-image"]});
   background-size: cover;
-  border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
+  border-top: 1px solid ${(props) => props.theme.colors["primary-color-250"]};
   background-repeat: no-repeat;
   padding-bottom: 70px;
   width: 100vw;
@@ -51,7 +49,9 @@ export const BackgroundContact = styled.div`
   background-image: url(${bgc});
   background-image: url(${backgroundHome});
   background-image: url(${bgc4});
-  border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
+  background-image: url(${(props) => props.theme.colors["background-image"]});
+  background-image: linear-gradient(#0c285a, #0d50a1);
+  border-top: 1px solid ${(props) => props.theme.colors["primary-color-250"]};
   background-repeat: no-repeat;
   background-size: cover;
 `;

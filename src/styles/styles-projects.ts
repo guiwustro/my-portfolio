@@ -4,7 +4,7 @@ import bgc4 from "../assets/images/bgc-4.jpg";
 
 export const ContainerBackGround = styled.div`
   background-image: url(${bgc4});
-  border-top: 1px solid ${(props) => props.theme.colors["blue-250"]};
+  border-top: 1px solid ${(props) => props.theme.colors["primary-color-250"]};
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 70px;
@@ -46,13 +46,13 @@ export const Container = styled.div`
       font-weight: 500;
       font-size: 1.1rem;
       height: 40px;
-      background-color: ${(props) => props.theme.colors["blue-300"]};
+      background: ${(props) => props.theme.colors["primary-color-see-website"]};
       display: block;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: ${(props) => props.theme.colors["text"]};
+      color: ${(props) => props.theme.colors.text};
     }
   }
 
@@ -80,7 +80,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: ${(props) => props.theme.colors["blue-200"]};
+    background-color: ${(props) => props.theme.colors["primary-color-200"]};
     gap: 24px;
     & > h3 {
       padding-left: 30px;
@@ -108,6 +108,7 @@ export const Container = styled.div`
       }
     }
   }
+
   .website-link__desktop {
     padding: 5px 30px;
     width: 195px;
@@ -115,7 +116,7 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 36px;
-    background: ${(props) => props.theme.colors["blue-see-website"]};
+    background: ${(props) => props.theme.colors["primary-color-see-website"]};
 
     display: none;
     align-self: center;

@@ -1,23 +1,22 @@
+import background from "../../assets/images/backgrounds/bgc-blue-dark-1.png";
+
 export const darkBlueTheme = {
   title: "darkBlueTheme",
   colors: {
-    text: "#F5F2F2",
-
+    text: "#ffffff",
     body: "#557A95",
-    // Header #040d1a #7395AE
-
-    "text-white": "#F5F2F2",
-
+    "text-white": "#ffffff",
     "border-color": "#CCCCDB",
-
-    "blue-200": "#040d1a", //header
-    "blue-500": "#CEE1EE",
-    "blue-700": "#E9F2FF", //title Eu sou
-    "blue-300": "#8EB5D1",
-
-    "blue-250": "#9EC1DB",
-    // "blue-see-website2": "#8EB5D1",
-    "blue-see-website": "linear-gradient(45deg, transparent, #2196f3)",
-    "blue-gradient": "45deg, #bddbf1, white",
+    "primary-color-200": "#040d1a", //header
+    "primary-color-250": "#9EC1DB",
+    "primary-color-500": "#CEE1EE",
+    "background-image": background,
+    "primary-color-700": "#E9F2FF", //title Eu sou
+    // "primary-color-see-website2": "#8EB5D1",
+    "primary-color-see-website": "linear-gradient(45deg, transparent, #2196f3)",
+    "tooltip-background": "#87b4ce",
+    "background-project-image": "rgba(16, 54, 83, 0.9)",
+    "footer-color": "#112b3eb5",
+    "primary-color-gradient": "45deg, #bddbf1, white",
   },
 };

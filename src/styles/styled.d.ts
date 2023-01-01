@@ -9,13 +9,16 @@ declare module "styled-components" {
       body: string;
       "text-white": string;
       "border-color": string;
-      "blue-200": string;
-      "blue-300": string;
-      "blue-500": string;
-      "blue-700": string;
-      "blue-250": string;
-      "blue-see-website": string;
-      "blue-gradient": string;
+      "background-image": string;
+      "primary-color-200": string; //header
+      "primary-color-250": string; //borders
+      "primary-color-500": string; //Project name
+      "primary-color-700": string; //title Eu sou
+      "tooltip-background": string;
+      "primary-color-see-website": string;
+      "background-project-image": string;
+      "primary-color-gradient": string;
+      "footer-color": string;
     };
   }
 }
