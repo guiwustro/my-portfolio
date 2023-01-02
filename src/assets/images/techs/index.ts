@@ -7,7 +7,7 @@ import Jest from "./Jest.png";
 import JS from "./JS.png";
 import MaterialUI from "./MaterialUI.png";
 import MongoDB from "./MongoDB.png";
-import MySQL from "./MySQL.png";
+import MySQL from "./mySQL.png";
 import NextJS from "./NextJS.png";
 import NodeJS from "./NodeJS.png";
 import PostGreSQL from "./PostGreSQL.png";
