@@ -44,7 +44,7 @@ export const NameContainer = styled.div`
     font-weight: 700;
     /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
 
-    color: ${(props) => props.theme.colors["blue-700"]};
+    color: ${(props) => props.theme.colors["primary-color-700"]};
   }
 
   span.retroshadow {
@@ -87,13 +87,13 @@ export const NameContainer = styled.div`
 
   @media screen and (min-width: 380px) {
     span.retroshadow {
-      font-size: 3.1rem;
+      font-size: 3rem;
     }
     .retroshadow::before {
-      font-size: 3.1rem;
+      font-size: 3rem;
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 631px) {
     .retroshadow::before {
       white-space: nowrap;
     }
@@ -113,14 +113,19 @@ export const IconsContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+`;
+
+export const IconContainer = styled.div`
+  width: 100%;
+  position: relative;
   & > a {
-    position: relative;
+    /* position: relative; */
   }
   & > a > svg {
-    width: 33px;
+    /* width: 33px; */
     height: 100%;
 
-    fill: ${(props) => props.theme.colors["blue-500"]};
+    fill: ${(props) => props.theme.colors["primary-color-500"]};
   }
   & > a:before {
     content: "";
@@ -168,15 +173,14 @@ export const PhotoContainer = styled.div`
   }
 `;
 
-export const Ellipse = styled.div`
-  border-radius: 100%;
+export const PositionDots = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(99, 143, 174, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  right: -30px;
+  top: 10px;
+
+  @media screen and (min-width: 768px) {
+    right: 30px;
+  }
 `;
+
+export const PositionLightBulb = styled.div``;

@@ -3,17 +3,22 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { ImageAnimation, TextAnimation } from "components/about-me-animation";
 import LightBulbAnimation from "components/lighbulb-animation";
 import RocketAnimation from "components/rocket-animation";
+import Tooltip from "components/tooltip";
+import ToolTipChangeTheme from "components/tooltip-change-theme";
 import Image from "next/image";
 import { IHomepageProps } from "pages";
 import { homePageInfo } from "translations/home";
 
+import DotImage from "../../assets/images/dots_image.png";
 import MyPhoto from "../../assets/images/myPhoto.png";
 import {
   Container,
+  IconContainer,
   IconsContainer,
   LeftSideContainer,
   NameContainer,
   PhotoContainer,
+  PositionDots,
 } from "./styles";
 
 const AboutMe = ({ locale }: IHomepageProps) => {
@@ -25,7 +30,8 @@ const AboutMe = ({ locale }: IHomepageProps) => {
   } = homePageInfo[locale];
 
   return (
-    <Container id="home">
+    <Container id="home" style={{ position: "relative" }}>
+      <ToolTipChangeTheme />
       <LeftSideContainer>
         <NameContainer>
           <TextAnimation>
@@ -46,27 +52,46 @@ const AboutMe = ({ locale }: IHomepageProps) => {
         </TextAnimation>
         <TextAnimation>
           <IconsContainer>
-            <a
-              target="_blank"
-              href={"https://www.linkedin.com/in/guilhermewustro/"}
-              rel="noreferrer"
+            <Tooltip
+              title={"Linkedin"}
+              width={70}
+              ContainerWidth={19}
+              position="left"
             >
-              <BsLinkedin />
-            </a>
-            <a
-              target="_blank"
-              href={"https://github.com/guiwustro"}
-              rel="noreferrer"
+              <a
+                target="_blank"
+                href={"https://www.linkedin.com/in/guilhermewustro/"}
+                rel="noreferrer"
+              >
+                <BsLinkedin />
+              </a>
+            </Tooltip>
+
+            <Tooltip
+              title={"Github"}
+              width={70}
+              ContainerWidth={19}
+              position="left"
             >
-              <BsGithub />
-            </a>
+              <IconContainer>
+                <a
+                  target="_blank"
+                  href={"https://github.com/guiwustro"}
+                  rel="noreferrer"
+                >
+                  <BsGithub />
+                </a>
+              </IconContainer>
+            </Tooltip>
           </IconsContainer>
         </TextAnimation>
       </LeftSideContainer>
       <ImageAnimation>
         <PhotoContainer>
-          {/* <LightBulbAnimation /> */}
-          {/* <Ellipse /> */}
+          <PositionDots>
+            <Image src={DotImage} width="28" height="28" alt="Dots" />
+          </PositionDots>
+          <LightBulbAnimation />
           <Image src={MyPhoto} width="275" height="275" alt="GW" />
           <RocketAnimation />
         </PhotoContainer>
