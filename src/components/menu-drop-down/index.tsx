@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 
-// import ThemeButton from "components/theme-button";
+import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -15,7 +15,8 @@ import { ContainerMenu } from "./styles";
 
 const MenuDropDown = ({ locale }: IHomepageProps) => {
   const { toogleMenuDropDown } = useMenuDropDownContext();
-  const { contact, home, projects, technologies } = homePageInfo[locale].header;
+  const { contact, home, projects, technologies, colors } =
+    homePageInfo[locale].header;
   const { pathname, asPath, query } = useRouter();
   const router = useRouter();
 
@@ -80,6 +81,9 @@ const MenuDropDown = ({ locale }: IHomepageProps) => {
           </Link>
         </UnderLineAnimation>
       </nav>
+      <div className="center-div">
+        <ThemeButton colors={colors} />
+      </div>
       <div>
         <UnderLineAnimationButton>
           <button
@@ -105,8 +109,6 @@ const MenuDropDown = ({ locale }: IHomepageProps) => {
             English
           </button>
         </UnderLineAnimationButton>
-
-        <div className="center-div">{/* <ThemeButton /> */}</div>
       </div>
     </ContainerMenu>
   );

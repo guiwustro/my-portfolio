@@ -10,8 +10,8 @@ export const ContainerMenu = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 230px;
-  background-color: ${(props) => props.theme.colors["blue-200"]};
-  border: 1px solid ${(props) => props.theme.colors["blue-250"]};
+  background-color: ${(props) => props.theme.colors["primary-color-200"]};
+  border: 1px solid ${(props) => props.theme.colors["primary-color-250"]};
   padding: 24px;
   nav {
     display: flex;
