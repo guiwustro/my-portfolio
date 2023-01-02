@@ -16,7 +16,8 @@ import {
   salmonTheme,
 } from "../styles/themes";
 
-export type TThemes = "darkBlue" | "green" | "salmon";
+export type TThemes = "darkBlue" | "green";
+// export type TThemes = "darkBlue" | "green" | "salmon";
 interface IThemeContextData {
   themeName: TThemes;
   toggleTheme: (theme: TThemes) => void;
@@ -32,10 +33,10 @@ export const AppThemeProvider = ({ children }: IThemeChildren) => {
   const [themeName, setThemeName] = useState<TThemes>("darkBlue");
 
   const themes = {
-    lightBlue: lightBlueTheme,
+    // lightBlue: lightBlueTheme,
     darkBlue: darkBlueTheme,
     green: greenTheme,
-    salmon: salmonTheme,
+    // salmon: salmonTheme,
   };
 
   const theme = useMemo(() => {
