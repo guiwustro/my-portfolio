@@ -45,12 +45,12 @@ const TranslationMenu = () => {
           {locale === "default" ? (
             <>
               <BrazilFlag />
-              Português-BR
+              <span>Português-BR</span>
             </>
           ) : (
             <>
               <UsaFlag />
-              English
+              <span>English</span>
             </>
           )}
         </button>
@@ -77,7 +77,6 @@ const TranslationMenu = () => {
                 stiffness: 100,
               },
             }}
-            // transition={{ type: "spring", stiffness: "100", duration: "0.75" }}
           >
             <button
               onClick={() => {

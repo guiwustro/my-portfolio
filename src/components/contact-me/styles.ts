@@ -69,7 +69,7 @@ export const FormGroup = styled.div<IFormProps>`
   & > input {
     width: 100%;
     background: transparent;
-    color: ${(props) => props.theme.colors["blue-250"]};
+    color: ${(props) => props.theme.colors["primary-color-250"]};
     color: #ffff;
     border: none;
     outline: none;

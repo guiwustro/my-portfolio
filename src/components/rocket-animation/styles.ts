@@ -15,7 +15,7 @@ const Container = styled.div`
   display: none;
 
   .rocket__animation {
-    animation: ${spin} 12s infinite linear;
+    /* animation: ${spin} 12s infinite linear; */
     position: absolute;
     border-radius: 50%;
     height: 100%;
@@ -26,24 +26,24 @@ const Container = styled.div`
 
       position: absolute;
       transform: translateX(-50%);
-      left: 110px;
+      left: -14px;
       height: 60px;
       width: 15px;
-      top: -4px;
-      transform: rotate(90deg);
+      top: 35px;
+      transform: rotate(60deg);
       background: linear-gradient(#ffffff, #cceff740, transparent);
       filter: blur(5px);
     }
     &::before {
       content: "";
       position: absolute;
-      left: 110px;
+      left: -14px;
       height: 60px;
       width: 15px;
-      top: -4px;
+      top: 35px;
       transform: translateX(-50%);
 
-      transform: rotate(90deg);
+      transform: rotate(60deg);
       background: linear-gradient(#00d0ff, #00d0ff40, transparent);
       filter: blur(30px);
     }
@@ -51,14 +51,16 @@ const Container = styled.div`
       fill: #cee1ee;
       height: 50px;
       width: 50px;
-      top: 0;
+      top: 10px;
       right: 10;
-      left: 150px;
-      transform: rotate(45deg);
+      left: 20px;
+      /* transform: rotate(45deg); */
+      transform: rotate(15deg);
       position: absolute;
     }
   }
   @media screen and (min-width: 768px) {
+    transform: scale(1);
     display: block;
   }
 `;

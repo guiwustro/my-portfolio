@@ -6,8 +6,17 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 50px 20px;
 
-  & > h3 {
-    color: ${(props) => props.theme.colors["blue-700"]};
+  .project-title {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    & > span {
+      font-weight: 700;
+    }
+  }
+
+  & > .project-title > h3 {
+    color: ${(props) => props.theme.colors["primary-color-700"]};
     font-weight: 700;
     font-size: 1.8rem;
     line-height: 43px;
@@ -26,23 +35,23 @@ export const Container = styled.div`
   }
 
   & > ul > li {
-    height: 250px;
+    height: 270px;
     width: 100%;
     display: flex;
     border-radius: 8px;
     flex-direction: column;
     justify-content: space-between;
-    background-color: ${(props) => props.theme.colors["blue-200"]};
+    background-color: ${(props) => props.theme.colors["primary-color-200"]};
     .item-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding: 10px;
       & > h4 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
         /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
-        color: ${(props) => props.theme.colors["blue-500"]};
+        color: ${(props) => props.theme.colors["primary-color-500"]};
       }
 
       & > a {
@@ -50,7 +59,7 @@ export const Container = styled.div`
         width: 25px;
         height: 25px;
         border-radius: 50%;
-        z-index: 12;
+        z-index: 0;
       }
       & > a > svg {
         width: 25px;
@@ -77,8 +86,6 @@ export const Container = styled.div`
         background: #0f558d;
         filter: blur(3px);
       }
-      & > a:hover {
-      }
     }
   }
   .project-image {
@@ -88,6 +95,11 @@ export const Container = styled.div`
   @media screen and (min-width: 425px) {
     & > ul > li {
       height: 300px;
+      .item-header {
+        & > h4 {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
   @media screen and (min-width: 490px) {
@@ -133,7 +145,7 @@ export const Container = styled.div`
   @media screen and (min-width: 1024px) {
     & > ul > li {
       width: 31.5%;
-      height: 250px;
+      height: 280px;
     }
   }
   @media screen and (min-width: 1200px) {
@@ -167,9 +179,10 @@ export const ImageContainer = styled.div`
     border-bottom-left-radius: 8px;
     height: 100%;
   }
+
   & > .image-overlay:hover {
-    background: ${(props) => props.theme.colors["blue-200"]};
-    background: rgba(16, 54, 83, 0.9);
+    background: ${(props) => props.theme.colors["background-project-image"]};
+
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
   }
@@ -180,13 +193,17 @@ export const ImageContainer = styled.div`
   .image-overlay > .image-description {
     position: absolute;
     top: 0;
-    margin: 10%;
+    margin: 7%;
     left: 0;
     text-align: center;
     display: flex;
     align-items: center;
     height: 100%;
     max-height: 150px;
+
+    margin: 4%;
+    max-height: 200px;
+
     min-height: 150px;
     justify-content: space-between;
     opacity: 0;
@@ -233,8 +250,14 @@ export const ContainerSeeProject = styled.span`
   padding: 5px 30px;
   font-weight: 500;
   font-size: 1.4rem;
-  background: ${(props) => props.theme.colors["blue-see-website"]};
+  background: ${(props) => props.theme.colors["primary-color-see-website"]};
   text-align: center;
   justify-self: end;
   color: ${(props) => props.theme.colors["text"]};
+`;
+
+export const TechIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 `;

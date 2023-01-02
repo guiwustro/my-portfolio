@@ -9,11 +9,17 @@ import {
 
 import { ThemeProvider } from "styled-components";
 
-import { darkBlueTheme, lightBlueTheme } from "../styles/themes";
+import {
+  darkBlueTheme,
+  lightBlueTheme,
+  greenTheme,
+  salmonTheme,
+} from "../styles/themes";
 
+export type TThemes = "darkBlue" | "green" | "salmon";
 interface IThemeContextData {
-  themeName: "light" | "dark";
-  toggleTheme: () => void;
+  themeName: TThemes;
+  toggleTheme: (theme: TThemes) => void;
 }
 
 interface IThemeChildren {
@@ -23,18 +29,23 @@ interface IThemeChildren {
 const ThemeContext = createContext({} as IThemeContextData);
 
 export const AppThemeProvider = ({ children }: IThemeChildren) => {
-  const [themeName, setThemeName] = useState<"light" | "dark">("dark");
+  const [themeName, setThemeName] = useState<TThemes>("darkBlue");
+
+  const themes = {
+    lightBlue: lightBlueTheme,
+    darkBlue: darkBlueTheme,
+    green: greenTheme,
+    salmon: salmonTheme,
+  };
 
   const theme = useMemo(() => {
-    if (themeName === "light") return lightBlueTheme;
-
-    return darkBlueTheme;
+    return themes[themeName];
   }, [themeName]);
 
-  const toggleTheme = useCallback(() => {
-    setThemeName((oldThemeName) =>
-      oldThemeName === "light" ? "dark" : "light",
-    );
+  // const toogleTheme =
+
+  const toggleTheme = useCallback((theme: TThemes) => {
+    setThemeName(theme);
   }, []);
 
   return (

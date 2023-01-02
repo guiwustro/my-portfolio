@@ -2,6 +2,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 import MenuDropDown from "components/menu-drop-down";
 // import ThemeButton from "components/theme-button";
+import ThemeButton from "components/theme-button";
 import { useMenuDropDownContext } from "contexts/menuDropDownProvider";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -22,7 +23,8 @@ import {
 
 const Header = ({ locale }: IHomepageProps) => {
   const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
-  const { contact, home, projects, technologies } = homePageInfo[locale].header;
+  const { contact, home, projects, technologies, colors } =
+    homePageInfo[locale].header;
   const { isOpenMenuDropDown, toogleMenuDropDown } = useMenuDropDownContext();
   return (
     <CenterContainer>
@@ -62,7 +64,7 @@ const Header = ({ locale }: IHomepageProps) => {
         </nav>
         <ContainerTheme>
           <TranslationMenu />
-          {/* <ThemeButton /> */}
+          <ThemeButton colors={colors} />
         </ContainerTheme>
         <Mobile>
           <ButtonMenu onClick={() => toogleMenuDropDown(undefined)}>

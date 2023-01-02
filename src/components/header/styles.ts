@@ -5,7 +5,7 @@ export const CenterContainer = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -23,10 +23,6 @@ export const Container = styled.div`
   margin-left: 0 auto;
   padding: 0 20px;
 
-  z-index: 999;
-  & > div > svg path {
-    fill: ${(props) => props.theme.colors["text"]};
-  }
   &:before {
     content: "";
     z-index: -1;
@@ -35,10 +31,10 @@ export const Container = styled.div`
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: ${(props) => props.theme.colors["blue-200"]};
+    background-color: ${(props) => props.theme.colors["primary-color-200"]};
     border-bottom: 1px solid;
 
-    border-color: ${(props) => props.theme.colors["blue-250"]};
+    border-color: ${(props) => props.theme.colors["primary-color-250"]};
   }
   #logo {
   }
@@ -88,6 +84,8 @@ export const ContainerTheme = styled.div`
   display: flex;
   flex-direction: row;
   gap: 30px;
+  width: 300px;
+  margin-top: 8px;
 
   @media screen and (min-width: 1024px) {
     gap: 60px;

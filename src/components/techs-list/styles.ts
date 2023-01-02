@@ -10,7 +10,7 @@ export const TechsContainer = styled(motion.div)`
   padding: 0 20px;
 
   & > h3 {
-    color: ${(props) => props.theme.colors["blue-700"]};
+    color: ${(props) => props.theme.colors["primary-color-700"]};
     font-weight: 700;
     font-size: 1.8rem;
     line-height: 43px;
@@ -34,7 +34,7 @@ export const TechsContainer = styled(motion.div)`
       height: 100px;
       & > h4 {
         text-align: center;
-        color: ${(props) => props.theme.colors["blue-700"]};
+        color: ${(props) => props.theme.colors["primary-color-700"]};
         font-size: 1rem;
         line-height: 24px;
         height: 48px;
@@ -44,7 +44,7 @@ export const TechsContainer = styled(motion.div)`
         /* font-family: "Reggae One", CenturyGothic, "AppleGothic", sans-serif; */
       }
       & > svg {
-        fill: ${(props) => props.theme.colors["blue-500"]};
+        fill: ${(props) => props.theme.colors["primary-color-500"]};
         width: 40px;
         height: 40px;
       }
@@ -58,7 +58,7 @@ export const TechsContainer = styled(motion.div)`
       justify-content: flex-start;
       .tech-item {
         & > svg {
-          fill: ${(props) => props.theme.colors["blue-500"]};
+          fill: ${(props) => props.theme.colors["primary-color-500"]};
           width: 50px;
           height: 50px;
         }
