@@ -4,8 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
-NODE VERSION: 18.10
-If the Node.js version is less than 18.10 the application maybe can't be stated.
+NODE VERSION: 18.0 OR SUPERIOR
+
+If the Node.js version is less than 18.0 the application maybe can't be started.
 
 ```bash
 npm run dev
