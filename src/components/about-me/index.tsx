@@ -58,13 +58,15 @@ const AboutMe = ({ locale }: IHomepageProps) => {
               ContainerWidth={19}
               position="left"
             >
-              <a
-                target="_blank"
-                href={"https://www.linkedin.com/in/guilhermewustro/"}
-                rel="noreferrer"
-              >
-                <BsLinkedin />
-              </a>
+              <IconContainer>
+                <a
+                  target="_blank"
+                  href={"https://www.linkedin.com/in/guilhermewustro/"}
+                  rel="noreferrer"
+                >
+                  <BsLinkedin />
+                </a>
+              </IconContainer>
             </Tooltip>
 
             <Tooltip

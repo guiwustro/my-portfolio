@@ -18,8 +18,10 @@ export const ContainerMaxWidth = styled.div`
 export const Container = styled.div`
   padding: 40px 20px;
   min-height: 600px;
+
   h1 {
-    color: #e9f2ff;
+    color: ${({ theme }) => theme.colors["text"]};
+
     font-weight: 700;
     font-size: 1.8rem;
     padding-bottom: 20px;
@@ -70,7 +72,8 @@ export const FormGroup = styled.div<IFormProps>`
     width: 100%;
     background: transparent;
     color: ${(props) => props.theme.colors["primary-color-250"]};
-    color: #ffff;
+    color: ${({ theme }) => theme.colors["text"]};
+
     border: none;
     outline: none;
     box-shadow: none;
@@ -86,6 +89,8 @@ export const FormGroup = styled.div<IFormProps>`
     position: absolute;
     left: 0;
     color: rgba(255, 255, 255, 1);
+    color: ${({ theme }) => theme.colors["text"]};
+
     text-transform: uppercase;
     pointer-events: none;
     letter-spacing: 0.1rem;
@@ -146,11 +151,11 @@ export const FormGroupArea = styled.div<IFormProps>`
   & > label {
     position: absolute;
     left: 0;
-    color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
     pointer-events: none;
     letter-spacing: 0.1rem;
     padding: 10px 10px 5px;
+    color: ${({ theme }) => theme.colors["text"]};
 
     transition: 0.5s;
   }

@@ -48,7 +48,8 @@ const Container = styled.div`
       filter: blur(30px);
     }
     & > svg {
-      fill: #cee1ee;
+      fill: ${(props) => props.theme.colors["primary-color-500"]};
+
       height: 50px;
       width: 50px;
       top: 10px;

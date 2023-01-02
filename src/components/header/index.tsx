@@ -18,6 +18,7 @@ import {
   CenterContainer,
   Container,
   ContainerTheme,
+  JustDesktop,
   Mobile,
 } from "./styles";
 
@@ -64,7 +65,9 @@ const Header = ({ locale }: IHomepageProps) => {
         </nav>
         <ContainerTheme>
           <TranslationMenu />
-          <ThemeButton colors={colors} />
+          <JustDesktop>
+            <ThemeButton colors={colors} />
+          </JustDesktop>
         </ContainerTheme>
         <Mobile>
           <ButtonMenu onClick={() => toogleMenuDropDown(undefined)}>

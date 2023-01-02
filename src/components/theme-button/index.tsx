@@ -14,8 +14,8 @@ interface IThemeColor {
 }
 const themeColors: IThemeColor[] = [
   { colorName: "darkBlue", colorCode: "#7395AE" },
-  { colorName: "green", colorCode: "#A5F8B7" },
-  { colorName: "salmon", colorCode: "#EAC5C5" },
+  { colorName: "green", colorCode: "#4CBA64" },
+  // { colorName: "salmon", colorCode: "#EAC5C5" },
 ];
 export interface NewAnimatePresenceProps
   extends Omit<AnimatePresenceProps, "children"> {
@@ -57,7 +57,6 @@ const ThemeButton = ({ colors }: IPropsThemeButton) => {
       document.removeEventListener("mousedown", handleOutClick);
     };
   }, []);
-  console.log(colors);
 
   return (
     <div ref={modalRef} style={{ position: "relative" }}>

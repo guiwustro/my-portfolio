@@ -4,10 +4,9 @@ export const Container = styled.footer`
   height: 60px;
   display: flex;
   align-items: center;
-  /* background-color: #112b3eb5; */
-  background-color: ${({ theme }) => theme.colors["footer-color"]};
   border-top: 1px solid rgba(204, 204, 219, 1);
   justify-content: center;
+  background-color: ${({ theme }) => theme.colors["footer-color"]};
 
   span {
     font-family: "Lato";

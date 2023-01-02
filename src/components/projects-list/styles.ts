@@ -82,8 +82,7 @@ export const Container = styled.div`
 
       & > a:hover:before {
         transform: scale(1.2);
-        box-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
-        background: #0f558d;
+        background: ${(props) => props.theme.colors["hover-color-github"]};
         filter: blur(3px);
       }
     }

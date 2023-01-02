@@ -4,7 +4,9 @@ import { ToolTipChangeThemeContainer } from "./styles";
 
 const ToolTipChangeTheme = () => {
   return (
-    <ToolTipChangeThemeContainer>Change Theme!</ToolTipChangeThemeContainer>
+    <ToolTipChangeThemeContainer>
+      {/* Change theme! */}
+    </ToolTipChangeThemeContainer>
   );
 };
 

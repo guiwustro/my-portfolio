@@ -46,11 +46,8 @@ export const DivAngle = styled.div`
 `;
 
 export const BackgroundContact = styled.div`
-  background-image: url(${bgc});
-  background-image: url(${backgroundHome});
-  background-image: url(${bgc4});
   background-image: url(${(props) => props.theme.colors["background-image"]});
-  background-image: linear-gradient(#0c285a, #0d50a1);
+  background: ${(props) => props.theme.colors["footer-color"]};
   border-top: 1px solid ${(props) => props.theme.colors["primary-color-250"]};
   background-repeat: no-repeat;
   background-size: cover;

@@ -52,11 +52,14 @@ export const Container = styled.div`
 
   .logo__mobile {
     display: block;
-    margin-top: 8px;
+    margin-top: 5px;
+
+    margin-left: 5px;
   }
   .logo__desktop {
     display: none;
-    margin-top: 8px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
 
   @media screen and (min-width: 768px) {
@@ -85,7 +88,8 @@ export const ContainerTheme = styled.div`
   flex-direction: row;
   gap: 30px;
   width: 300px;
-  margin-top: 8px;
+  margin-top: 5px;
+  margin-left: 5px;
 
   @media screen and (min-width: 1024px) {
     gap: 60px;
@@ -131,5 +135,13 @@ export const Desktop = styled.div`
     nav {
       gap: 60px;
     }
+  }
+`;
+
+export const JustDesktop = styled.div`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
   }
 `;

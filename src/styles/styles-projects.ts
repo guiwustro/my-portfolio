@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-import bgc4 from "../assets/images/bgc-4.jpg";
-
 export const ContainerBackGround = styled.div`
-  background-image: url(${bgc4});
+  background-image: url(${(props) => props.theme.colors["background-image"]});
   border-top: 1px solid ${(props) => props.theme.colors["primary-color-250"]};
   background-repeat: no-repeat;
   background-size: cover;

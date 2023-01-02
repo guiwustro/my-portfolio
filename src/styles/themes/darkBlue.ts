@@ -16,7 +16,17 @@ export const darkBlueTheme = {
     "primary-color-see-website": "linear-gradient(45deg, transparent, #2196f3)",
     "tooltip-background": "#87b4ce",
     "background-project-image": "rgba(16, 54, 83, 0.9)",
-    "footer-color": "#112b3eb5",
+    "footer-color": "linear-gradient(#0c285a, #0d50a1)",
+    "hover-color-github": "#0f558d",
     "primary-color-gradient": "45deg, #bddbf1, white",
+
+    // Name
+
+    "color-name-before": "#bbd2f3",
+    "color-name-after": "#e9f2ff",
+
+    "text-shadow-before": "4px 4px 0px #788aa1, 7px 7px 0px rgba(0, 0, 0, 0.5)",
+    "text-shadow-after":
+      "4px 4px 0px #7a838e, 7px 7px 0px rgba(0, 0, 0, 0.5),0 0 10px #fff, 0 0 5px #fff;",
   },
 };

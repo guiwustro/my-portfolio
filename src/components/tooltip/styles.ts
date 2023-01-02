@@ -20,6 +20,8 @@ export const Container = styled.div<ITooltipProps>`
   span {
     width: ${({ width }) => width}px;
     background: ${({ theme }) => theme.colors["tooltip-background"]};
+    color: ${({ theme }) => theme.colors["text"]};
+
     padding: 5px;
     border-radius: 4px;
     font-family: "Lato";
@@ -43,15 +45,17 @@ export const Container = styled.div<ITooltipProps>`
           `}
 
     transform: translateX(-50%);
-    color: #ffffff;
+    /* color: #ffffff; */
     text-align: center;
 
     &::before {
       content: "";
       position: absolute;
       border-style: solid;
-      border-color: #87b4ce transparent;
+      border-color: ${({ theme }) =>
+        `${theme.colors["tooltip-background"]} transparent`};
       border-width: 6px 6px 0 6px;
+
       ${({ position }) =>
         position === "right"
           ? css`

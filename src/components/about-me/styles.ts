@@ -52,10 +52,11 @@ export const NameContainer = styled.div`
     font-size: 2.5rem;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
-    color: #bbd2f3;
     position: relative;
     letter-spacing: 0.05em;
-    text-shadow: 4px 4px 0px #788aa1, 7px 7px 0px rgba(0, 0, 0, 0.5);
+
+    color: ${(props) => props.theme.colors["color-name-before"]};
+    text-shadow: ${(props) => props.theme.colors["text-shadow-before"]};
   }
   @keyframes animate {
     0%,
@@ -77,10 +78,10 @@ export const NameContainer = styled.div`
     width: 140%;
     font-size: 2.5rem;
     word-wrap: normal;
-    color: #e9f2ff;
-    text-shadow: 4px 4px 0px #7a838e, 7px 7px 0px rgba(0, 0, 0, 0.5),
-      0 0 10px #fff, 0 0 5px #fff;
     overflow: hidden;
+
+    color: ${(props) => props.theme.colors["color-name-after"]};
+    text-shadow: ${(props) => props.theme.colors["text-shadow-after"]};
 
     animation: animate 15s linear infinite;
   }
@@ -138,21 +139,15 @@ export const IconContainer = styled.div`
     transition: 0.5s;
     transform: scale(0.9);
     z-index: -1;
+    border-radius: 50%;
   }
   & > a:nth-child(2):before {
     border-radius: 50%;
   }
   & > a:hover:before {
     transform: scale(1.2);
-    box-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
-    background: #0f558d;
-
+    background: ${(props) => props.theme.colors["hover-color-github"]};
     filter: blur(3px);
-  }
-  & > a:hover {
-    color: linear-gradient(45deg, transparent, #2196f3);
-    box-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
-    text-shadow: 0 0 15px linear-gradient(45deg, transparent, #2196f3);
   }
 `;
 

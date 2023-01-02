@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const TranslationContainer = styled.div`
   position: relative;
   min-width: 130px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   display: none;
   @media (min-width: 768px) {
     display: block;
