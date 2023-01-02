@@ -14,6 +14,8 @@ interface IProjectInfo {
   features: string;
   "about-project": string;
   projects: IProject[];
+  "deploy-api-message": string;
+  "see-code": string;
 }
 
 export interface IProjectsInfo {
@@ -27,6 +29,9 @@ export const projectsInfo: IProjectsInfo = {
     techs: "Technologies",
     features: "Features",
     "about-project": "About project",
+    "deploy-api-message":
+      "The API deploy may be offline so some functionality will not be working!",
+    "see-code": "See code",
     projects: [
       {
         "project-name": "Me Au Pet Hotel",
@@ -257,6 +262,9 @@ export const projectsInfo: IProjectsInfo = {
     techs: "Tecnologias",
     features: "Funcionalidades",
     "about-project": "Sobre o projeto",
+    "deploy-api-message":
+      "O deploy da API pode estar off-line por isso algumas funcionalidades não estarão funcionando!",
+    "see-code": "Ver código",
     projects: [
       {
         "project-name": "Me Au Pet Hotel",
