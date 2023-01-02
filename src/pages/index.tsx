@@ -1,8 +1,10 @@
 import ContactMe from "components/contact-me";
 import Footer from "components/footer";
-import { AnimatePresence } from "framer-motion";
+import ToolTipChangeTheme from "components/tooltip-change-theme";
 import { GetStaticPropsContext } from "next";
+import Head from "next/head";
 
+import icon from "../assets/icons/gw.svg";
 import AboutMe from "../components/about-me";
 import Header from "../components/header";
 import ProjectsList from "../components/projects-list";
@@ -21,23 +23,28 @@ export interface IHomepageProps {
 
 const Homepage = ({ locale }: IHomepageProps) => {
   return (
-    <ContainerMain>
-      <Header locale={locale} />
-      <>
-        <ContainerImage>
-          <AboutMe locale={locale} />
-          <TechsList locale={locale} />
-        </ContainerImage>
-        <DivAngle />
-        <ContainerBackGround>
-          <ProjectsList locale={locale} />
-        </ContainerBackGround>
-        <BackgroundContact>
-          <ContactMe locale={locale} />
-          <Footer locale={locale} />
-        </BackgroundContact>
-      </>
-    </ContainerMain>
+    <>
+      <Head>
+        <title>Guilherme Portfolio</title>
+      </Head>
+      <ContainerMain>
+        <Header locale={locale} />
+        <>
+          <ContainerImage>
+            <AboutMe locale={locale} />
+            <TechsList locale={locale} />
+          </ContainerImage>
+          <DivAngle />
+          <ContainerBackGround>
+            <ProjectsList locale={locale} />
+          </ContainerBackGround>
+          <BackgroundContact>
+            <ContactMe locale={locale} />
+            <Footer locale={locale} />
+          </BackgroundContact>
+        </>
+      </ContainerMain>
+    </>
   );
 };
 

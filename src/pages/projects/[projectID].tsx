@@ -2,9 +2,10 @@ import React from "react";
 
 import { Carousel } from "components/carousel";
 import Header from "components/header";
+import Tooltip from "components/tooltip";
 import { motion } from "framer-motion";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
-import Link from "next/link.js";
+import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 import { Container, ContainerBackGround } from "styles/styles-projects";
 import { projectsInfo } from "translations/projects";
@@ -23,6 +24,7 @@ const Projects = ({
     "see-website": seeWebsite,
     features,
     projects,
+    "deploy-api-message": deploy_message,
     techs,
   } = projectsInfo[locale];
 
@@ -30,8 +32,13 @@ const Projects = ({
     (project) => project["project-name"] === projectSelected["project-name"],
   );
 
+  const PROJECTS_WITH_DEPLOY_PROBLEM = ["Me Au Pet Hotel", "HealthyGo"];
+
   return (
-    <React.Fragment>
+    <>
+      <Head>
+        <title>Guilherme Portfolio - {projectSelected["project-name"]}</title>
+      </Head>
       <Header locale={locale} />
       <ContainerBackGround>
         <motion.div
@@ -42,11 +49,36 @@ const Projects = ({
           <Container>
             <div className="project-title">
               <h1>{projectSelected["project-name"]}</h1>
-              <Link href={projectSelected["project-url"]}>
-                <a target="_blank" className="website-link__mobile">
-                  {seeWebsite}
-                </a>
-              </Link>
+              <div>
+                {PROJECTS_WITH_DEPLOY_PROBLEM.includes(
+                  projectSelected["project-name"],
+                ) ? (
+                  <Tooltip
+                    title={deploy_message}
+                    ContainerWidth={120}
+                    position="right"
+                    hiddenDesktop={true}
+                  >
+                    <a
+                      target="_blank"
+                      className="website-link__mobile"
+                      href={projectSelected["project-url"]}
+                      rel="noreferrer"
+                    >
+                      {seeWebsite}
+                    </a>
+                  </Tooltip>
+                ) : (
+                  <a
+                    target="_blank"
+                    className="website-link__mobile"
+                    href={projectSelected["project-url"]}
+                    rel="noreferrer"
+                  >
+                    {seeWebsite}
+                  </a>
+                )}
+              </div>
             </div>
             <p className="project-description">
               {projects[projectIndex].description}
@@ -54,11 +86,37 @@ const Projects = ({
             <Carousel images={projectSelected.images} />
             <div className="project-techs-list">
               <div className="background-techs">
-                <Link href={projectSelected["project-url"]}>
-                  <a target="_blank" className="website-link__desktop">
-                    {seeWebsite}
-                  </a>
-                </Link>
+                <div>
+                  {PROJECTS_WITH_DEPLOY_PROBLEM.includes(
+                    projectSelected["project-name"],
+                  ) ? (
+                    <Tooltip
+                      title={deploy_message}
+                      ContainerWidth={200}
+                      width={281}
+                    >
+                      <a
+                        target="_blank"
+                        className="website-link__desktop"
+                        href={projectSelected["project-url"]}
+                        rel="noreferrer"
+                        style={{ marginLeft: "20px" }}
+                      >
+                        {seeWebsite}
+                      </a>
+                    </Tooltip>
+                  ) : (
+                    <a
+                      target="_blank"
+                      className="website-link__desktop"
+                      href={projectSelected["project-url"]}
+                      rel="noreferrer"
+                      style={{ marginLeft: "20px" }}
+                    >
+                      {seeWebsite}
+                    </a>
+                  )}
+                </div>
                 <h3>{techs}</h3>
                 <ul>
                   {projectSelected?.techs.map((e, i) => {
@@ -98,7 +156,7 @@ const Projects = ({
           </Container>
         </motion.div>
       </ContainerBackGround>
-    </React.Fragment>
+    </>
   );
 };
 
